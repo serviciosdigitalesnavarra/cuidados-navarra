@@ -116,16 +116,27 @@
       if (!form.reportValidity()) return;
       boton.disabled = true; boton.textContent = "Enviando…";
       aviso.className = "aviso"; aviso.textContent = "";
+      if (location.protocol === "file:") { form.submit(); return; } // abierto desde el ordenador: envío clásico
       fetch(DESTINO_AJAX, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) })
-        .then(function (r) { return r.json().then(function (d) { if (!r.ok || String(d.success) === "false") throw d; }); })
-        .then(function () {
-          form.reset();
-          aviso.className = "aviso ok";
-          aviso.textContent = "¡Gracias! Hemos recibido tu mensaje y te responderemos pronto.";
+        .then(function (r) { return r.json().then(function (d) { d._ok = r.ok; return d; }); })
+        .then(function (d) {
+          var txt = String(d.message || "");
+          if (d._ok && String(d.success) !== "false") {
+            form.reset();
+            aviso.className = "aviso ok";
+            aviso.textContent = "¡Gracias! Hemos recibido tu mensaje y te responderemos pronto.";
+          } else if (/activat/i.test(txt)) {
+            // Primer envío: FormSubmit pide confirmar el correo de destino.
+            aviso.className = "aviso ok";
+            aviso.textContent = "Formulario pendiente de activar: se ha enviado un correo de confirmación a la dirección de destino. Tras confirmarlo, los mensajes llegarán con normalidad.";
+          } else {
+            throw new Error(txt);
+          }
         })
         .catch(function () {
-          aviso.className = "aviso error";
-          aviso.textContent = "No se ha podido enviar el mensaje. Inténtalo de nuevo en unos minutos.";
+          // Si el envío rápido falla, se usa el envío clásico, que abre la página de FormSubmit.
+          aviso.className = "aviso"; aviso.textContent = "";
+          form.submit();
         })
         .finally(function () { boton.disabled = false; boton.textContent = "Enviar mensaje"; });
     });
