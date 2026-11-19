@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuidados Navarra · Guías de cuidados para personas mayores y dependientes</title>
+  <meta name="description" content="Guías claras y sencillas sobre cuidados a personas mayores y dependientes: higiene, alimentación, movilidad, medicación, memoria y apoyo al cuidador.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="logo" href="index.html">
+        <span class="logo-icono" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>
+        </span>
+        Cuidados Navarra
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="#temas">Temáticas</a>
+        <a href="#guias">Guías</a>
+        <a href="contacto.html">Contacto</a>
+        <button class="boton-texto" id="boton-texto" type="button">A+ Texto grande</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="portada">
+      <div class="contenedor">
+        <h1>Cuidar mejor, <span>con calma</span> y con confianza</h1>
+        <p>Guías prácticas y sencillas para acompañar a personas mayores y dependientes en su día a día, y para cuidar también de quien cuida.</p>
+        <div class="acciones">
+          <a class="boton" href="#temas">Ver temáticas</a>
+          <a class="boton secundario" href="contacto.html">Hablar con nosotros</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="destacados-seccion">
+      <div class="contenedor">
+        <div class="destacados" id="destacados">
+          <h2 class="titulo-seccion">Guías destacadas</h2>
+          <p class="subtitulo">Los consejos más consultados para empezar.</p>
+          <div class="rejilla-articulos" id="rejilla-destacados"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="temas">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Temáticas</h2>
+        <p class="subtitulo">Elige un área para ver todas sus guías.</p>
+        <div class="rejilla-temas" id="rejilla-temas"></div>
+      </div>
+    </section>
+
+    <section id="guias">
+      <div class="contenedor">
+        <h2 class="titulo-seccion">Todas las guías</h2>
+        <p class="subtitulo" id="resultado-busqueda" aria-live="polite"></p>
+        <div class="herramientas">
+          <div class="buscador">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <label for="busqueda" class="oculto">Buscar guías</label>
+            <input type="search" id="busqueda" placeholder="Buscar: caídas, medicación, baño…" autocomplete="off">
+          </div>
+          <div class="filtros" id="filtros" role="group" aria-label="Filtrar por temática"></div>
+        </div>
+        <div class="rejilla-articulos" id="rejilla-articulos"></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="dialogo" aria-labelledby="dialogo-titulo">
+    <div class="dialogo-cabecera">
+      <span class="etiqueta" id="dialogo-etiqueta" style="font-weight:700;color:var(--verde-intenso)"></span>
+      <h2 id="dialogo-titulo"></h2>
+      <button class="cerrar" id="cerrar-dialogo" aria-label="Cerrar">×</button>
+    </div>
+    <div class="dialogo-cuerpo" id="dialogo-cuerpo"></div>
+  </dialog>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <span>© <span id="anio"></span> Cuidados Navarra. La información de esta web es orientativa y no sustituye la consulta con profesionales sanitarios.</span>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </footer>
+
+  <script src="contenido/temas.js"></script>
+  <script src="js/comun.js"></script>
+  <script src="js/temas.js"></script>
+</body>
+</html>
