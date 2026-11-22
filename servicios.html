@@ -46,7 +46,7 @@
             "<h3>" + CN.esc(s.titulo) + "</h3><p>" + CN.resaltar(s.resumen) + "</p>" +
             "<ul>" + (s.detalles || []).map(function (x) { return "<li>" + CN.resaltar(x) + "</li>"; }).join("") + "</ul>" +
             '<div class="pie-servicio"><span class="precio">' + CN.resaltar(s.precio || "") + "</span>" +
-            '<a class="boton" href="empresa.html#contacto">Solicitar</a></div></article>';
+            '<a class="boton" href="empresa.html#contacto">Solicitar<span class="oculto"> ' + CN.esc(s.titulo) + "</span></a></div></article>";
         }).join("");
       }).catch(function () { CN.errorCarga(el); });
     });

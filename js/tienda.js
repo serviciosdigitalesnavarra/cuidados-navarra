@@ -32,7 +32,7 @@
 
   function pintarFiltros() {
     $("#filtros-tienda").innerHTML = [{ id: "todos", nombre: "Todos", icono: "✦" }].concat(D.categorias || []).map(function (c) {
-      return '<button class="filtro" data-cat="' + esc(c.id) + '" aria-pressed="' + (filtro === c.id) + '">' + c.icono + " " + esc(c.nombre) + "</button>";
+      return '<button class="filtro" data-cat="' + esc(c.id) + '" aria-pressed="' + (filtro === c.id) + '"><span aria-hidden="true">' + c.icono + "</span> " + esc(c.nombre) + "</button>";
     }).join("");
   }
 
