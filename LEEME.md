@@ -18,6 +18,10 @@ terminos.html         Términos y condiciones de uso (aviso legal)
 privacidad.html       Privacidad, protección de datos y cookies
 accesibilidad.html    Ayuda de accesibilidad y declaración de accesibilidad
 contacto.html         Redirige al formulario de empresa.html#contacto
+app.html              Instalar la app en el móvil (textos en js/app.js)
+offline.html          Página que se ve sin conexión
+sw.js                 Modo app sin conexión (no hace falta tocarlo)
+app-movil/            Apps para Google Play y App Store (ver app-movil/GUIA-TIENDAS.md)
 
 datos/                ← AQUÍ se editan todos los contenidos
   sitio.json          Nombre, correo, DATOS DEL TITULAR (NIF, domicilio…) y textos de portada

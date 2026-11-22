@@ -47,6 +47,11 @@
   }
   aplicarPreferencias();
 
+  // App instalable y sin conexión (enlace «Instalar la app», página app.html…): ver js/app.js
+  var sapp = document.createElement("script");
+  sapp.src = "js/app.js";
+  document.head.appendChild(sapp);
+
   var esc = function (t) {
     return String(t == null ? "" : t).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];

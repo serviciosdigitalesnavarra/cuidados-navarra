@@ -1,5 +1,16 @@
 # Base para las apps Android e iPhone
 
+## Estado actual
+
+1. **App instalable desde la web (PWA)**, ya incluida: `manifest.webmanifest`, `sw.js` (funciona sin conexión y
+   siempre trae lo más reciente), `offline.html` y la página `app.html` con las instrucciones para Android, iPhone y
+   ordenador (textos en castellano y euskera en `js/app.js`). Al cambiar contenidos no hay que tocar nada.
+2. **Apps para Google Play y App Store** en `app-movil/` (Capacitor): abren la web publicada, así que están siempre
+   sincronizadas. La app Android se compila sola en GitHub (Actions › «App Android»). Pasos para publicar:
+   `app-movil/GUIA-TIENDAS.md`.
+
+Lo que sigue describe los datos por si en el futuro se hace una app nativa que los lea directamente.
+
 La web es la «raíz»: las apps deben leer los mismos datos JSON publicados, para que web y apps
 muestren siempre lo mismo sin duplicar contenidos.
 

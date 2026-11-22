@@ -1,0 +1,18 @@
+{
+  "appId": "io.github.serviciosdigitalesnavarra.cuidados",
+  "appName": "Cuidados Navarra",
+  "webDir": "www",
+  "server": {
+    "url": "https://serviciosdigitalesnavarra.github.io/cuidados-navarra/index.html",
+    "errorPath": "offline.html",
+    "androidScheme": "https"
+  },
+  "backgroundColor": "#EAF6EC",
+  "android": {
+    "allowMixedContent": false
+  },
+  "ios": {
+    "contentInset": "never",
+    "limitsNavigationsToAppBoundDomains": false
+  }
+}

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sin conexión · Cuidados Navarra</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#EAF6EC">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body class="pagina-offline">
+  <!-- Página que muestra la app cuando no hay conexión y la página pedida aún no se había guardado.
+       Se usa también dentro de las apps de Google Play y App Store. -->
+  <main id="contenido" class="contenedor">
+    <div class="offline-caja">
+      <img src="img/icono.svg" alt="" width="72" height="72">
+      <div lang="es">
+        <h1>Ahora no hay conexión</h1>
+        <p>Esta página aún no estaba guardada en tu móvil. Las páginas que ya has visitado siguen disponibles.</p>
+      </div>
+      <div lang="eu">
+        <h2>Orain ez dago konexiorik</h2>
+        <p>Orri hau oraindik ez zegoen zure mugikorrean gordeta. Lehen bisitatutako orriak erabilgarri daude.</p>
+      </div>
+      <p class="offline-botones">
+        <button class="boton" type="button" onclick="location.reload()">Volver a intentar · Saiatu berriro</button>
+        <a class="boton claro" href="index.html">Inicio · Hasiera</a>
+      </p>
+      <p class="offline-urgencias"><a href="tel:112">Urgencias · Larrialdiak: <strong>112</strong></a></p>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,77 @@
+/* Estilos de la app instalable: página app.html, aviso de la portada, enlace del pie y página sin conexión.
+   Usa los mismos colores que css/estilos.css. */
+
+/* Enlace «Instalar la app» del pie */
+.enlace-app {
+  display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem;
+  padding: .65rem 1rem; border-radius: var(--radio-boton); min-height: 44px;
+  background: var(--verde-suave); color: var(--verde-texto); font-weight: 700; text-decoration: none;
+}
+.enlace-app:hover { background: #cbe9d3; }
+.en-app .enlace-app { display: none; }
+
+/* Aviso en la portada del móvil */
+.aviso-app {
+  position: relative; display: flex; gap: 1rem; align-items: flex-start;
+  background: #fff; border-radius: var(--radio); box-shadow: var(--sombra);
+  padding: 1.2rem 3.2rem 1.2rem 1.2rem; margin: 1.4rem 0;
+}
+.aviso-app img { flex: none; border-radius: 14px; }
+.aviso-app p { margin: 0 0 .6rem; }
+.aviso-app .aviso-app-titulo { font-weight: 900; font-size: 1.1rem; margin-bottom: .3rem; }
+.aviso-app .boton { margin-top: .2rem; }
+.aviso-app-cerrar {
+  position: absolute; top: .5rem; right: .5rem; width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: transparent; color: var(--texto-suave); font-size: 1.1rem; cursor: pointer;
+}
+.aviso-app-cerrar:hover { background: var(--verde-fondo); color: var(--texto); }
+
+/* Página app.html */
+.pagina-app h1 { margin: 0 0 .5rem; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 900; }
+.pagina-app h2 { font-size: 1.3rem; font-weight: 900; margin: 2rem 0 .8rem; }
+.cabecera-app { display: flex; gap: 1.4rem; align-items: flex-start; }
+.icono-app { flex: none; border-radius: 22px; box-shadow: 0 10px 30px rgba(0, 0, 0, .15); }
+.intro-app { font-size: 1.1rem; color: #2d3a34; margin: 0 0 1rem; }
+.estado-app:empty { display: none; }
+.boton-instalar-app { display: inline-flex; align-items: center; gap: .5rem; font-size: 1.1rem; padding: .9rem 1.5rem; }
+.aviso-ok-app { background: var(--verde-suave); color: #1a5b2c; font-weight: 700; padding: 1rem 1.2rem; border-radius: 12px; margin: 0; }
+.ventajas-app { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; margin-top: 1.6rem; }
+.ventaja-app { background: var(--verde-fondo); border-radius: var(--radio); padding: 1.1rem 1.2rem; }
+.ventaja-app h3 { margin: 0 0 .3rem; font-size: 1.05rem; }
+.ventaja-app p { margin: 0; color: #2d3a34; font-size: .95rem; }
+.bloque-app { background: #fff; border: 1.5px solid var(--borde); border-radius: var(--radio); margin-bottom: 12px; }
+.bloque-app summary {
+  cursor: pointer; list-style: none; padding: 1rem 3rem 1rem 1.2rem; font-weight: 900; font-size: 1.08rem;
+  position: relative; min-height: 44px;
+}
+.bloque-app summary::-webkit-details-marker { display: none; }
+.bloque-app summary::after {
+  content: "+"; position: absolute; right: 1.2rem; top: 50%; transform: translateY(-50%);
+  font-size: 1.5rem; color: var(--verde-texto); line-height: 1;
+}
+.bloque-app[open] summary::after { content: "−"; }
+.bloque-app[open] summary { border-bottom: 1.5px solid var(--borde); }
+.pasos-app { margin: 0; padding: 1rem 1.2rem 1rem 2.8rem; }
+.pasos-app li { margin: .2rem 0 .8rem; padding-left: .3rem; line-height: 1.6; }
+.pasos-app li::marker { font-weight: 900; color: var(--verde-texto); }
+.icono-paso { vertical-align: -5px; color: var(--verde-texto); margin: 0 .15rem; }
+.bloque-app .nota-app { padding: 0 1.2rem 1rem; margin: 0; }
+.nota-app { color: var(--texto-suave); font-size: .95rem; }
+.tiendas-app { display: flex; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 640px) {
+  .cabecera-app { flex-direction: column; gap: 1rem; }
+  .icono-app { width: 72px; height: 72px; border-radius: 18px; }
+}
+
+/* Página sin conexión */
+.pagina-offline { min-height: 100vh; display: grid; place-items: center; }
+.offline-caja {
+  background: #fff; border-radius: var(--radio-grande); box-shadow: var(--sombra);
+  padding: clamp(1.6rem, 5vw, 3rem); max-width: 620px; margin: 2rem auto; text-align: center;
+}
+.offline-caja img { border-radius: 18px; }
+.offline-caja h1, .offline-caja h2 { font-size: 1.5rem; font-weight: 900; margin: 1rem 0 .4rem; }
+.offline-caja [lang="eu"] { border-top: 1.5px solid var(--borde); margin-top: 1.2rem; padding-top: .4rem; }
+.offline-botones { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 1.6rem; }
+.offline-urgencias a { font-size: 1.1rem; color: var(--verde-texto); }
