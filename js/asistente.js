@@ -1,8 +1,10 @@
 /*
  * Asistente de preguntas frecuentes (chatbot) de Cuidados Navarra.
  *
- *  - Las preguntas y respuestas están en datos/preguntas.json: para cambiar lo que responde,
- *    edita ese archivo, no este.
+ *  - Se actualiza solo: además de datos/preguntas.json, lee al abrirse las guías (temas.json),
+ *    los servicios (servicios.json), la tienda (tienda.json) y los datos de contacto (sitio.json).
+ *    Cada guía, servicio o producto nuevo se convierte en una respuesta sin tocar nada más.
+ *  - Para respuestas a medida, edita datos/preguntas.json, no este archivo.
  *  - Funciona entero en el navegador: lo que escribe la persona NO se envía a ningún sitio.
  *  - Busca por palabras clave (sin importar tildes ni mayúsculas). Si no encuentra respuesta,
  *    propone preguntas parecidas y guías de datos/temas.json.
@@ -19,7 +21,8 @@
   // ---------- Búsqueda por palabras clave ----------
   var VACIAS = ("a al algo algun alguna como con cual cuales cuando de del el ella ellos en es esa ese eso esta este esto estoy " +
     "ha hay he la las le les lo los me mi mis mucho muy no nos o os para pero por puedo puede que se ser si sin sobre " +
-    "su sus te tengo tiene tu un una uno unos unas usted y ya yo hacer hago debo quiero necesito saber favor").split(" ");
+    "su sus te tengo tiene tu un una uno unos unas usted y ya yo hacer hago debo quiero necesito saber favor " +
+    "casa persona mayor paso cada todo toda ante").split(" ");
   var normal = function (t) {
     return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
   };
@@ -52,7 +55,11 @@
           puntos += 3; coincide = true;
         }
       });
-      var enunciado = utiles(palabras(p.pregunta));
+      // Palabras sacadas automáticamente del título de una guía, servicio o producto
+      (p.clavesAuto || []).forEach(function (k) {
+        if (clave.some(function (w) { return parecida(w, k); })) { puntos += 2; coincide = true; }
+      });
+      var enunciado = p._enunciado || (p._enunciado = utiles(palabras(p.pregunta + " " + (p.textoExtra || ""))));
       clave.forEach(function (w) { if (enunciado.some(function (e) { return parecida(w, e); })) puntos += 1; });
       if (p.urgente && coincide) puntos += 100;
       return { p: p, puntos: puntos };
@@ -84,6 +91,82 @@
       relacionadas: r.filter(function (x) { return !x.p.oculta; }).slice(0, 3).map(function (x) { return x.p; }),
       guias: buscarGuias(texto).map(function (x) { return x.g; })
     };
+  }
+
+  // ---------- Respuestas automáticas a partir del contenido de la web ----------
+  var sinPendientes = function (t) { return t && String(t).indexOf("[") === -1; };
+  var lista = function (items) { return items.map(function (t) { return "- " + t; }).join("\n"); };
+  // Palabras útiles de un título, para buscar sin tener que escribir palabras clave a mano
+  var clavesDe = function (t) {
+    return utiles(palabras(t)).filter(function (w, i, a) { return w.length >= 4 && a.indexOf(w) === i; });
+  };
+
+  function construir(d, temas, servicios, tienda, sitio) {
+    temas = temas || {}; servicios = servicios || {}; tienda = tienda || {}; sitio = sitio || {};
+    var arts = temas.articulos || [], cats = temas.categorias || [], servs = servicios.servicios || [],
+        prods = tienda.productos || [], catsTienda = tienda.categorias || [];
+    var cat = function (lista, id) { return lista.find(function (c) { return c.id === id; }) || { nombre: "" }; };
+
+    // Datos que se pueden usar en las respuestas: {{contacto.horario}}, {{lista.servicios}}…
+    var ctx = {
+      sitio: sitio, contacto: sitio.contacto || {},
+      lista: {
+        servicios: lista(servs.map(function (x) { return x.titulo + ": " + x.resumen; })),
+        temas: lista(cats.map(function (c) { return c.nombre; })),
+        tienda: lista(catsTienda.map(function (c) { return c.nombre; })),
+        guias: lista(arts.map(function (a) { return a.titulo; }))
+      }
+    };
+
+    function deGuia(a, base) {
+      var c = cat(cats, a.categoria);
+      base = base || {};
+      return {
+        id: base.id || "guia-" + a.id, auto: !base.id, tema: base.tema || c.nombre, origen: "Guía: " + a.titulo,
+        pregunta: base.pregunta || a.titulo,
+        palabrasClave: (base.palabrasClave || []).concat(a.palabrasClave || []),
+        clavesAuto: clavesDe(a.titulo), textoExtra: a.resumen + " " + c.nombre,
+        respuesta: base.respuesta || a.contenido,
+        enlaces: [{ texto: "Abrir la guía completa", url: "index.html#guia-" + a.id }].concat(base.enlaces || []),
+        urgente: base.urgente, oculta: base.oculta
+      };
+    }
+    function deServicio(x, base) {
+      base = base || {};
+      var texto = x.resumen + (x.detalles && x.detalles.length ? "\n\n" + lista(x.detalles) : "") +
+        (sinPendientes(x.precio) ? "\n\nPrecio orientativo: " + x.precio + "." : "");
+      return {
+        id: base.id || "servicio-" + x.id, auto: !base.id, tema: base.tema || "Nuestros servicios", origen: "Servicio: " + x.titulo,
+        pregunta: base.pregunta || x.titulo,
+        palabrasClave: (base.palabrasClave || []).concat(x.palabrasClave || []),
+        clavesAuto: clavesDe(x.titulo), textoExtra: x.resumen,
+        respuesta: base.respuesta || texto,
+        enlaces: (base.enlaces || [{ texto: "Ver los servicios", url: "servicios.html" }]).concat([{ texto: "Pedir información", url: "empresa.html#contacto" }]),
+        oculta: base.oculta
+      };
+    }
+
+    var usadasG = {}, usadosS = {}, salida = [];
+    (d.preguntas || []).forEach(function (p) {
+      var a = p.guia && arts.find(function (x) { return x.id === p.guia; });
+      var x = p.servicio && servs.find(function (y) { return y.id === p.servicio; });
+      if (a) { usadasG[a.id] = 1; salida.push(deGuia(a, p)); }
+      else if (x) { usadosS[x.id] = 1; salida.push(deServicio(x, p)); }
+      else if (p.respuesta) salida.push(p); // si la guía o el servicio se borró y no hay texto propio, se omite
+    });
+    arts.forEach(function (a) { if (!usadasG[a.id]) salida.push(deGuia(a)); });
+    servs.forEach(function (x) { if (!usadosS[x.id]) salida.push(deServicio(x)); });
+    prods.forEach(function (x) {
+      var c = cat(catsTienda, x.categoria);
+      salida.push({
+        id: "producto-" + x.id, auto: true, tema: "Tienda", origen: "Tienda: " + x.titulo, pregunta: x.titulo,
+        palabrasClave: x.palabrasClave || [], clavesAuto: clavesDe(x.titulo), textoExtra: x.texto + " " + c.nombre,
+        respuesta: x.texto + "\n\nLo tienes en nuestra tienda, en «" + c.nombre + "».",
+        enlaces: [{ texto: "Ver en la tienda", url: "tienda.html" }]
+      });
+    });
+    salida.forEach(function (p) { if (p.respuesta) p.respuesta = CN.plantilla(p.respuesta, ctx); });
+    return salida;
   }
 
   // ---------- Inteligencia artificial (desactivada por defecto) ----------
@@ -173,7 +256,8 @@
   function mostrar(res) {
     if (res.pregunta) {
       var p = res.pregunta;
-      decir('<div class="asistente-texto' + (p.urgente ? " urgente" : "") + '">' + formatear(p.respuesta) + "</div>" +
+      decir((p.origen ? '<p class="asistente-origen">' + esc(p.origen) + "</p>" : "") +
+        '<div class="asistente-texto' + (p.urgente ? " urgente" : "") + '">' + formatear(p.respuesta) + "</div>" +
         enlacesHTML(p.enlaces) + chipsHTML(res.relacionadas, "También puede interesarte:"));
       historial.push({ rol: "asistente", texto: p.respuesta });
       return;
@@ -200,14 +284,17 @@
 
   function iniciar() {
     if (cargado) return cargado;
-    cargado = CN.cargar("preguntas").then(function (d) {
-      DATOS = d; DATOS.preguntas = DATOS.preguntas || [];
+    var opcional = function (n) { return CN.cargar(n).catch(function () { return null; }); };
+    cargado = Promise.all([CN.cargar("preguntas"), opcional("temas"), opcional("servicios"), opcional("tienda"), opcional("sitio")]).then(function (r) {
+      var d = r[0];
+      DATOS = d;
+      GUIAS = (r[1] && r[1].articulos) || [];
+      DATOS.preguntas = construir(d, r[1], r[2], r[3], r[4]);
       var a = d.asistente || {};
       if (a.nombre) $("asistente-titulo").textContent = a.nombre;
       if (a.aviso) $("asistente-aviso").textContent = a.aviso;
       var sug = (a.sugerencias || []).map(function (id) { return d.preguntas.find(function (p) { return p.id === id; }); }).filter(Boolean);
       decir('<div class="asistente-texto">' + formatear(a.bienvenida || "Hola, ¿en qué te puedo ayudar?") + "</div>" + chipsHTML(sug));
-      CN.cargar("temas").then(function (t) { GUIAS = t.articulos || []; }).catch(function () {});
     }).catch(function () {
       cargado = null;
       decir('<div class="asistente-texto"><p>Ahora mismo no puedo cargar las respuestas. Prueba en unos segundos o escríbenos.</p></div>' +

@@ -394,3 +394,4 @@ section[id], [id].bloque { scroll-margin-top: 110px; }
   html.asistente-abierto .asistente-boton { display: none; }
 }
 @media print { .asistente { display: none; } }
+.asistente-origen { margin: 0 0 .35rem; font-size: .78rem; font-weight: 700; color: var(--verde-texto); text-transform: uppercase; letter-spacing: .04em; }
