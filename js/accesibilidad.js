@@ -67,6 +67,8 @@
   for (var k in TEXTOS.es) if (!(k in T)) T[k] = TEXTOS.es[k];
 
   var ICONO_ALTAVOZ = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+  // Altavoz con un oído: icono compacto del botón «Escuchar» de la cabecera
+  var ICONO_OIDO = '<svg width="26" height="26" viewBox="0 0 26 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 9.5h2.6L8.5 6v12l-3.9-3.5H2z" fill="currentColor"/><path d="M10.8 9.3a2.6 2.6 0 0 1 0 5.4"/><path d="M14.5 9.2a5 5 0 0 1 10 0c0 2.6-1.9 3.6-2.6 5.4-.6 1.6-1 3.9-3.4 3.9a2.5 2.5 0 0 1-2.5-2.3"/><path d="M17.3 9.4a2.2 2.2 0 0 1 4.4 0c0 1.2-1 1.7-1.6 2.6"/></svg>';
   var ICONO_PARAR = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
   var ICONO_PAUSA = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
   var ICONO_SEGUIR = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7 5v14l12-7L7 5Z"/></svg>';
@@ -198,7 +200,8 @@
       // data-texto y data-texto-parar llevan una clave de TEXTOS (o un texto literal)
       var normal = b.getAttribute("data-texto") || "escuchar", parando = b.getAttribute("data-texto-parar") || "parar";
       if (t) t.textContent = leyendo ? (T[parando] || parando) : (T[normal] || normal);
-      if (ic) ic.innerHTML = leyendo ? ICONO_PARAR : ICONO_ALTAVOZ;
+      if (ic) ic.innerHTML = leyendo ? ICONO_PARAR : (b.getAttribute("data-icono") === "oido" ? ICONO_OIDO : ICONO_ALTAVOZ);
+      if (b.id === "boton-escuchar") b.title = leyendo ? T.pararLectura : T.escucharPagina;
     });
     var p = barra.querySelector("[data-lector=pausa]");
     p.innerHTML = lector.pausado ? ICONO_SEGUIR : ICONO_PAUSA;
@@ -377,7 +380,6 @@
     '<a href="accesibilidad.html">' + T.ayuda + "</a></div>";
 
   // Textos de los botones de la cabecera
-  var be = $("boton-escuchar"); if (be) be.title = T.tituloEscuchar;
   var ta = botonAjustes.querySelector(".texto-acc"); if (ta) ta.textContent = T.accesibilidad;
 
   function pintarPanel() {
