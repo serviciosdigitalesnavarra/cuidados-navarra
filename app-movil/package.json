@@ -1,0 +1,22 @@
+{
+  "name": "cuidados-navarra-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Apps de Cuidados Navarra para Google Play y App Store (Capacitor). Muestran la web publicada, así que siempre están sincronizadas con ella.",
+  "scripts": {
+    "preparar": "node preparar-web.js",
+    "iconos": "capacitor-assets generate --iconBackgroundColor \"#000000\" --splashBackgroundColor \"#EAF6EC\" --splashBackgroundColorDark \"#111614\"",
+    "android": "node preparar-web.js && npx cap add android && npm run iconos -- --android && npx cap sync android && npx cap open android",
+    "ios": "node preparar-web.js && npx cap add ios && npm run iconos -- --ios && npx cap sync ios && npx cap open ios",
+    "sincronizar": "node preparar-web.js && npx cap sync"
+  },
+  "dependencies": {
+    "@capacitor/android": "8.6.0",
+    "@capacitor/core": "8.6.0",
+    "@capacitor/ios": "8.6.0"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "4.0.0",
+    "@capacitor/cli": "8.6.0"
+  }
+}
