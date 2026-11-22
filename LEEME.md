@@ -16,6 +16,7 @@ servicios.html        Nuestros servicios
 tienda.html           Tienda de enlaces (Amazon, Shopify y otros proveedores)
 terminos.html         Términos y condiciones de uso (aviso legal)
 privacidad.html       Privacidad, protección de datos y cookies
+accesibilidad.html    Ayuda de accesibilidad y declaración de accesibilidad
 contacto.html         Redirige al formulario de empresa.html#contacto
 
 datos/                ← AQUÍ se editan todos los contenidos
@@ -101,9 +102,25 @@ Los mensajes se envían con **FormSubmit** a `serviciosdigitalesnavarra@protonma
 La primera vez, envía un mensaje de prueba y confirma el correo de activación que llega a esa dirección
 (mira en spam). Para cambiar el correo, edita las líneas marcadas `← CORREO` en `empresa.html` y `js/contacto.js`.
 
+## Accesibilidad y lectura en voz alta
+
+- **«Escuchar»** (cabecera, cada guía y cada respuesta del asistente): lee el texto con la voz del propio
+  dispositivo (Web Speech API, gratis, sin servidor). Marca en amarillo el párrafo que lee y muestra una barra
+  para pausar, ir al párrafo anterior/siguiente y parar.
+- **«Accesibilidad»** (cabecera): tamaño de letra (normal, grande, muy grande), alto contraste, más espacio,
+  velocidad de la voz y lectura automática del asistente. Se guarda en el navegador.
+- Todo está en `js/accesibilidad.js`; sus textos visibles están en el objeto `TEXTOS` al principio del archivo.
+  Para añadir un botón «Escuchar» en cualquier sitio: `<button type="button" data-escuchar="#id-de-la-zona">`.
+  La clase `no-leer` hace que un trozo se salte al leer.
+- La voz sigue el idioma de `<html lang="…">`.
+- La **declaración de accesibilidad** está en `accesibilidad.html` (se edita ahí mismo). Revísala al menos una vez
+  al año y cambia su fecha.
+- Objetivo: WCAG 2.2 nivel AA. Si cambias colores en `css/estilos.css`, comprueba el contraste
+  (mínimo 4,5:1 para texto normal y 3:1 para títulos grandes), por ejemplo en https://webaim.org/resources/contrastchecker/.
+
 ## Cookies
 
-La web no usa cookies. Solo guarda en el navegador la preferencia de «Texto grande» (técnica, exenta de
+La web no usa cookies. Solo guarda en el navegador los ajustes de accesibilidad (técnicos, exentos de
 consentimiento). Si algún día añades analítica (Google Analytics, etc.), necesitarás un banner de consentimiento
 y actualizar el apartado de cookies en `legal.json`.
 

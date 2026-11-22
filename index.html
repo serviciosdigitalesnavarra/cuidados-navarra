@@ -88,7 +88,9 @@
     <div class="dialogo-cabecera">
       <span class="etiqueta" id="dialogo-etiqueta"></span>
       <h2 id="dialogo-titulo"></h2>
-      <button class="cerrar" id="cerrar-dialogo" aria-label="Cerrar">×</button>
+      <button type="button" class="boton-acc boton-escuchar dialogo-escuchar" data-escuchar="#dialogo" data-texto="escucharGuia" data-texto-parar="pararLectura">
+        <span class="icono-escuchar"></span><span class="texto-escuchar">Escuchar la guía</span></button>
+      <button type="button" class="cerrar" id="cerrar-dialogo" aria-label="Cerrar la guía">×</button>
     </div>
     <div class="dialogo-cuerpo" id="dialogo-cuerpo"></div>
   </dialog>

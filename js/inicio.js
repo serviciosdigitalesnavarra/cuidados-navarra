@@ -28,9 +28,9 @@
   function tarjeta(a, retraso) {
     var c = cat(a.categoria);
     return '<article class="articulo" style="animation-delay:' + retraso + 'ms">' +
-      '<span class="etiqueta">' + c.icono + " " + esc(c.nombre) + "</span>" +
+      '<span class="etiqueta"><span aria-hidden="true">' + c.icono + "</span> " + esc(c.nombre) + "</span>" +
       "<h3>" + esc(a.titulo) + "</h3><p>" + esc(a.resumen) + "</p>" +
-      '<button class="boton" data-leer="' + esc(a.id) + '">Leer guía</button></article>';
+      '<button class="boton" data-leer="' + esc(a.id) + '">Leer guía<span class="oculto">: ' + esc(a.titulo) + "</span></button></article>";
   }
 
   function pintarTemas() {
@@ -44,7 +44,7 @@
 
   function pintarFiltros() {
     $("#filtros").innerHTML = [{ id: "todas", nombre: "Todas", icono: "✦" }].concat(CATS).map(function (c) {
-      return '<button class="filtro" data-filtro="' + esc(c.id) + '" aria-pressed="' + (estado.categoria === c.id) + '">' + c.icono + " " + esc(c.nombre) + "</button>";
+      return '<button class="filtro" data-filtro="' + esc(c.id) + '" aria-pressed="' + (estado.categoria === c.id) + '"><span aria-hidden="true">' + c.icono + "</span> " + esc(c.nombre) + "</button>";
     }).join("");
   }
 
@@ -69,7 +69,7 @@
   function abrir(id) {
     var a = ARTS.find(function (x) { return x.id === id; }); if (!a) return;
     var c = cat(a.categoria);
-    $("#dialogo-etiqueta").textContent = c.icono + " " + c.nombre;
+    $("#dialogo-etiqueta").innerHTML = '<span aria-hidden="true">' + c.icono + "</span> " + esc(c.nombre);
     $("#dialogo-titulo").textContent = a.titulo;
     $("#dialogo-cuerpo").innerHTML = CN.formatear(a.contenido);
     var d = $("#dialogo");
