@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "categorias": [
+    {
+      "id": "higiene",
+      "nombre": "Higiene y cuidado personal",
+      "icono": "🛁",
+      "descripcion": "Aseo, piel, boca y vestido con dignidad y seguridad."
+    },
+    {
+      "id": "alimentacion",
+      "nombre": "Alimentación",
+      "icono": "🥗",
+      "descripcion": "Dietas, hidratación y ayuda para comer."
+    },
+    {
+      "id": "movilidad",
+      "nombre": "Movilidad y caídas",
+      "icono": "🦯",
+      "descripcion": "Movilizaciones, transferencias y prevención de caídas."
+    },
+    {
+      "id": "medicacion",
+      "nombre": "Medicación y salud",
+      "icono": "💊",
+      "descripcion": "Organización de tratamientos y señales de alerta."
+    },
+    {
+      "id": "memoria",
+      "nombre": "Memoria y demencias",
+      "icono": "🧠",
+      "descripcion": "Acompañar el deterioro cognitivo con calma."
+    },
+    {
+      "id": "hogar",
+      "nombre": "Hogar seguro",
+      "icono": "🏡",
+      "descripcion": "Adaptaciones sencillas para vivir con autonomía."
+    },
+    {
+      "id": "cuidador",
+      "nombre": "Cuidar al cuidador",
+      "icono": "🤝",
+      "descripcion": "Descanso, apoyo emocional y recursos."
+    },
+    {
+      "id": "tramites",
+      "nombre": "Ayudas y trámites",
+      "icono": "📋",
+      "descripcion": "Dependencia, prestaciones y servicios disponibles."
+    }
+  ],
+  "articulos": [
+    {
+      "id": "art-001",
+      "categoria": "higiene",
+      "titulo": "Aseo en cama paso a paso",
+      "resumen": "Cómo realizar un aseo completo, cómodo y respetuoso cuando la persona no puede levantarse.",
+      "destacado": true,
+      "contenido": "Antes de empezar, prepara todo lo necesario para no dejar sola a la persona: dos palanganas con agua templada, jabón neutro, esponjas, toallas y ropa limpia.\n\nExplica cada paso antes de hacerlo y cubre con una toalla las zonas que no estés lavando para preservar su intimidad y evitar que pase frío.\n\n- Lava de las zonas más limpias a las más sucias: cara, brazos, tórax, piernas y por último zona genital.\n- Seca bien los pliegues de la piel, sobre todo axilas, ingles y entre los dedos.\n- Aprovecha para revisar la piel en busca de rojeces o heridas.\n- Aplica crema hidratante con un suave masaje.\n\nSi observas una zona enrojecida que no desaparece al dejar de presionar, coméntalo con su enfermera o médico."
+    },
+    {
+      "id": "art-002",
+      "categoria": "higiene",
+      "titulo": "Prevenir las úlceras por presión",
+      "resumen": "Cambios posturales, hidratación de la piel y señales de alerta para actuar a tiempo.",
+      "contenido": "Las úlceras por presión aparecen cuando una zona del cuerpo soporta presión durante mucho tiempo. Son más frecuentes en talones, caderas, sacro y codos.\n\n- Cambia de postura a la persona encamada cada 2 o 3 horas.\n- Mantén la piel limpia, seca e hidratada.\n- Usa cojines o colchones antiescaras si te los recomiendan.\n- Evita arrugas en las sábanas y arrastrar a la persona al moverla.\n\nUna buena alimentación e hidratación también protege la piel."
+    },
+    {
+      "id": "art-003",
+      "categoria": "alimentacion",
+      "titulo": "Hidratación en personas mayores",
+      "resumen": "Con la edad disminuye la sensación de sed. Pequeños trucos para beber lo suficiente.",
+      "destacado": true,
+      "contenido": "Las personas mayores sienten menos sed, por lo que pueden deshidratarse sin darse cuenta. Los signos de alerta son boca seca, orina oscura, cansancio o confusión.\n\n- Ofrece agua con frecuencia, aunque no la pidan.\n- Deja siempre un vaso o botella a la vista y al alcance.\n- Incluye caldos, infusiones, gelatinas y frutas con mucha agua.\n- Si hay problemas para tragar líquidos, consulta sobre el uso de espesantes."
+    },
+    {
+      "id": "art-004",
+      "categoria": "alimentacion",
+      "titulo": "Ayudar a comer con dificultad para tragar",
+      "resumen": "Postura, texturas adecuadas y qué hacer si la persona se atraganta.",
+      "contenido": "La dificultad para tragar (disfagia) es frecuente tras un ictus o en demencias avanzadas.\n\n- Siéntala bien erguida, con la barbilla ligeramente hacia abajo.\n- Ofrece cucharadas pequeñas y espera a que trague antes de la siguiente.\n- Evita distracciones como la televisión mientras come.\n- Mantén la postura sentada al menos 30 minutos después de comer.\n\nSi tose con frecuencia al comer o beber, pide valoración a su equipo sanitario."
+    },
+    {
+      "id": "art-005",
+      "categoria": "movilidad",
+      "titulo": "Prevenir caídas en casa",
+      "resumen": "La mayoría de caídas se pueden evitar con pequeños cambios y buenos hábitos.",
+      "destacado": true,
+      "contenido": "Las caídas son una de las principales causas de pérdida de autonomía en personas mayores.\n\n- Retira alfombras sueltas y cables del suelo.\n- Asegura una buena iluminación, también por la noche (luces de pasillo).\n- Usa calzado cerrado y con suela antideslizante.\n- Instala barras de apoyo en el baño.\n- Revisa con su médico los medicamentos que puedan causar mareo.\n\nMantenerse activo con paseos y ejercicios de equilibrio también reduce el riesgo."
+    },
+    {
+      "id": "art-006",
+      "categoria": "movilidad",
+      "titulo": "Pasar de la cama a la silla",
+      "resumen": "Técnica segura para la persona y para tu espalda.",
+      "contenido": "Antes de empezar, coloca la silla junto a la cama, frenada y en ángulo.\n\n- Ayuda a la persona a sentarse en el borde de la cama con los pies apoyados en el suelo.\n- Flexiona tus rodillas y mantén la espalda recta.\n- Sujétala por la cintura o con un cinturón de transferencia, nunca por los brazos.\n- Gira junto a ella pivotando sobre los pies y siéntala despacio.\n\nSi necesitas hacer mucha fuerza, pide información sobre grúas o tablas de transferencia."
+    },
+    {
+      "id": "art-007",
+      "categoria": "medicacion",
+      "titulo": "Organizar la medicación semanal",
+      "resumen": "Pastilleros, listas y rutinas para no olvidar ni repetir dosis.",
+      "contenido": "Cuando se toman varios medicamentos, una buena organización evita errores.\n\n- Usa un pastillero semanal con compartimentos por día y hora.\n- Ten una lista actualizada con cada medicamento, dosis y para qué sirve.\n- Asocia las tomas a rutinas fijas como el desayuno o la cena.\n- Lleva la lista siempre a las consultas médicas.\n\nNunca cambies ni suspendas un tratamiento sin consultarlo."
+    },
+    {
+      "id": "art-008",
+      "categoria": "medicacion",
+      "titulo": "Señales de alerta que requieren atención",
+      "resumen": "Cuándo llamar al centro de salud o al 112.",
+      "contenido": "Llama al 112 ante dolor en el pecho, dificultad para respirar, pérdida de fuerza en un lado del cuerpo, dificultad para hablar o pérdida de consciencia.\n\nConsulta con su centro de salud si aparece:\n\n- Fiebre que no baja.\n- Confusión o somnolencia nueva.\n- Dejar de comer o beber.\n- Una caída, aunque parezca leve."
+    },
+    {
+      "id": "art-009",
+      "categoria": "memoria",
+      "titulo": "Comunicarse con una persona con demencia",
+      "resumen": "Frases cortas, tono tranquilo y mucha paciencia.",
+      "contenido": "La forma de comunicarnos puede reducir mucho la ansiedad de la persona.\n\n- Ponte a su altura y mírale a los ojos.\n- Usa frases cortas y una sola idea cada vez.\n- No le corrijas ni discutas; acompaña su emoción.\n- Apóyate en gestos, caricias y una sonrisa.\n\nMantener rutinas diarias estables le aporta seguridad."
+    },
+    {
+      "id": "art-010",
+      "categoria": "hogar",
+      "titulo": "Adaptar el baño",
+      "resumen": "El baño es el lugar de más riesgo. Ideas sencillas y económicas.",
+      "contenido": "Pequeñas adaptaciones mejoran mucho la seguridad y la autonomía.\n\n- Cambia la bañera por un plato de ducha a ras de suelo si es posible.\n- Coloca una silla o taburete de ducha.\n- Instala barras de apoyo junto al inodoro y la ducha.\n- Usa alfombrillas antideslizantes dentro y fuera.\n- Un elevador de inodoro facilita sentarse y levantarse."
+    },
+    {
+      "id": "art-011",
+      "categoria": "cuidador",
+      "titulo": "Reconocer el cansancio del cuidador",
+      "resumen": "Cuidar de ti también es cuidar de la persona a la que atiendes.",
+      "destacado": true,
+      "contenido": "Cuidar de forma continuada puede generar agotamiento físico y emocional.\n\nSeñales a tener en cuenta:\n\n- Cansancio que no mejora con el descanso.\n- Irritabilidad, tristeza o sensación de culpa.\n- Abandono de tus aficiones y relaciones.\n\nPide ayuda a familiares, busca grupos de apoyo y consulta los servicios de respiro de tu zona. Reservar un rato al día para ti no es egoísmo."
+    },
+    {
+      "id": "art-012",
+      "categoria": "tramites",
+      "titulo": "Solicitar la valoración de dependencia",
+      "resumen": "Primeros pasos para acceder a ayudas y servicios.",
+      "contenido": "La valoración de la situación de dependencia da acceso a servicios como ayuda a domicilio, centro de día o prestaciones económicas.\n\n- Acude a los servicios sociales de tu ayuntamiento o de tu comunidad autónoma.\n- Prepara el informe de salud actualizado de su médico.\n- Rellena la solicitud con los datos de la persona y del cuidador.\n\nUna trabajadora social puede orientarte durante todo el proceso."
+    }
+  ]
+}

@@ -2,68 +2,66 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cuidados Navarra · Guías de cuidados para personas mayores y dependientes</title>
-  <meta name="description" content="Guías claras y sencillas sobre cuidados a personas mayores y dependientes: higiene, alimentación, movilidad, medicación, memoria y apoyo al cuidador.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cuidados Navarra · Cuidados para personas mayores y dependientes</title>
+  <meta name="description" content="Guías, servicios y productos para acompañar a personas mayores y dependientes en Navarra, y para cuidar también de quien cuida.">
+  <meta name="theme-color" content="#EAF6EC">
+  <meta name="apple-mobile-web-app-title" content="Cuidados Navarra">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icono-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/lato-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
-  <a class="saltar" href="#contenido">Saltar al contenido</a>
-
-  <header class="cabecera">
-    <div class="contenedor">
-      <a class="logo" href="index.html">
-        <span class="logo-icono" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>
-        </span>
-        Cuidados Navarra
-      </a>
-      <nav class="nav" aria-label="Principal">
-        <a href="index.html" aria-current="page">Inicio</a>
-        <a href="#temas">Temáticas</a>
-        <a href="#guias">Guías</a>
-        <a href="contacto.html">Contacto</a>
-        <button class="boton-texto" id="boton-texto" type="button">A+ Texto grande</button>
-      </nav>
-    </div>
-  </header>
-
+<body data-pagina="inicio">
   <main id="contenido">
-    <section class="portada">
-      <div class="contenedor">
-        <h1>Cuidar mejor, <span>con calma</span> y con confianza</h1>
-        <p>Guías prácticas y sencillas para acompañar a personas mayores y dependientes en su día a día, y para cuidar también de quien cuida.</p>
-        <div class="acciones">
-          <a class="boton" href="#temas">Ver temáticas</a>
-          <a class="boton secundario" href="contacto.html">Hablar con nosotros</a>
-        </div>
-      </div>
-    </section>
+    <div class="contenedor">
 
-    <section id="destacados-seccion">
-      <div class="contenedor">
-        <div class="destacados" id="destacados">
+      <section class="hero" aria-labelledby="hero-titulo">
+        <div class="hero-texto">
+          <span class="antetitulo">Cuidados para mayores y dependientes</span>
+          <h1 id="hero-titulo">Cuidar mejor, <em>con calma y con confianza</em></h1>
+          <p id="hero-texto">Guías prácticas, servicios cercanos y productos útiles para acompañar a personas mayores y dependientes en su día a día.</p>
+          <div class="acciones">
+            <a class="boton" href="servicios.html">Ver nuestros servicios</a>
+            <a class="boton claro" href="#temas">Explorar guías</a>
+          </div>
+          <p class="hero-contacto">¿Tienes dudas? No dudes en escribirnos<br><a id="hero-email" href="empresa.html#contacto">Formulario de contacto</a></p>
+        </div>
+        <div class="hero-foto" id="hero-foto" role="img" aria-label="Planta verde en un salón luminoso y tranquilo" style="background-image:url('img/portada.svg')">
+          <div class="cristal">
+            <div class="anillo" aria-hidden="true"></div>
+            <h2 id="cristal-titulo">Un cuidado tranquilo empieza por una buena información</h2>
+            <p id="cristal-texto">Consejos revisados y explicados con palabras sencillas, para familias y profesionales.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bloque" id="destacados">
+        <div class="cabeza-seccion">
+          <span class="antetitulo">Para empezar</span>
           <h2 class="titulo-seccion">Guías destacadas</h2>
-          <p class="subtitulo">Los consejos más consultados para empezar.</p>
-          <div class="rejilla-articulos" id="rejilla-destacados"></div>
+          <p class="subtitulo">Los consejos más consultados por las familias.</p>
         </div>
-      </div>
-    </section>
+        <div class="rejilla-articulos" id="rejilla-destacados"><p class="cargando">Cargando…</p></div>
+      </section>
 
-    <section id="temas">
-      <div class="contenedor">
-        <h2 class="titulo-seccion">Temáticas</h2>
-        <p class="subtitulo">Elige un área para ver todas sus guías.</p>
-        <div class="rejilla-temas" id="rejilla-temas"></div>
-      </div>
-    </section>
+      <section class="bloque" id="temas">
+        <div class="cabeza-seccion">
+          <span class="antetitulo">Temáticas</span>
+          <h2 class="titulo-seccion">¿Sobre qué necesitas información?</h2>
+          <p class="subtitulo">Elige un área para ver todas sus guías.</p>
+        </div>
+        <div class="rejilla-temas" id="rejilla-temas"><p class="cargando">Cargando…</p></div>
+      </section>
 
-    <section id="guias">
-      <div class="contenedor">
-        <h2 class="titulo-seccion">Todas las guías</h2>
-        <p class="subtitulo" id="resultado-busqueda" aria-live="polite"></p>
+      <section class="bloque" id="guias">
+        <div class="cabeza-seccion">
+          <span class="antetitulo">Biblioteca</span>
+          <h2 class="titulo-seccion">Todas las guías</h2>
+          <p class="subtitulo" id="resultado-busqueda" aria-live="polite"></p>
+        </div>
         <div class="herramientas">
           <div class="buscador">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -73,28 +71,29 @@
           <div class="filtros" id="filtros" role="group" aria-label="Filtrar por temática"></div>
         </div>
         <div class="rejilla-articulos" id="rejilla-articulos"></div>
-      </div>
-    </section>
+      </section>
+
+      <section class="banda-negra">
+        <div>
+          <h2>¿Necesitas apoyo en casa?</h2>
+          <p>Te escuchamos y te proponemos el cuidado que mejor encaja con vuestra vida.</p>
+        </div>
+        <a class="boton" href="empresa.html#contacto">Hablar con nosotros</a>
+      </section>
+
+    </div>
   </main>
 
   <dialog id="dialogo" aria-labelledby="dialogo-titulo">
     <div class="dialogo-cabecera">
-      <span class="etiqueta" id="dialogo-etiqueta" style="font-weight:700;color:var(--verde-intenso)"></span>
+      <span class="etiqueta" id="dialogo-etiqueta"></span>
       <h2 id="dialogo-titulo"></h2>
       <button class="cerrar" id="cerrar-dialogo" aria-label="Cerrar">×</button>
     </div>
     <div class="dialogo-cuerpo" id="dialogo-cuerpo"></div>
   </dialog>
 
-  <footer class="pie">
-    <div class="contenedor">
-      <span>© <span id="anio"></span> Cuidados Navarra. La información de esta web es orientativa y no sustituye la consulta con profesionales sanitarios.</span>
-      <a href="contacto.html">Contacto</a>
-    </div>
-  </footer>
-
-  <script src="contenido/temas.js"></script>
   <script src="js/comun.js"></script>
-  <script src="js/temas.js"></script>
+  <script src="js/inicio.js"></script>
 </body>
 </html>

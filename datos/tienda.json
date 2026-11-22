@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "_nota": "Tienda de enlaces. Cada producto enlaza a la web del proveedor (no se cobra en esta web). Si un enlace lleva [corchetes], el botón se muestra como 'Próximamente' hasta que pongas la dirección real. Para Amazon, escribe tu ID de afiliado en proveedores.amazon.etiquetaAfiliado y se añadirá solo a los enlaces de Amazon.",
+  "aviso": "Algunos enlaces de esta tienda son enlaces de afiliado: si compras a través de ellos, podemos recibir una pequeña comisión sin que a ti te cueste más. En calidad de Afiliado de Amazon, obtenemos ingresos por las compras adscritas que cumplen los requisitos aplicables. Los precios y la disponibilidad los fija cada proveedor y pueden cambiar.",
+  "proveedores": [
+    { "id": "amazon", "nombre": "Amazon", "etiquetaAfiliado": "" },
+    { "id": "shopify", "nombre": "Tienda Shopify", "_nota": "Pon aquí el nombre de la tienda Shopify con la que colabores." },
+    { "id": "otros", "nombre": "Otros proveedores" }
+  ],
+  "categorias": [
+    { "id": "seguridad", "nombre": "Seguridad y alertas", "icono": "🚨" },
+    { "id": "medicacion", "nombre": "Medicación", "icono": "💊" },
+    { "id": "comunicacion", "nombre": "Comunicación", "icono": "📞" },
+    { "id": "hogar", "nombre": "Hogar y movilidad", "icono": "🏡" },
+    { "id": "salud", "nombre": "Control de salud", "icono": "❤️" }
+  ],
+  "productos": [
+    { "id": "reloj-sos", "categoria": "seguridad", "proveedor": "amazon", "icono": "⌚", "titulo": "Reloj con botón SOS y GPS", "texto": "Permite pedir ayuda con un botón y localizar a la persona si se desorienta.", "url": "https://www.amazon.es/s?k=reloj+gps+sos+personas+mayores", "precio": "" },
+    { "id": "detector-caidas", "categoria": "seguridad", "proveedor": "amazon", "icono": "🛎️", "titulo": "Colgante detector de caídas", "texto": "Avisa automáticamente a un familiar si detecta una caída.", "url": "https://www.amazon.es/s?k=detector+de+caidas+personas+mayores", "precio": "" },
+    { "id": "luz-sensor", "categoria": "hogar", "proveedor": "amazon", "icono": "💡", "titulo": "Luces nocturnas con sensor de movimiento", "texto": "Iluminan el camino al baño por la noche y reducen el riesgo de caídas.", "url": "https://www.amazon.es/s?k=luz+nocturna+sensor+movimiento", "precio": "" },
+    { "id": "pastillero-alarma", "categoria": "medicacion", "proveedor": "amazon", "icono": "⏰", "titulo": "Pastillero semanal con alarma", "texto": "Organiza las tomas de la semana y avisa con sonido y luz a la hora de cada dosis.", "url": "https://www.amazon.es/s?k=pastillero+con+alarma", "precio": "" },
+    { "id": "telefono-teclas", "categoria": "comunicacion", "proveedor": "amazon", "icono": "📱", "titulo": "Teléfono de teclas grandes", "texto": "Botones grandes, memorias con foto y sonido potente para llamar sin complicaciones.", "url": "https://www.amazon.es/s?k=telefono+teclas+grandes+mayores", "precio": "" },
+    { "id": "tensiometro", "categoria": "salud", "proveedor": "amazon", "icono": "🩺", "titulo": "Tensiómetro de brazo", "texto": "Mide la tensión arterial en casa con pantalla grande y memoria de lecturas.", "url": "https://www.amazon.es/s?k=tensiometro+brazo", "precio": "" },
+    { "id": "barras-apoyo", "categoria": "hogar", "proveedor": "amazon", "icono": "🛁", "titulo": "Barras de apoyo para el baño", "texto": "Dan seguridad al entrar y salir de la ducha y al levantarse del inodoro.", "url": "https://www.amazon.es/s?k=barra+apoyo+ba%C3%B1o+mayores", "precio": "" },
+    { "id": "marco-digital", "categoria": "comunicacion", "proveedor": "shopify", "icono": "🖼️", "titulo": "Marco de fotos conectado", "texto": "La familia envía fotos desde el móvil y aparecen solas en el marco. Ejemplo para tu tienda Shopify.", "url": "https://[TU-TIENDA].myshopify.com/products/[producto]", "precio": "" },
+    { "id": "sensor-hogar", "categoria": "seguridad", "proveedor": "shopify", "icono": "📡", "titulo": "Kit de sensores para el hogar", "texto": "Avisa si no hay movimiento habitual en casa. Ejemplo para tu tienda Shopify.", "url": "https://[TU-TIENDA].myshopify.com/products/[producto]", "precio": "" },
+    { "id": "teleasistencia", "categoria": "seguridad", "proveedor": "otros", "icono": "🆘", "titulo": "Servicio de teleasistencia", "texto": "Pulsador conectado a una central 24 horas. Añade aquí el enlace del proveedor con el que trabajes.", "url": "[ENLACE DEL PROVEEDOR]", "precio": "" }
+  ]
+}
