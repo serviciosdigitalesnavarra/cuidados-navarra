@@ -2,7 +2,8 @@
  * Código común a todas las páginas:
  *  - cabecera y pie (menú igual en todas las páginas: se cambia solo aquí, en MENU y PIE)
  *  - menú del móvil y botón "Texto grande"
- *  - CN.cargar("nombre"): lee datos/nombre.json (los mismos datos que usarán las apps)
+ *  - CN.cargar("nombre"): lee datos/nombre.json (los mismos datos que usarán las apps) y, en euskera, su traducción
+ *  - CN.t("texto"): traduce un texto fijo (diccionario en js/idioma.js)
  *  - utilidades para escribir textos con seguridad
  */
 (function () {
@@ -50,14 +51,25 @@
   };
 
   var cache = {};
+  var leerJSON = function (ruta) {
+    return fetch(ruta, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("No se pudo cargar " + ruta);
+      return r.json();
+    });
+  };
+  // En euskera se une datos/nombre.json con su traducción datos/eu/nombre.json (ver js/idioma.js)
   var cargar = function (nombre) {
     if (!cache[nombre]) {
-      cache[nombre] = fetch("datos/" + nombre + ".json", { cache: "no-cache" }).then(function (r) {
-        if (!r.ok) throw new Error("No se pudo cargar " + nombre);
-        return r.json();
+      cache[nombre] = leerJSON("datos/" + nombre + ".json").then(function (base) {
+        var ruta = window.I18N && I18N.rutaDatos(nombre);
+        if (!ruta) return base;
+        return leerJSON(ruta).then(function (tr) { return I18N.fusionar(base, tr); }, function () { return base; });
       });
     }
     return cache[nombre];
+  };
+  var t = window.I18N ? I18N.t : function (texto, datos) {
+    return datos ? String(texto).replace(/\{(\w+)\}/g, function (m, k) { return datos[k] == null ? m : datos[k]; }) : texto;
   };
   var errorCarga = function (el) {
     if (!el) return;
@@ -72,6 +84,7 @@
     return '<a class="saltar" href="#contenido">Saltar al contenido</a>' +
       '<header class="cabecera"><div class="contenedor"><div class="barra" style="position:relative">' +
       '<a class="logo" href="index.html" aria-label="Cuidados Navarra, inicio">Cuidados <span>Navarra</span></a>' +
+      (window.I18N ? I18N.selector() : "") +
       '<button class="menu-movil" id="menu-movil" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>' +
       '<nav class="nav" id="nav" aria-label="Principal">' + nav +
       '<button class="boton-texto" id="boton-texto" type="button">A+ Texto</button>' +
@@ -139,5 +152,5 @@
     if (location.hash && location.hash.indexOf("#guia-") !== 0) setTimeout(function () { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }, 400);
   });
 
-  window.CN = { esc: esc, resaltar: resaltar, plantilla: plantilla, formatear: formatear, cargar: cargar, errorCarga: errorCarga };
+  window.CN = { t: t, esc: esc, resaltar: resaltar, plantilla: plantilla, formatear: formatear, cargar: cargar, errorCarga: errorCarga };
 })();
