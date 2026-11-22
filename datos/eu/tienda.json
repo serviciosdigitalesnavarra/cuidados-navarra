@@ -1,0 +1,28 @@
+{
+  "_nota": "Traducción al euskera de datos/tienda.json (solo textos). Los enlaces, proveedores, precios e iconos se toman de datos/tienda.json. Pendiente de revisión por una persona nativa.",
+  "version": 1,
+  "aviso": "Denda honetako esteka batzuk afiliazio-estekak dira: haien bidez erosten baduzu, komisio txiki bat jaso dezakegu, zuri garestiago atera gabe. Amazonen afiliatu garen aldetik, baldintzak betetzen dituzten erosketengatik diru-sarrerak lortzen ditugu. Prezioak eta erabilgarritasuna hornitzaile bakoitzak ezartzen ditu, eta alda daitezke.",
+  "proveedores": [
+    { "id": "shopify", "nombre": "Shopify denda" },
+    { "id": "otros", "nombre": "Beste hornitzaile batzuk" }
+  ],
+  "categorias": [
+    { "id": "seguridad", "nombre": "Segurtasuna eta alertak" },
+    { "id": "medicacion", "nombre": "Medikazioa" },
+    { "id": "comunicacion", "nombre": "Komunikazioa" },
+    { "id": "hogar", "nombre": "Etxea eta mugikortasuna" },
+    { "id": "salud", "nombre": "Osasun-kontrola" }
+  ],
+  "productos": [
+    { "id": "reloj-sos", "titulo": "SOS botoidun eta GPSdun erlojua", "texto": "Botoi batekin laguntza eskatzeko aukera ematen du, eta pertsona aurkitzeko, desorientatzen bada." },
+    { "id": "detector-caidas", "titulo": "Erorikoak detektatzeko zintzilikarioa", "texto": "Erorikoren bat detektatzen badu, senide bati abisatzen dio automatikoki." },
+    { "id": "luz-sensor", "titulo": "Mugimendu-sentsoredun gaueko argiak", "texto": "Gauez komunerako bidea argitzen dute, eta erortzeko arriskua murrizten dute." },
+    { "id": "pastillero-alarma", "titulo": "Alarmadun asteko pilula-kutxa", "texto": "Asteko hartualdiak antolatzen ditu, eta dosi bakoitzaren orduan soinuz eta argiz abisatzen du." },
+    { "id": "telefono-teclas", "titulo": "Tekla handiko telefonoa", "texto": "Botoi handiak, argazkidun memoriak eta soinu indartsua, korapilorik gabe deitzeko." },
+    { "id": "tensiometro", "titulo": "Besoko tentsiometroa", "texto": "Etxean neurtzen du tentsio arteriala, pantaila handiarekin eta neurketen memoriarekin." },
+    { "id": "barras-apoyo", "titulo": "Komunerako euskarri-barrak", "texto": "Segurtasuna ematen dute dutxan sartu eta irtetean, eta komun-ontzitik altxatzean." },
+    { "id": "marco-digital", "titulo": "Argazki-marko konektatua", "texto": "Familiak mugikorretik bidaltzen ditu argazkiak, eta berez agertzen dira markoan. Zure Shopify dendarako adibidea." },
+    { "id": "sensor-hogar", "titulo": "Etxerako sentsore-multzoa", "texto": "Abisatzen du etxean ohiko mugimendurik ez badago. Zure Shopify dendarako adibidea." },
+    { "id": "teleasistencia", "titulo": "Teleasistentzia-zerbitzua", "texto": "24 orduko zentral batera konektatutako sakagailua. Gehitu hemen zurekin lan egiten duen hornitzailearen esteka." }
+  ]
+}

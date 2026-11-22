@@ -1,0 +1,13 @@
+{
+  "_nota": "Traducción al euskera de datos/servicios.json (solo textos; los iconos y el orden salen del archivo en castellano). Pendiente de revisión por una persona nativa.",
+  "version": 1,
+  "intro": "Adinekoak edo mendekotasuna duten pertsonak bere ingurunean seguru jarraitzeko eta familia lasai egoteko pentsatutako laguntzak.",
+  "servicios": [
+    { "id": "domicilio", "titulo": "Etxeko zaintza", "resumen": "Laguntza garbiketan, mugikortasunean, otorduetan eta eguneroko errutinan, etxean bertan.", "detalles": ["Higienea eta zaintza pertsonala", "Mugiarazte eta lekualdatze seguruak", "Otorduak prestatzea eta hidratazioa kontrolatzea", "Medikazioa gogoraraztea"], "precio": "[00 €/ordutik aurrera]" },
+    { "id": "acompanamiento", "titulo": "Laguntza eta konpainia", "resumen": "Konpainia etxean, paseoak, enkarguak eta mediku-bisitak, bakardadeari aurre egiteko.", "detalles": ["Kontsultetara eta izapideetara laguntzea", "Paseoak eta estimulazio-jarduerak", "Solasaldia eta konpainia"], "precio": "[Galdetu]" },
+    { "id": "respiro", "titulo": "Familiarentzako atsedena", "resumen": "Zaintzailea ordezten dugu ordu batzuetan, gau batean edo asteburu batean.", "detalles": ["Eguneko eta gaueko zaintza", "Asteburuak eta oporrak", "Familiarekin batera planifikatzea"], "precio": "[Galdetu]" },
+    { "id": "orientacion", "titulo": "Orientazioa eta izapideak", "resumen": "Mendekotasunaren balorazioa eta beste laguntza batzuk ulertzen eta eskatzen laguntzen dizugu.", "detalles": ["Mendekotasunaren Legeari buruzko informazioa", "Laguntza formularioekin eta agiriekin", "Nafarroako baliabide publikoak eta pribatuak"], "precio": "[Lehen kontsulta doan]" },
+    { "id": "hogar", "titulo": "Etxebizitza egokitzea", "resumen": "Etxebizitza aztertu eta aldaketa errazak proposatzen ditugu erorikoak saihesteko.", "detalles": ["Bisita eta arriskuen balorazioa", "Laguntza teknikoen gomendioa", "Teleasistentziari eta teknologiari buruzko aholkularitza"], "precio": "[Galdetu]" },
+    { "id": "formacion", "titulo": "Zaintzaileentzako prestakuntza", "resumen": "Tailer praktikoak familientzat eta profesionalentzat: mugiarazteak, elikadura, dementziak.", "detalles": ["Aurrez aurreko eta lineako tailerrak", "Talde txikiak", "Etxerako material praktikoa"], "precio": "[Galdetu]" }
+  ]
+}

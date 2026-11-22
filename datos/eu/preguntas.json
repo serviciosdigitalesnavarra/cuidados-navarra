@@ -1,0 +1,165 @@
+{
+  "_nota": "Traducción al euskera de datos/preguntas.json (chatbot). Cada pregunta se empareja por su id. Las palabrasClave de aquí SE SUMAN a las de castellano, así que el asistente entiende ambos idiomas: escribe raíces cortas (por ejemplo 'erori' encuentra 'erori', 'erorita'…). 'enlaces' van en el mismo orden que en castellano (solo se traduce 'texto'). Pendiente de revisión por una persona nativa.",
+  "version": 2,
+  "asistente": {
+    "nombre": "Cuidados Navarraren laguntzailea",
+    "botonTexto": "Zalantzak?",
+    "bienvenida": "Kaixo. Cuidados Navarraren laguntzailea naiz. Idatzi zure zalantza zure hitzekin, edo aukeratu galdera hauetako bat.",
+    "aviso": "Erantzun orientagarriak. Ez dute osasun-profesional bat ordezten. Larrialdiak: 112.",
+    "sinRespuesta": "Oraindik ez daukat horretarako erantzunik. Beste hitz batzuekin saia zaitezke, gidak begiratu edo idatz iezaguzu, eta pertsonalki erantzungo dizugu."
+  },
+  "preguntas": [
+    {
+      "id": "urgencias", "tema": "Osasuna",
+      "pregunta": "Zer egin larrialdi batean?",
+      "palabrasClave": ["larrialdi", "ez du arnasten", "arnasa", "ito", "itotzen", "bihotzeko", "iktus", "bularreko min", "bularrean min", "konorte", "zorabiatu", "kordea galdu", "ez du erantzuten", "konbultsio", "odol asko", "odoljario", "ezin du hitz egin", "ahoa okertuta"],
+      "respuesta": "Pertsonaren bizitza arriskuan egon badaiteke, deitu orain 112ra. Doakoa da, eta 24 orduz artatzen du.\n\nDeitu 112ra kasu hauetan:\n- Bularreko mina edo arnasteko zailtasuna.\n- Gorputzaren alde batean indarra galtzea, ahoa okertuta edo hitz egiteko zailtasuna.\n- Konortea galtzea edo konbultsioak.\n- Konpontzen ez den itotzea.\n\nLaguntza iristen den bitartean, geratu pertsonarekin eta jarraitu 112ren argibideei.",
+      "enlaces": [{ "texto": "Deitu 112ra" }, { "texto": "Alerta-seinaleak" }]
+    },
+    {
+      "id": "senales-alerta", "tema": "Osasuna",
+      "pregunta": "Noiz deitu behar dut osasun-etxera?",
+      "palabrasClave": ["osasun etxe", "osasun-etxe", "mediku", "sukar", "nahasmen", "nahasi", "logura", "ez du jaten", "ez du jan nahi", "ez du edaten", "alerta", "okerrera", "arraro"]
+    },
+    {
+      "id": "servicios", "tema": "Gure enpresa",
+      "pregunta": "Zer zerbitzu eskaintzen dituzue?",
+      "palabrasClave": ["zerbitzu", "zer egiten", "eskaintzen", "kontratatu", "etxean laguntza", "zaintzaile", "laguntzaile", "etxez etxe", "etxeko laguntza"],
+      "respuesta": "Pertsonak bere etxean seguru jarraitzeko eta familia lasai egoteko laguntzak eskaintzen ditugu:\n\n{{lista.servicios}}",
+      "enlaces": [{ "texto": "Ikusi zerbitzuak" }, { "texto": "Hitz egin gurekin" }]
+    },
+    {
+      "id": "precios", "tema": "Gure enpresa",
+      "pregunta": "Zenbat balio dute zuen zerbitzuek?",
+      "palabrasClave": ["prezio", "zenbat", "balio", "kostu", "tarifa", "aurrekontu", "euro", "merke", "garesti", "ordaindu"],
+      "respuesta": "Prezioa laguntza motaren, orduen eta ordutegiaren araberakoa da. Zerbitzuen orrian prezio orientagarriak dituzu, eta orientazio-kontsulta lehena doakoa da.\n\nKontaiguzu zuen egoera formularioaren bidez, eta konpromisorik gabeko aurrekontu bat prestatuko dizugu.",
+      "enlaces": [{ "texto": "Ikusi zerbitzuak eta prezioak" }, { "texto": "Eskatu aurrekontua" }]
+    },
+    {
+      "id": "zona", "tema": "Gure enpresa",
+      "pregunta": "Zein eremutan lan egiten duzue?",
+      "palabrasClave": ["eremu", "non", "iruñe", "iruña", "nafarroa", "herri", "hiri", "gertu", "etorri", "lizarra", "tafalla", "zangoza", "erriberri", "baztan", "altsasu", "burlata", "barañain", "atarrabia", "zizur", "antsoain", "tutera"],
+      "respuesta": "Nafarroan lan egiten dugu. Idatz iezaguzu zure herriaren izenarekin, eta artatu zaitzakegun eta zein ordutegitan esango dizugu.",
+      "enlaces": [{ "texto": "Idatzi iezaguzu" }]
+    },
+    {
+      "id": "contacto", "tema": "Gure enpresa",
+      "pregunta": "Nola jar naiteke zuekin harremanetan?",
+      "palabrasClave": ["harreman", "kontaktu", "norbaitekin hitz egin", "telefono", "deitu", "posta", "email", "idatzi", "ordutegi", "arreta"],
+      "respuesta": "Harremanetarako formularioaren bidez idatz diezagukezu, eta ahalik eta lasterren erantzungo dizugu. Arreta-ordutegia: {{contacto.horario}}.\n\nZuzenean ere idatz dezakezu helbide honetara: {{contacto.email}}.",
+      "enlaces": [{ "texto": "Joan formulariora" }]
+    },
+    {
+      "id": "respiro", "tema": "Zaintzailea zaindu",
+      "pregunta": "Egun batzuk atseden hartu behar ditut, ordez nazakezue?",
+      "palabrasClave": ["atseden", "deskantsu", "opor", "asteburu", "ordezkatu", "ordeztu", "ordez", "gau bat", "gauez", "egun batzuk", "joan behar"]
+    },
+    {
+      "id": "cansancio-cuidador", "tema": "Zaintzailea zaindu",
+      "pregunta": "Zaintzeaz nekatuta nago, zer egin dezaket?",
+      "palabrasClave": ["nekatu", "neka", "akitu", "ezin dut gehiago", "estres", "triste", "errudun", "erre", "gainkarga", "bakarrik", "antsietate"]
+    },
+    {
+      "id": "dependencia", "tema": "Laguntzak eta izapideak",
+      "pregunta": "Nola eskatzen da mendekotasunaren laguntza?",
+      "palabrasClave": ["mendekotasun", "balorazio", "gradu", "eskatu", "eskaera", "izapide", "paper", "gizarte zerbitzu", "gizarte-zerbitzu", "gizarte langile", "gizarte-langile"]
+    },
+    {
+      "id": "ayudas-economicas", "tema": "Laguntzak eta izapideak",
+      "pregunta": "Zer laguntza ekonomiko daude adineko bat zaintzeko?",
+      "palabrasClave": ["laguntza ekonomiko", "laguntza", "dirulaguntza", "diru-laguntza", "prestazio", "diru", "paga", "kobratu"],
+      "respuesta": "Bide nagusia mendekotasunaren balorazioa da: graduaren arabera, zerbitzuak (etxez etxeko laguntza, eguneko zentroa, teleasistentzia) edo prestazio ekonomikoak jasotzeko eskubidea ematen du. Nafarroan, zure udaleko oinarrizko gizarte-zerbitzuen bidez izapidetzen da.\n\nGure lehen orientazio-kontsultan, doakoa dena, zurekin batera aztertuko dugu zer laguntza dagozkizuen.",
+      "enlaces": [{ "texto": "Nola eskatu mendekotasuna" }, { "texto": "Eskatu orientazioa" }]
+    },
+    {
+      "id": "caidas", "tema": "Mugikortasuna eta erorikoak",
+      "pregunta": "Nola saihestu erorikoak etxean?",
+      "palabrasClave": ["erori", "eroriko", "erortze", "erortzen", "estropezu", "irrist", "oreka", "alfonbra", "zorabio"]
+    },
+    {
+      "id": "transferencias", "tema": "Mugikortasuna eta erorikoak",
+      "pregunta": "Nola pasatu pertsona bat ohetik aulkira?",
+      "palabrasClave": ["ohetik aulkira", "gurpil aulki", "gurpil-aulki", "altxatu", "mugitu", "mugiarazi", "lekualdat", "garabi", "bizkar", "eseri"]
+    },
+    {
+      "id": "aseo", "tema": "Higienea",
+      "pregunta": "Nola garbitu ohetik altxatzen ez den pertsona bat?",
+      "palabrasClave": ["garbitu", "garbiketa", "bainatu", "ohean garbi", "higiene", "dutxa", "ohean dago", "ohean etzanda"]
+    },
+    {
+      "id": "ulceras", "tema": "Higienea",
+      "pregunta": "Nola saihesten dira ultzerak edo zauriak?",
+      "palabrasClave": ["ultzera", "zauri", "gorriune", "gorritu", "azal", "jarrera aldaketa", "jarrera-aldaketa", "koltxoi", "kuxin"]
+    },
+    {
+      "id": "hidratacion", "tema": "Elikadura",
+      "pregunta": "Amak ia ez du urik edaten, zer egin?",
+      "palabrasClave": ["edan", "edaten", "ur", "egarri", "hidrat", "deshidrat", "gernu ilun", "likido"]
+    },
+    {
+      "id": "tragar", "tema": "Elikadura",
+      "pregunta": "Jatean itotzen da, nola lagundu?",
+      "palabrasClave": ["irentsi", "irensteko", "disfagia", "eztul", "jan", "jaten", "janari", "testura", "loditzaile", "birrindu", "pure", "elikadura", "dieta"]
+    },
+    {
+      "id": "medicacion", "tema": "Medikazioa",
+      "pregunta": "Nola antolatu pilulak ez nahasteko?",
+      "palabrasClave": ["medikazio", "botika", "sendagai", "pilula", "pastila", "dosi", "ahaztu", "ahazten", "hartualdi", "tratamendu", "errezeta"],
+      "enlaces": [{ "texto": "Pilula-kutxak dendan" }]
+    },
+    {
+      "id": "demencia", "tema": "Memoria eta dementziak",
+      "pregunta": "Nola hitz egin alzheimerra duen pertsona batekin?",
+      "palabrasClave": ["dementzia", "alzheimer", "memoria", "dena ahazten", "desorientat", "ez nau ezagutzen", "oldarkor", "urduri", "errepikatzen", "narriadura"]
+    },
+    {
+      "id": "bano", "tema": "Etxe segurua",
+      "pregunta": "Nola egokitu komuna adineko batentzat?",
+      "palabrasClave": ["komun", "bainugela", "bainuontzi", "dutxa plater", "dutxa-plater", "barra", "heldulekua", "komun ontzi", "komun-ontzi", "aulkitxo", "dutxako aulki", "obra"],
+      "enlaces": [{ "texto": "Etxebizitza egokitzea" }]
+    },
+    {
+      "id": "teleasistencia", "tema": "Etxe segurua",
+      "pregunta": "Bakarrik bizi da, nola egon naiteke lasaiago?",
+      "palabrasClave": ["bakarrik bizi", "etxean bakarrik", "teleasistentzia", "botoi", "sos", "erorikoak detektatu", "erloju", "kokagailu", "gps", "abisu"],
+      "respuesta": "Badira irtenbide errazak, edozein unetan laguntza eska dezan:\n- Teleasistentzia (24 orduko zentral batera konektatutako botoia edo zintzilikarioa). Mendekotasunaren bidez ere eska daiteke.\n- SOS botoidun eta GPSdun erlojua, edo erorikoak detektatzeko zintzilikarioa.\n- Familiaren mugikorrera abisatzen duten etxeko sentsoreak.\n\nDendan adibide batzuk dituzu, eta laguntza-zerbitzuarekin aldizka bisitatzen dugu.",
+      "enlaces": [{ "texto": "Ikusi denda" }, { "texto": "Laguntza eta konpainia" }]
+    },
+    {
+      "id": "soledad", "tema": "Gure enpresa",
+      "pregunta": "Konpainia egin diezaiokezue edo medikura lagundu?",
+      "palabrasClave": ["konpainia", "lagundu", "bakardade", "paseo", "paseatu", "enkargu", "mediku bisita", "medikura", "solasaldi"]
+    },
+    {
+      "id": "formacion", "tema": "Gure enpresa",
+      "pregunta": "Zaintzaileentzako ikastaroak ematen dituzue?",
+      "palabrasClave": ["ikastaro", "prestakuntza", "tailer", "ikasi", "klase", "irakatsi"]
+    },
+    {
+      "id": "tienda", "tema": "Denda",
+      "pregunta": "Zer produktu gomendatzen dizkidazue?",
+      "palabrasClave": ["denda", "produktu", "erosi", "amazon", "gomendatu", "katalogo"],
+      "respuesta": "Dendan eguneroko bizitzarako produktu erabilgarriak bildu ditugu, honela antolatuta:\n\n{{lista.tienda}}\n\nProduktu bat sakatzean, hornitzailearen dendara joango zara hura erosteko. Produktu jakin bati buruz ere galdetu diezadakezu.",
+      "enlaces": [{ "texto": "Joan dendara" }]
+    },
+    {
+      "id": "privacidad", "tema": "Legezkoa",
+      "pregunta": "Txat honetan idazten dudana gordetzen duzue?",
+      "palabrasClave": ["pribatutasun", "nire datuak", "gordetzen", "gorde", "cookie", "datuen babes", "dbeo", "konfidentzial"],
+      "respuesta": "Ez. Laguntzaile honek zure gailuan bertan funtzionatzen du: hemen idazten duzuna ez da inora bidaltzen eta ez da inon gordetzen. Pertsonalki erantzutea nahi baduzu, erabili harremanetarako formularioa.",
+      "enlaces": [{ "texto": "Pribatutasun-politika" }]
+    },
+    {
+      "id": "saludo", "tema": "Orokorra",
+      "pregunta": "Kaixo",
+      "palabrasClave": ["kaixo", "egun on", "arratsalde on", "gabon", "zer moduz", "aupa"],
+      "respuesta": "Kaixo! Esadazu zertan lagun zaitzakedan: etxeko zaintza, laguntzak, gure zerbitzuak…"
+    },
+    {
+      "id": "gracias", "tema": "Orokorra",
+      "pregunta": "Eskerrik asko",
+      "palabrasClave": ["eskerrik asko", "eskerrik", "mila esker", "esker", "ados", "primeran", "ondo", "agur", "gero arte"],
+      "respuesta": "Plazer bat laguntzea. Beste zalantzaren bat sortzen bazaizu, hemen nago. Eta gogoratu nahi duzunean idatz diezagukezula."
+    }
+  ]
+}

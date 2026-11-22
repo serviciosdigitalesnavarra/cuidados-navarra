@@ -15,14 +15,18 @@
 (function () {
   if (!window.CN || document.getElementById("asistente")) return;
 
-  var esc = CN.esc;
+  var esc = CN.esc, t = CN.t || function (x) { return x; };
   var DATOS = null, GUIAS = [], historial = [], abierto = false, cargado = null;
 
   // ---------- Búsqueda por palabras clave ----------
   var VACIAS = ("a al algo algun alguna como con cual cuales cuando de del el ella ellos en es esa ese eso esta este esto estoy " +
     "ha hay he la las le les lo los me mi mis mucho muy no nos o os para pero por puedo puede que se ser si sin sobre " +
     "su sus te tengo tiene tu un una uno unos unas usted y ya yo hacer hago debo quiero necesito saber favor " +
-    "casa persona mayor paso cada todo toda ante").split(" ");
+    "casa persona mayor paso cada todo toda ante " +
+    // euskera
+    "eta edo da dira du dut duzu dute ditu ditut dituzu naiz zara gara dago daude dauka dut al ba bai ez ere baina oso asko " +
+    "bat batzuk hau hori hura hau honek horrek nire zure gure bere haren ni zu gu zer nola noiz non zein zergatik " +
+    "behar nahi egin egiten izan ahal ari dela dena edozein etxe etxean pertsona adineko mesedez").split(" ");
   var normal = function (t) {
     return String(t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, " ").trim();
   };
@@ -122,26 +126,26 @@
       var c = cat(cats, a.categoria);
       base = base || {};
       return {
-        id: base.id || "guia-" + a.id, auto: !base.id, tema: base.tema || c.nombre, origen: "Guía: " + a.titulo,
+        id: base.id || "guia-" + a.id, auto: !base.id, tema: base.tema || c.nombre, origen: t("Guía: {titulo}", { titulo: a.titulo }),
         pregunta: base.pregunta || a.titulo,
         palabrasClave: (base.palabrasClave || []).concat(a.palabrasClave || []),
         clavesAuto: clavesDe(a.titulo), textoExtra: a.resumen + " " + c.nombre,
         respuesta: base.respuesta || a.contenido,
-        enlaces: [{ texto: "Abrir la guía completa", url: "index.html#guia-" + a.id }].concat(base.enlaces || []),
+        enlaces: [{ texto: t("Abrir la guía completa"), url: "index.html#guia-" + a.id }].concat(base.enlaces || []),
         urgente: base.urgente, oculta: base.oculta
       };
     }
     function deServicio(x, base) {
       base = base || {};
       var texto = x.resumen + (x.detalles && x.detalles.length ? "\n\n" + lista(x.detalles) : "") +
-        (sinPendientes(x.precio) ? "\n\nPrecio orientativo: " + x.precio + "." : "");
+        (sinPendientes(x.precio) ? "\n\n" + t("Precio orientativo: {precio}.", { precio: x.precio }) : "");
       return {
-        id: base.id || "servicio-" + x.id, auto: !base.id, tema: base.tema || "Nuestros servicios", origen: "Servicio: " + x.titulo,
+        id: base.id || "servicio-" + x.id, auto: !base.id, tema: base.tema || t("Nuestros servicios"), origen: t("Servicio: {titulo}", { titulo: x.titulo }),
         pregunta: base.pregunta || x.titulo,
         palabrasClave: (base.palabrasClave || []).concat(x.palabrasClave || []),
         clavesAuto: clavesDe(x.titulo), textoExtra: x.resumen,
         respuesta: base.respuesta || texto,
-        enlaces: (base.enlaces || [{ texto: "Ver los servicios", url: "servicios.html" }]).concat([{ texto: "Pedir información", url: "empresa.html#contacto" }]),
+        enlaces: (base.enlaces || [{ texto: t("Ver los servicios"), url: "servicios.html" }]).concat([{ texto: t("Pedir información"), url: "empresa.html#contacto" }]),
         oculta: base.oculta
       };
     }
@@ -159,10 +163,10 @@
     prods.forEach(function (x) {
       var c = cat(catsTienda, x.categoria);
       salida.push({
-        id: "producto-" + x.id, auto: true, tema: "Tienda", origen: "Tienda: " + x.titulo, pregunta: x.titulo,
+        id: "producto-" + x.id, auto: true, tema: t("Tienda"), origen: t("Tienda: {titulo}", { titulo: x.titulo }), pregunta: x.titulo,
         palabrasClave: x.palabrasClave || [], clavesAuto: clavesDe(x.titulo), textoExtra: x.texto + " " + c.nombre,
-        respuesta: x.texto + "\n\nLo tienes en nuestra tienda, en «" + c.nombre + "».",
-        enlaces: [{ texto: "Ver en la tienda", url: "tienda.html" }]
+        respuesta: x.texto + "\n\n" + t("Lo tienes en nuestra tienda, en «{categoria}».", { categoria: c.nombre }),
+        enlaces: [{ texto: t("Ver en la tienda"), url: "tienda.html" }]
       });
     });
     salida.forEach(function (p) { if (p.respuesta) p.respuesta = CN.plantilla(p.respuesta, ctx); });
@@ -245,6 +249,7 @@
   function decir(html, quien) {
     var div = document.createElement("div");
     div.className = "asistente-mensaje " + (quien === "yo" ? "yo" : "bot");
+    if (quien === "yo") div.setAttribute("translate", "no"); // lo que escribe la persona no se traduce
     div.innerHTML = html;
     log.appendChild(div);
     // Las respuestas largas se muestran desde su principio, no desde el final
@@ -258,15 +263,15 @@
       var p = res.pregunta;
       decir((p.origen ? '<p class="asistente-origen">' + esc(p.origen) + "</p>" : "") +
         '<div class="asistente-texto' + (p.urgente ? " urgente" : "") + '">' + formatear(p.respuesta) + "</div>" +
-        enlacesHTML(p.enlaces) + chipsHTML(res.relacionadas, "También puede interesarte:"));
+        enlacesHTML(p.enlaces) + chipsHTML(res.relacionadas, t("También puede interesarte:")));
       historial.push({ rol: "asistente", texto: p.respuesta });
       return;
     }
     var a = DATOS.asistente || {};
-    var guias = (res.guias || []).map(function (g) { return { texto: "Guía: " + g.titulo, url: "index.html#guia-" + g.id }; });
-    decir('<div class="asistente-texto">' + formatear(a.sinRespuesta || "No tengo una respuesta para eso todavía.") + "</div>" +
-      enlacesHTML(guias.concat([{ texto: "Escribirnos", url: "empresa.html#contacto" }])) +
-      chipsHTML(res.relacionadas, res.relacionadas && res.relacionadas.length ? "¿Quizás querías preguntar…?" : ""));
+    var guias = (res.guias || []).map(function (g) { return { texto: t("Guía: {titulo}", { titulo: g.titulo }), url: "index.html#guia-" + g.id }; });
+    decir('<div class="asistente-texto">' + formatear(a.sinRespuesta || t("No tengo una respuesta para eso todavía.")) + "</div>" +
+      enlacesHTML(guias.concat([{ texto: t("Escribirnos"), url: "empresa.html#contacto" }])) +
+      chipsHTML(res.relacionadas, res.relacionadas && res.relacionadas.length ? t("¿Quizás querías preguntar…?") : ""));
   }
 
   function preguntar(texto, id) {
@@ -294,11 +299,11 @@
       if (a.nombre) $("asistente-titulo").textContent = a.nombre;
       if (a.aviso) $("asistente-aviso").textContent = a.aviso;
       var sug = (a.sugerencias || []).map(function (id) { return d.preguntas.find(function (p) { return p.id === id; }); }).filter(Boolean);
-      decir('<div class="asistente-texto">' + formatear(a.bienvenida || "Hola, ¿en qué te puedo ayudar?") + "</div>" + chipsHTML(sug));
+      decir('<div class="asistente-texto">' + formatear(a.bienvenida || t("Hola, ¿en qué te puedo ayudar?")) + "</div>" + chipsHTML(sug));
     }).catch(function () {
       cargado = null;
-      decir('<div class="asistente-texto"><p>Ahora mismo no puedo cargar las respuestas. Prueba en unos segundos o escríbenos.</p></div>' +
-        enlacesHTML([{ texto: "Escribirnos", url: "empresa.html#contacto" }]));
+      decir('<div class="asistente-texto"><p>' + t("Ahora mismo no puedo cargar las respuestas. Prueba en unos segundos o escríbenos.") + "</p></div>" +
+        enlacesHTML([{ texto: t("Escribirnos"), url: "empresa.html#contacto" }]));
     });
     return cargado;
   }

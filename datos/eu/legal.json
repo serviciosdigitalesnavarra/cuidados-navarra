@@ -1,0 +1,96 @@
+{
+  "_nota": "Traducción al euskera de datos/legal.json. Las secciones van en el MISMO ORDEN que en castellano. Las marcas {{titular.nombre}}, etc. se rellenan solas. IMPORTANTE: traducción orientativa pendiente de revisión por una persona nativa y por un profesional jurídico; en caso de duda prevalece la versión en castellano.",
+  "version": 3,
+  "terminos": {
+    "titulo": "Erabilera-baldintzak",
+    "actualizado": "2026ko azaroaren 22a",
+    "secciones": [
+      {
+        "titulo": "1. Titularraren informazioa",
+        "texto": "Informazioaren Gizartearen eta Merkataritza Elektronikoaren Zerbitzuei buruzko uztailaren 11ko 34/2002 Legearen (LSSI-CE) 10. artikulua betez, webgune honen titularraren datuak jakinarazten dira:\n\n- Titularra: {{titular.nombre}}\n- IFZ/IFK: {{titular.nif}}\n- Helbidea: {{titular.domicilio}}\n- Helbide elektronikoa: {{titular.email}}\n- Telefonoa: {{titular.telefono}}\n- Erregistroko datuak: {{titular.registro}}\n- Jarduera: {{titular.actividad}}"
+      },
+      {
+        "titulo": "2. Xedea eta onarpena",
+        "texto": "Baldintza hauek {{sitio.nombre}} webgunerako ({{sitio.web}}) eta harekin batera doazen aplikazio mugikorretarako sarbidea eta haien erabilera arautzen dituzte. Webgunera sartzeak edo hura erabiltzeak baldintza hauek onartzea dakar. Ados ez bazaude, ez erabili webgunea, mesedez.\n\nTitularrak edozein unetan alda ditzake baldintza hauek. Indarreko bertsioa beti da orri honetan argitaratutakoa, bere eguneratze-datarekin."
+      },
+      {
+        "titulo": "3. Edukien izaera informatiboa",
+        "texto": "Webgune honetako gidek eta aholkuek dibulgazio- eta orientazio-helburua dute. Ez dira diagnostikoa, tratamendua edo aholku mediko pertsonalizatua, eta ez dute ordezten osasun- edo gizarte-profesionalen balorazioa.\n\nPertsona baten osasunari buruzko zalantzarik baduzu, kontsultatu haren osasun-etxearekin. Larrialdietan, deitu 112ra."
+      },
+      {
+        "titulo": "4. Erabilera-baldintzak",
+        "texto": "Webgunea legez, arduraz eta errespetuz erabiltzeko konpromisoa hartzen duzu, eta ez duzu:\n\n- Legez kontrako helburuetarako edo fede onaren eta ordena publikoaren aurkako helburuetarako erabiliko.\n- Birusik edo webgunea edo beste erabiltzaile batzuk kalte ditzakeen sistemarik sartuko.\n- Formularioaren bidez eduki iraingarririk edo faltsurik bidaliko, ezta hirugarrenen daturik ere haien baimenik gabe.\n- Eremu mugatuetara edo titularraren sistemetara sartzen saiatuko."
+      },
+      {
+        "titulo": "5. Jabetza intelektuala eta industriala",
+        "texto": "Webguneko testuak, diseinua, logotipoak eta gainerako elementuak titularrarenak dira edo baimenarekin erabiltzen dira, eta 1/1996 Legegintzako Errege Dekretuak (Jabetza Intelektualaren Legea) eta jabetza industrialari buruzko araudiak babesten dituzte.\n\nEdukiak kontsultatu, inprimatu eta partekatu ditzakezu erabilera pertsonal eta ez-komertzialerako, iturria aipatuta. Beste edozein erabilerak, erreprodukziok edo eraldaketak aldez aurretiko baimen idatzia behar du."
+      },
+      {
+        "titulo": "6. Beste webgune batzuetarako estekak eta denda",
+        "texto": "Webguneak hirugarrenen webguneetarako estekak ditu, besteak beste Denda atala, Amazon, Shopify-n oinarritutako dendak edo beste merkataritza batzuk bezalako hornitzaileen produktuetara lotzen duena.\n\n- {{sitio.nombre}}-k ez ditu zuzenean saltzen produktu horiek, eta ez du parte hartzen erosketan. Salerosketa-kontratua zure eta hornitzailearen artean egiten da, hornitzailearen baldintza, prezio, entrega-epe, berme eta itzulketa-politiken arabera.\n- Esteka batzuk afiliazio-estekak dira: haien bidez erosten baduzu, titularrak komisio bat jaso dezake, zuri kostu gehigarririk eragin gabe. Afiliazio-estekak dendan bertan identifikatzen dira, LSSI-CEren 20. artikuluaren eta publizitate-araudiaren arabera.\n- Ez gara hirugarrenen webguneen edukiaren, erabilgarritasunaren edo pribatutasun-praktiken erantzule."
+      },
+      {
+        "titulo": "7. Kontsumitzaileen eskubideak",
+        "texto": "Gure zerbitzuren bat kontratatzen duzunean, Kontsumitzaileen eta Erabiltzaileen Defentsarako Lege Orokorraren testu bategina onartzen duen 1/2007 Legegintzako Errege Dekretua eta hura garatzen duen araudia aplikatuko dira. Kontratatu aurretik, idatziz jakinaraziko dizugu prezio osoa, zerbitzuaren ezaugarriak eta, hala badagokio, urrutiko kontratuetan edo establezimendutik kanpo egindakoetan 14 egun naturaleko atzera egiteko eskubidea duzula.\n\nErreklamazio-orriak ditugu kontsumitzaileen eskura. Zure erreklamazioak helbide honetara ere bidal ditzakezu: {{titular.email}}, Nafarroako Gobernuaren Kontsumo Zerbitzura edo, lineako erosketetan, auziak linean ebazteko Europako plataformara: https://ec.europa.eu/consumers/odr."
+      },
+      {
+        "titulo": "8. Erantzukizuna",
+        "texto": "Titularrak webgunea behar bezala ibil dadin eta haren informazioa zehatza eta eguneratua izan dadin ahalegintzen da, baina ez du bermatzen etenik edo akatsik ez dagoenik. Legeak onartzen duen neurrian, ez da erantzule webgunearen erabilera desegokiaren ondoriozko kalteez, argitaratutako dibulgazio-informazioan soilik oinarrituta hartutako erabakiez, ezta estekatutako hirugarrenen webguneen edukiez ere."
+      },
+      {
+        "titulo": "9. Datuen babesa",
+        "texto": "Ematen dizkiguzun datu pertsonalen tratamendua gure Pribatutasun eta datuen babeserako politikak arautzen du, webgune honetan bertan eskuragarri dagoenak."
+      },
+      {
+        "titulo": "10. Legeria aplikagarria eta jurisdikzioa",
+        "texto": "Baldintza hauek Espainiako legeriak eta Europar Batasunaren araudi aplikagarriak arautzen dituzte. Edozein auzitarako, alderdiak legearen arabera dagozkien epaitegi eta auzitegien mende jartzen dira. Kontsumitzailea bazara, zure bizilekuko epaitegiak izango dira eskudun."
+      }
+    ]
+  },
+  "privacidad": {
+    "titulo": "Pribatutasuna eta datuen babesa",
+    "actualizado": "2026ko azaroaren 22a",
+    "secciones": [
+      {
+        "titulo": "1. Tratamenduaren arduraduna",
+        "texto": "Datuak Babesteko Erregelamendu Orokorrarekin ((EB) 2016/679 Erregelamendua, DBEO) eta Datu Pertsonalak Babesteko eta Eskubide Digitalak Bermatzeko 3/2018 Lege Organikoarekin (LOPDGDD) bat etorriz, jakinarazten dizugu zure datuen tratamenduaren arduraduna hau dela:\n\n- Arduraduna: {{titular.nombre}}\n- IFZ/IFK: {{titular.nif}}\n- Helbidea: {{titular.domicilio}}\n- Helbide elektronikoa: {{titular.email}}\n- Datuak babesteko ordezkaria: {{titular.dpd}}"
+      },
+      {
+        "titulo": "2. Zer datu tratatzen ditugun eta zertarako",
+        "texto": "Borondatez ematen dizkiguzun datuak baino ez ditugu tratatzen:\n\n- Harremanetarako formularioa: izena, helbide elektronikoa, telefonoa (aukerakoa), arrazoia eta mezuaren edukia. Zure kontsultari erantzuteko erabiltzen ditugu, eta, eskatzen baduzu, gure zerbitzuei buruzko informazioa emateko.\n- Zerbitzuak kontratatzea: zerbitzua emateko, fakturatzeko eta gure legezko betebeharrak betetzeko behar diren datuak.\n\nFormularioan osasun-daturik edo hirugarrenen daturik ez sartzeko eskatzen dizugu, zure kontsultarako ezinbestekoak ez badira. Sartzen badituzu, kontsulta artatzeko soilik tratatuko ditugu, zure baimen esplizituan oinarrituta (DBEOren 9.2.a artikulua)."
+      },
+      {
+        "titulo": "3. Oinarri juridikoa",
+        "texto": "- Interesdunaren baimena (DBEOren 6.1.a artikulua), formularioko laukia markatzean ematen duzuna eta edozein unetan erretira dezakezuna.\n- Kontratu bat betetzea edo kontratu aurreko neurriak aplikatzea zuk eskatuta (6.1.b artikulua), zerbitzu bat eskatzen edo kontratatzen duzunean.\n- Legezko betebeharrak betetzea (6.1.c artikulua), adibidez zerga- eta kontabilitate-betebeharrak."
+      },
+      {
+        "titulo": "4. Kontserbazio-epea",
+        "texto": "Kontsulten datuak erantzuteko behar den denboran gordetzen ditugu, eta gehienez urtebetez azken harremanetik, harreman kontraktual bat hasten ez bada. Bezeroen datuak harremanak irauten duen bitartean gordetzen dira, eta, ondoren, legezko preskripzio-epeetan (adibidez, sei urte kontabilitate-agirietarako, Merkataritza Kodearen arabera). Gero ezabatu edo anonimizatu egiten dira."
+      },
+      {
+        "titulo": "5. Hartzaileak eta tratamendu-eragileak",
+        "texto": "Ez diegu zure daturik lagatzen hirugarrenei, legezko betebeharrik ez badago. Zerbitzua emateko, tratamendu-eragile gisa jarduten duten hornitzaileak ditugu, eta haiekin DBEOren 28. artikuluak eskatzen dituen bermeak sinatu edo onartu dira:\n\n- FormSubmit (formsubmit.co): harremanetarako formularioko mezuak gure posta elektronikora birbidaltzen dituen zerbitzua.\n- Proton AG (Suitza): gure posta elektronikoaren hornitzailea. Suitzak Europako Batzordearen egokitasun-erabakia du.\n- GitHub, Inc. (GitHub Pages): webgunearen ostatatzea; segurtasun-arrazoiengatik IP helbideak modu teknikoan erregistra ditzake.\n\nHornitzaile horietako batzuek Europako Esparru Ekonomikotik kanpo trata ditzakete datuak. Kasu horretan, transferentziak egokitasun-erabakietan (hala nola EB-AEB Datuen Pribatutasun Esparruan, atxikitako erakundeentzat) edo Europako Batzordeak onartutako kontratu-klausula estandarretan oinarritzen dira."
+      },
+      {
+        "titulo": "6. Zure eskubideak",
+        "texto": "Edozein unetan erabil ditzakezu datuak eskuratzeko, zuzentzeko, ezabatzeko, aurka egiteko, tratamendua mugatzeko eta eramangarritasunerako eskubideak, bai eta zure baimena erretiratzeko eskubidea ere, helbide hauetara idatzita: {{titular.email}} edo {{titular.domicilio}}. Adierazi zer eskubide erabiltzen duzun, eta egiaztatu zure nortasuna.\n\nZure eskubideak behar bezala artatu ez ditugula uste baduzu, erreklamazioa aurkez dezakezu Datuak Babesteko Espainiako Bulegoan (www.aepd.es), Jorge Juan kalea, 6, 28001 Madril."
+      },
+      {
+        "titulo": "7. Adingabeak",
+        "texto": "Webgune hau ez dago 14 urtetik beherakoei zuzenduta. Adin horretatik beherakoa bazara, ez bidali datu pertsonalik zure guraso edo tutoreen baimenik gabe (LOPDGDDren 7. artikulua)."
+      },
+      {
+        "titulo": "8. Segurtasuna",
+        "texto": "Arriskuari egokitutako neurri tekniko eta antolakuntzakoak aplikatzen ditugu zure datuak babesteko: konexio zifratua (HTTPS), posta zifratua, informaziorako sarbide mugatua eta hura tratatzen duten pertsona guztien konfidentzialtasun-betebeharra."
+      },
+      {
+        "titulo": "9. Cookieak eta tokiko biltegiratzea",
+        "texto": "Webgune honek ez du erabiltzen ez cookie propiorik ez hirugarrenen cookierik helburu analitiko, publizitario edo jarraipenekoekin. Letra-tipoak gure ostatutik zerbitzatzen dira, kanpoko zerbitzuetara konektatu gabe.\n\nZure nabigatzailean (tokiko biltegiratzean) zure irisgarritasun-ezarpenak baino ez ditugu gordetzen, «Irisgarritasuna» botoian aldatzen badituzu (letra-tamaina, kontrastea, tartea eta ahotsaren abiadura), eta aukeratutako hizkuntza (gaztelania edo euskara). Datu teknikoak dira, ez dute inor identifikatzen, eta baimenetik salbuetsita daude LSSI-CEren 22.2 artikuluaren arabera. Edozein unetan ezaba ditzakezu nabigatzailearen ezarpenetatik.\n\nOzen irakurtzeko aukerak («Entzun») zure gailuaren ahotsa erabiltzen du. Nabigatzaile batzuek, Chromek adibidez, fabrikatzailearen lineako ahotsak erabil ditzakete: kasu horretan, nabigatzaileak irakurriko den testua bidaltzen dio, hau da, orriaren eduki publikoa edo laguntzailearen erantzuna, inoiz ez zuk idazten duzuna.\n\nDendako esteka bat sakatzean, gure webgunetik irtengo zara. Hornitzaileen webguneek (adibidez, Amazonek) beren cookieak instala ditzakete, afiliaziokoak barne, beren politiken arabera; kontsultatzea gomendatzen dizugu.\n\nEtorkizunean baimena behar duten cookieak gehitzen baditugu (adibidez, analitikakoak), aurretik ohar bat erakutsiko dugu onartu edo baztertu ahal izateko, eta politika hau eguneratuko dugu."
+      },
+      {
+        "titulo": "10. Politika honen aldaketak",
+        "texto": "Politika hau egunera dezakegu lege-aldaketetara edo zerbitzuaren aldaketetara egokitzeko. Indarreko bertsioa beti argitaratuko dugu orri honetan, bere eguneratze-datarekin."
+      }
+    ]
+  }
+}

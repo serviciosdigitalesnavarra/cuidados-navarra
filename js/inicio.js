@@ -38,7 +38,7 @@
       var n = ARTS.filter(function (a) { return a.categoria === c.id; }).length;
       return '<button class="tema" data-tema="' + esc(c.id) + '"><span class="icono" aria-hidden="true">' + c.icono + "</span>" +
         "<strong>" + esc(c.nombre) + "</strong><small>" + esc(c.descripcion || "") + "</small>" +
-        '<span class="cuenta">' + n + (n === 1 ? " guía" : " guías") + "</span></button>";
+        '<span class="cuenta">' + CN.t(n === 1 ? "{n} guía" : "{n} guías", { n: n }) + "</span></button>";
     }).join("");
   }
 
@@ -57,7 +57,7 @@
     $("#rejilla-articulos").innerHTML = lista.length
       ? lista.map(function (a, i) { return tarjeta(a, i * 50); }).join("")
       : '<p class="sin-resultados">No hemos encontrado guías con esa búsqueda. Prueba con otras palabras o elige «Todas».</p>';
-    $("#resultado-busqueda").textContent = lista.length + (lista.length === 1 ? " guía encontrada" : " guías encontradas");
+    $("#resultado-busqueda").textContent = CN.t(lista.length === 1 ? "{n} guía encontrada" : "{n} guías encontradas", { n: lista.length });
   }
 
   function pintarDestacados() {

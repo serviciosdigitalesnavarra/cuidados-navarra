@@ -41,6 +41,25 @@
       espaciado: "Más espacio", espaciadoAyuda: "Más separación entre líneas, palabras y letras",
       leerAsistente: "Leer en voz alta el asistente", leerAsistenteAyuda: "Lee cada respuesta del botón «¿Dudas?»",
       restablecer: "Restablecer", ayuda: "Ayuda y declaración de accesibilidad"
+    },
+    // Euskera (primera traducción, pendiente de revisión por una persona nativa)
+    eu: {
+      escuchar: "Entzun", parar: "Gelditu",
+      escucharPagina: "Entzun orri hau", escucharGuia: "Entzun gida", pararLectura: "Gelditu irakurketa",
+      tituloEscuchar: "Irakurri orri hau ozen",
+      estaRespuesta: " erantzun hau",
+      barra: "Ozen irakurtzea", leyendo: "Irakurtzen", leyendoDe: "Irakurtzen · {n}/{total}", enPausa: "Pausan",
+      pausar: "Pausatu", seguir: "Jarraitu irakurtzen", anterior: "Aurreko paragrafoa", siguiente: "Hurrengo paragrafoa",
+      pulsaDeNuevo: "Sakatu berriro «Entzun» hasteko",
+      sinVoz: "Zure gailuak ez du euskarazko ahotsik: beste bat erabiliko da",
+      accesibilidad: "Irisgarritasuna", cerrarPanel: "Itxi irisgarritasun-ezarpenak",
+      sinSoporte: "Nabigatzaile honek ez du ozen irakurtzea onartzen. Saiatu Chrome, Safari edo Edge eguneratuekin, edo zure gailuaren pantaila-irakurgailuarekin.",
+      tamano: "Letra-tamaina", normal: "Arrunta", grande: "Handia", muyGrande: "Oso handia",
+      velocidad: "Ahotsaren abiadura", lenta: "Motela", rapida: "Azkarra",
+      contraste: "Kontraste handia", contrasteAyuda: "Testu beltza, ertz markatuak eta esteka azpimarratuak",
+      espaciado: "Tarte handiagoa", espaciadoAyuda: "Tarte handiagoa lerro, hitz eta letren artean",
+      leerAsistente: "Irakurri laguntzailea ozen", leerAsistenteAyuda: "«Zalantzak?» botoiaren erantzun bakoitza irakurtzen du",
+      restablecer: "Berrezarri", ayuda: "Laguntza eta irisgarritasun-adierazpena"
     }
   };
   var idioma = function () { return (html.getAttribute("lang") || "es").slice(0, 2).toLowerCase(); };

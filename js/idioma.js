@@ -161,7 +161,8 @@
       // Textos legales (js/legal.js)
       "Última actualización: {fecha}": "Azken eguneratzea: {fecha}",
       "Índice": "Aurkibidea",
-      "html:nota-revision": "<span class=\"pendiente\">[Nabarmendutako]</span> datuak titularrak osatu behar ditu oraindik. Testu hau Espainiako eta Europako araudira egokitutako txantiloi bat da; komeni da profesional juridiko batek berrikustea. Euskarazko itzulpena orientagarria da: zalantzarik izanez gero, gaztelaniazko bertsioak balio du.",
+      "html:nota-revision": "<span class=\"pendiente\">[Nabarmendutako]</span> datuak titularrak osatu behar ditu oraindik. Testu hau Espainiako eta Europako araudira egokitutako txantiloi bat da; komeni da profesional juridiko batek berrikustea.",
+      "html:nota-traduccion": "Euskarazko itzulpen hau orientagarria da. Zalantzarik izanez gero, <a href=\"?lang=es\" data-idioma=\"es\">gaztelaniazko bertsioak</a> balio du.",
 
       // Asistente (js/asistente.js)
       "¿Dudas?": "Zalantzak?",

@@ -1,0 +1,37 @@
+{
+  "_nota": "Traducción al euskera de datos/empresa.json (solo textos). Pendiente de revisión por una persona nativa.",
+  "version": 1,
+  "quienesSomos": {
+    "titulo": "Nor gara",
+    "parrafos": [
+      "Gizarte- eta osasun-arloko profesionalez osatutako talde nafarra gara, eta adinekoei, mendekotasun-egoeran dauden pertsonei eta haien familiei laguntzen diegu.",
+      "Ideia sinple batekin sortu ginen: zaintzea ez dela bakardadean edo presaka egin behar. Horregatik, lasai azaltzen ditugu gauzak, proposatu aurretik entzun egiten dugu, eta laguntza bakoitza etxe bakoitzaren benetako bizimodura egokitzen dugu.",
+      "[Gehitu hemen zuen historia: noiz hasi zineten, nork osatzen duen taldea, zein eremutan lan egiten duzuen.]"
+    ],
+    "datos": [
+      { "texto": "urteko esperientzia" },
+      { "texto": "lagundutako familia" },
+      { "cifra": "Nafarroa", "texto": "gure lan-eremua" }
+    ]
+  },
+  "valores": [
+    { "titulo": "Errespetua eta duintasuna", "texto": "Pertsona bakoitzak erabakitzen du bere bizitzari buruz. Haren intimitatea, ohiturak eta gauzak egiteko modua zaintzen ditugu." },
+    { "titulo": "Lasaitasuna", "texto": "Presarik gabe lan egiten dugu, entzuteko eta azaltzeko denborarekin. Lasaitasunak ere sendatzen du." },
+    { "titulo": "Zorroztasun profesionala", "texto": "Osasun- eta gizarte-arloko jardunbide egokietan oinarritzen gara, eta etengabe prestatzen gara." },
+    { "titulo": "Hurbiltasuna", "texto": "Hemengoak gara, eta gure komunitateko baliabideak ezagutzen ditugu. Argi hitz egiten dugu, eta erraz aurki gaitzakezu." },
+    { "titulo": "Konfidentzialtasuna", "texto": "Familia bakoitzari buruz dakiguna familian geratzen da. Haren datuak arreta handienaz babesten ditugu." },
+    { "titulo": "Zaintzen duena zaindu", "texto": "Zaintzaileek ere laguntza, atsedena eta aitortza behar dituzte." }
+  ],
+  "decalogo": [
+    "Pertsona bakoitza bere izenaz deituko dugu, errespetuz eta maitasunez.",
+    "Proposatu aurretik entzun egingo dugu: zaindutako pertsona da bere zaintzaren protagonista.",
+    "Haren intimitatea, sinesmenak, ordutegiak eta ohiturak errespetatuko ditugu.",
+    "Haren autonomia sustatuko dugu: harekin egingo dugu, ez haren ordez, ahal den guztietan.",
+    "Urrats bakoitza hitz errazekin azalduko dugu, alferrikako hitz teknikorik gabe.",
+    "Zuhurtziaz jardungo dugu, eta osasun-profesionalengana bideratuko dugu beharrezkoa denean.",
+    "Informazio pertsonal eta osasun-informazio guztia diskrezioz gordeko dugu.",
+    "Familia eta zaintzaileak ere zainduko ditugu.",
+    "Puntualak eta iraunkorrak izango gara, eta erraz aurkitzeko modukoak.",
+    "Gure lana berrikusi eta hobetuko dugu, artatzen ditugunei entzunez."
+  ]
+}
