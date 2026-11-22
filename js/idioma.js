@@ -43,6 +43,8 @@
       "Aviso legal y condiciones de uso del sitio web Cuidados Navarra.": "Cuidados Navarra webgunearen lege-oharra eta erabilera-baldintzak.",
       "Privacidad y protección de datos · Cuidados Navarra": "Pribatutasuna eta datuen babesa · Cuidados Navarra",
       "Política de privacidad, protección de datos y cookies de Cuidados Navarra (RGPD y LOPDGDD).": "Cuidados Navarraren pribatutasun-politika, datuen babesa eta cookieak (DBEO eta 3/2018 Lege Organikoa).",
+      "Accesibilidad · Cuidados Navarra": "Irisgarritasuna · Cuidados Navarra",
+      "Cómo escuchar la web en voz alta, agrandar la letra o activar el alto contraste, y declaración de accesibilidad de Cuidados Navarra.": "Nola entzun webgunea ozen, nola handitu letra edo aktibatu kontraste handia, eta Cuidados Navarraren irisgarritasun-adierazpena.",
 
       // Cabecera, menú y pie (js/comun.js)
       "Saltar al contenido": "Joan edukira",
@@ -56,10 +58,9 @@
       "Tienda": "Denda",
       "Guías": "Gidak",
       "Contacto": "Harremanetarako",
-      "A+ Texto": "A+ Testua",
-      "A− Texto": "A− Testua",
-      "Aumentar el tamaño de letra": "Handitu letra-tamaina",
-      "Volver al tamaño de letra normal": "Itzuli letra-tamaina arruntera",
+      "Accesibilidad": "Irisgarritasuna",
+      "Escuchar": "Entzun",
+      "Leer en voz alta esta página": "Irakurri orri hau ozen",
       "Explorar": "Arakatu",
       "Temáticas": "Gaiak",
       "Quiénes somos": "Nor gara",
@@ -99,6 +100,8 @@
       "Te escuchamos y te proponemos el cuidado que mejor encaja con vuestra vida.": "Entzun egiten dizugu, eta zuen bizimoduari hobekien egokitzen zaion zaintza proposatzen dizugu.",
       "Hablar con nosotros": "Hitz egin gurekin",
       "Leer guía": "Irakurri gida",
+      "Escuchar la guía": "Entzun gida",
+      "Cerrar la guía": "Itxi gida",
       "Todas": "Guztiak",
       "{n} guía": "{n} gida",
       "{n} guías": "{n} gida",
@@ -134,7 +137,7 @@
       "Formulario pendiente de activar: se ha enviado un correo de confirmación a la dirección de destino. Tras confirmarlo, los mensajes llegarán con normalidad.": "Formularioa aktibatu gabe dago: berresteko mezu bat bidali da helmuga-helbidera. Berretsi ondoren, mezuak ohi bezala iritsiko dira.",
       "Información básica sobre protección de datos": "Datuen babesari buruzko oinarrizko informazioa",
       "el titular de Cuidados Navarra": "Cuidados Navarraren titularra",
-      "html:casilla-privacidad": "<a href=\"privacidad.html\" target=\"_blank\">Pribatutasun-politika</a> irakurri dut eta onartzen dut, eta baimena ematen dut nire datuak nire kontsultari erantzuteko erabil daitezen.",
+      "html:casilla-privacidad": "<a href=\"privacidad.html\" target=\"_blank\">Pribatutasun-politika<span class=\"oculto\"> (beste fitxa batean irekitzen da)</span></a> irakurri dut eta onartzen dut, eta baimena ematen dut nire datuak nire kontsultari erantzuteko erabil daitezen.",
       "html:info-datos": "<strong>Arduraduna:</strong> <span id=\"resp-nombre\">Cuidados Navarraren titularra</span>. <strong>Helburua:</strong> zure kontsultari erantzutea. <strong>Legitimazioa:</strong> zure baimena. <strong>Hartzaileak:</strong> ez zaie daturik lagatzen hirugarrenei, legezko betebeharrik ez badago; bidalketa FormSubmit-ek kudeatzen du, tratamenduaren eragile gisa. <strong>Eskubideak:</strong> datuak eskuratzea, zuzentzea, ezabatzea eta beste batzuk, <a href=\"privacidad.html\">informazio gehigarrian</a> azaltzen den bezala.",
 
       // Servicios
@@ -324,6 +327,20 @@
       });
     }).observe(html, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ATRIBUTOS });
     recorrer(html);
+  }
+
+  // Páginas con mucho texto fijo (por ejemplo accesibilidad.html) llevan su versión traducida dentro
+  // del propio HTML:  <template data-idioma="eu" data-sustituye="id-del-bloque"> …texto en euskera… </template>
+  if (idioma !== BASE) {
+    document.addEventListener("DOMContentLoaded", function () {
+      var ts = document.querySelectorAll('template[data-idioma="' + idioma + '"][data-sustituye]');
+      for (var i = 0; i < ts.length; i++) {
+        var destino = document.getElementById(ts[i].getAttribute("data-sustituye"));
+        if (!destino) continue;
+        destino.innerHTML = "";
+        destino.appendChild(ts[i].content.cloneNode(true));
+      }
+    });
   }
 
   window.I18N = {
