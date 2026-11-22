@@ -25,7 +25,7 @@ https://serviciosdigitalesnavarra.github.io/cuidados-navarra/datos/indice.json
 | `servicios.json` | Servicios | `servicios[] {id, icono, titulo, resumen, detalles[], precio}` |
 | `tienda.json` | Tienda de enlaces | `proveedores[] {id, nombre, etiquetaAfiliado}`, `categorias[]`, `productos[] {id, categoria, proveedor, titulo, texto, url, imagen?, icono, precio}` |
 | `legal.json` | Textos legales | `terminos` y `privacidad`, cada uno con `secciones[] {titulo, texto}` |
-| `preguntas.json` | Asistente (chatbot) | `asistente {bienvenida, aviso, sinRespuesta, sugerencias[], ia}`, `preguntas[] {id, tema, pregunta, palabrasClave[], respuesta, enlaces[], urgente?, oculta?}` |
+| `preguntas.json` | Asistente (chatbot) | `asistente {bienvenida, aviso, sinRespuesta, sugerencias[], ia}`, `preguntas[] {id, tema, pregunta, palabrasClave[], respuesta \| guia \| servicio, enlaces[], urgente?, oculta?}` |
 
 Convenciones de texto (igual que en la web):
 - Párrafos separados por `\n\n`; líneas que empiezan por `- ` son listas.
@@ -35,12 +35,19 @@ Convenciones de texto (igual que en la web):
 
 ## Asistente (chatbot)
 
-La web incluye un asistente de preguntas frecuentes (`js/asistente.js`) que lee `preguntas.json`.
+La web incluye un asistente de preguntas frecuentes (`js/asistente.js`). Se actualiza solo: al abrirse lee
+`preguntas.json`, `temas.json`, `servicios.json`, `tienda.json` y `sitio.json` y construye la lista de respuestas:
+
+- Preguntas de `preguntas.json` con `respuesta` propia; las que tienen `guia` o `servicio` toman el texto actual de esa guía o servicio.
+- Una respuesta automática por cada guía, servicio y producto que no tenga ya una pregunta a medida
+  (palabras clave = palabras del título, más `palabrasClave` opcionales en el propio elemento).
+- `{{contacto.horario}}`, `{{lista.servicios}}`, etc. se sustituyen con los datos de `sitio.json` y los demás archivos.
+
 Las apps pueden reutilizar los mismos datos y la misma lógica de búsqueda:
 
 1. Normalizar el texto (minúsculas, sin tildes, solo letras y números) y quitar plurales sencillos.
 2. Por cada pregunta, sumar 3 puntos por cada palabra clave que aparezca (frases de varias palabras: 3 + nº de palabras)
-   y 1 punto por cada palabra útil compartida con el enunciado. `urgente: true` suma 100 si coincide alguna clave.
+   2 puntos por cada palabra del título (respuestas automáticas) y 1 punto por cada palabra útil compartida con el enunciado o el resumen. `urgente: true` suma 100 si coincide alguna clave.
 3. Responder con la mejor si tiene 3 puntos o más; si no, proponer las 3 más parecidas, guías de `temas.json` y contacto.
 
 Los enlaces del tipo `index.html#guia-<id>` apuntan a una guía de `temas.json`: en la app conviene abrir esa guía en pantalla.

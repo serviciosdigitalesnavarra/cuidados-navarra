@@ -60,21 +60,31 @@ Ejemplos:
 
 ## Asistente de preguntas frecuentes (chatbot)
 
-En todas las páginas aparece abajo a la derecha el botón **«¿Dudas?»**. Abre un asistente que responde
-con los textos de `datos/preguntas.json`. Funciona sin servidor y sin coste, y lo que escribe la gente
-**no se envía ni se guarda** en ningún sitio.
+En todas las páginas aparece abajo a la derecha el botón **«¿Dudas?»**. Funciona sin servidor y sin coste, y lo
+que escribe la gente **no se envía ni se guarda** en ningún sitio.
 
-- **Añadir una pregunta**: copia un bloque `{ ... }` de `preguntas`, ponle un `id` nuevo y rellena
-  `pregunta`, `respuesta` y `palabrasClave`.
-- **`palabrasClave`** es lo más importante: escribe las palabras o frases cortas que usaría una persona
-  («se ha caído», «escaras», «cuánto cuesta»). Da igual poner tildes o mayúsculas, y los plurales se reconocen solos.
-- **`enlaces`** (opcional): botones bajo la respuesta. Para abrir una guía concreta usa
-  `index.html#guia-art-005` (el `id` de la guía en `temas.json`).
-- **`urgente: true`** hace que esa respuesta gane siempre (se usa para la del 112).
-- **`oculta: true`** evita que se proponga como sugerencia (saludos, «gracias»…).
-- En `asistente` cambias el saludo, el aviso, el texto cuando no sabe responder y las preguntas
-  que se ofrecen al abrir (`sugerencias`, por su `id`).
-- Si no encuentra respuesta, propone preguntas parecidas, guías relacionadas y el formulario de contacto.
+**Se actualiza solo.** Cada vez que alguien lo abre, lee los contenidos publicados en ese momento:
+- Cada **guía** de `temas.json` se convierte en una respuesta (con su texto actual y un botón «Abrir la guía completa»).
+- Cada **servicio** de `servicios.json` y cada **producto** de `tienda.json`, igual.
+- El **horario**, el **correo** y la **lista de servicios** salen de `sitio.json` y `servicios.json`.
+
+Es decir: publicas una guía, un servicio o un producto nuevo, o cambias uno existente, y el asistente ya lo sabe
+(GitHub Pages tarda 1 o 2 minutos en publicar los cambios). No hace falta tocar `preguntas.json`.
+Si quieres que una guía, servicio o producto se encuentre con más palabras, añádele en su propio archivo
+`"palabrasClave": ["...", "..."]`.
+
+**Preguntas a medida** (`datos/preguntas.json`), para lo que no está en ninguna guía o para afinar:
+- Copia un bloque `{ ... }` de `preguntas`, ponle un `id` nuevo y rellena `pregunta` y `palabrasClave`
+  (palabras o frases cortas que usaría una persona, como «se ha caído» o «cuánto cuesta»; da igual tildes, mayúsculas o plurales).
+- Y uno de estos tres: `respuesta` (texto propio), `guia` (id de una guía, por ejemplo `"art-005"`: responde con su
+  texto actual) o `servicio` (id de un servicio, por ejemplo `"respiro"`).
+- En las respuestas puedes escribir `{{contacto.horario}}`, `{{contacto.email}}`, `{{sitio.nombre}}`,
+  `{{lista.servicios}}`, `{{lista.temas}}`, `{{lista.tienda}}` o `{{lista.guias}}`, y se rellenan solos.
+- `enlaces` (opcional): botones bajo la respuesta. Para abrir una guía usa `index.html#guia-art-005`.
+- `urgente: true` hace que esa respuesta gane siempre (se usa para la del 112). `oculta: true` evita que se proponga como sugerencia.
+- En `asistente` cambias el saludo, el aviso, el texto cuando no sabe responder y las preguntas que se ofrecen al
+  abrir (`sugerencias`, por su `id`).
+- Si se borra una guía o un servicio al que apunta una pregunta sin texto propio, esa pregunta desaparece sola.
 
 Para que algún día responda con inteligencia artificial, ver `APPS.md`, apartado «Asistente».
 

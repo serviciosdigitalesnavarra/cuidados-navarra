@@ -10,6 +10,6 @@
     "servicios": { "archivo": "servicios.json", "version": 1, "contenido": "Catálogo de servicios" },
     "tienda":    { "archivo": "tienda.json",    "version": 1, "contenido": "Proveedores, categorías y productos enlazados" },
     "legal":     { "archivo": "legal.json",     "version": 2, "contenido": "Términos y condiciones, privacidad y cookies" },
-    "preguntas": { "archivo": "preguntas.json", "version": 1, "contenido": "Preguntas frecuentes y textos del asistente (chatbot)" }
+    "preguntas": { "archivo": "preguntas.json", "version": 2, "contenido": "Preguntas frecuentes y textos del asistente (chatbot)" }
   }
 }
