@@ -1,7 +1,7 @@
 /*
  * Código común a todas las páginas:
  *  - cabecera y pie (menú igual en todas las páginas: se cambia solo aquí, en MENU y PIE)
- *  - menú del móvil y botón "Texto grande"
+ *  - menú del móvil y botones «Escuchar» y «Accesibilidad» (su lógica está en js/accesibilidad.js)
  *  - CN.cargar("nombre"): lee datos/nombre.json (los mismos datos que usarán las apps) y, en euskera, su traducción
  *  - CN.t("texto"): traduce un texto fijo (diccionario en js/idioma.js)
  *  - utilidades para escribir textos con seguridad
@@ -17,11 +17,35 @@
   var PIE = [
     { titulo: "Explorar", enlaces: [["Inicio", "index.html"], ["Temáticas", "index.html#temas"], ["Guías", "index.html#guias"], ["Tienda", "tienda.html"]] },
     { titulo: "Nuestra empresa", enlaces: [["Quiénes somos", "empresa.html#quienes-somos"], ["Nuestros valores", "empresa.html#valores"], ["Decálogo", "empresa.html#decalogo"], ["Nuestros servicios", "servicios.html"]] },
-    { titulo: "Contacto", enlaces: [["Formulario de contacto", "empresa.html#contacto"], ["Urgencias: 112", "tel:112"]] }
+    { titulo: "Contacto", enlaces: [["Formulario de contacto", "empresa.html#contacto"], ["Urgencias: 112", "tel:112"], ["Accesibilidad", "accesibilidad.html"]] }
   ];
 
   var html = document.documentElement;
-  try { if (localStorage.getItem("textoGrande") === "1") html.classList.add("texto-grande"); } catch (e) {}
+
+  // Preferencias de accesibilidad (se guardan solo en este navegador)
+  var POR_DEFECTO = { tam: "normal", contraste: false, espaciado: false, velocidad: 1, leerAsistente: false };
+  var preferencias = {};
+  try { preferencias = JSON.parse(localStorage.getItem("accesibilidad") || "null") || null; } catch (e) { preferencias = null; }
+  if (!preferencias) {
+    preferencias = {};
+    try { if (localStorage.getItem("textoGrande") === "1") preferencias.tam = "grande"; } catch (e) {} // ajuste antiguo «A+ Texto»
+    // Si el dispositivo pide más contraste, se activa de inicio
+    if (window.matchMedia && matchMedia("(prefers-contrast: more)").matches) preferencias.contraste = true;
+  }
+  for (var k in POR_DEFECTO) if (!(k in preferencias)) preferencias[k] = POR_DEFECTO[k];
+  function aplicarPreferencias() {
+    var p = preferencias;
+    html.classList.toggle("texto-grande", p.tam === "grande");
+    html.classList.toggle("texto-muy-grande", p.tam === "muy-grande");
+    html.classList.toggle("alto-contraste", !!p.contraste);
+    html.classList.toggle("espaciado", !!p.espaciado);
+  }
+  function guardarPreferencias(nuevas) {
+    if (nuevas) for (var k in nuevas) preferencias[k] = nuevas[k];
+    aplicarPreferencias();
+    try { localStorage.setItem("accesibilidad", JSON.stringify(preferencias)); } catch (e) {}
+  }
+  aplicarPreferencias();
 
   var esc = function (t) {
     return String(t == null ? "" : t).replace(/[&<>"']/g, function (c) {
@@ -87,8 +111,15 @@
       (window.I18N ? I18N.selector() : "") +
       '<button class="menu-movil" id="menu-movil" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>' +
       '<nav class="nav" id="nav" aria-label="Principal">' + nav +
-      '<button class="boton-texto" id="boton-texto" type="button">A+ Texto</button>' +
       '<a class="boton" href="empresa.html#contacto">Contacto</a></nav>' +
+      '<div class="herramientas-acc">' +
+        '<button type="button" class="boton-acc boton-escuchar" id="boton-escuchar" data-escuchar="main" title="Leer en voz alta esta página">' +
+          '<span class="icono-escuchar"></span><span class="texto-escuchar">Escuchar</span></button>' +
+        '<button type="button" class="boton-acc" id="boton-ajustes" aria-expanded="false" aria-controls="panel-acc">' +
+          '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8" fill="currentColor"/><path d="M5 8.5l7 1.5 7-1.5M12 10v4.5M12 14.5l-3 6M12 14.5l3 6"/></svg>' +
+          '<span class="texto-acc">Accesibilidad</span></button>' +
+      "</div>" +
+      '<div class="panel-acc" id="panel-acc" role="dialog" aria-modal="false" aria-labelledby="acc-titulo" tabindex="-1" hidden></div>' +
       "</div></div></header>" +
       '<span class="deco d1" aria-hidden="true"></span><span class="deco d2" aria-hidden="true"></span>';
   }
@@ -104,7 +135,7 @@
       '<p id="aviso-sanitario">La información de esta web es orientativa y no sustituye la consulta con profesionales sanitarios. En caso de urgencia, llama al 112.</p></div>' +
       cols + "</div>" +
       '<div class="pie-legal"><span>© ' + new Date().getFullYear() + ' Cuidados Navarra</span>' +
-      '<nav aria-label="Información legal"><a href="terminos.html">Términos y condiciones de uso</a><a href="privacidad.html">Privacidad y protección de datos</a><a href="privacidad.html#cookies">Cookies</a></nav></div>' +
+      '<nav aria-label="Información legal"><a href="terminos.html">Términos y condiciones de uso</a><a href="privacidad.html">Privacidad y protección de datos</a><a href="privacidad.html#cookies">Cookies</a><a href="accesibilidad.html">Accesibilidad</a></nav></div>' +
       "</div></div></footer>";
   }
 
@@ -124,19 +155,14 @@
       if (e.target.tagName === "A" && nav.classList.contains("abierto")) bm.click();
     });
 
-    var b = document.getElementById("boton-texto");
-    var pintar = function () {
-      var g = html.classList.contains("texto-grande");
-      b.setAttribute("aria-pressed", g);
-      b.textContent = g ? "A− Texto" : "A+ Texto";
-      b.title = g ? "Volver al tamaño de letra normal" : "Aumentar el tamaño de letra";
-    };
-    pintar();
-    b.addEventListener("click", function () {
-      html.classList.toggle("texto-grande");
-      try { localStorage.setItem("textoGrande", html.classList.contains("texto-grande") ? "1" : "0"); } catch (e) {}
-      pintar();
-    });
+    // «Saltar al contenido» lleva el foco al contenido principal también en Safari
+    var main = document.getElementById("contenido");
+    if (main && !main.hasAttribute("tabindex")) main.setAttribute("tabindex", "-1");
+
+    // Lectura en voz alta y panel de accesibilidad
+    var sac = document.createElement("script");
+    sac.src = "js/accesibilidad.js";
+    document.body.appendChild(sac);
 
     cargar("sitio").then(function (s) {
       var a = document.getElementById("aviso-sanitario");
@@ -152,5 +178,5 @@
     if (location.hash && location.hash.indexOf("#guia-") !== 0) setTimeout(function () { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }, 400);
   });
 
-  window.CN = { t: t, esc: esc, resaltar: resaltar, plantilla: plantilla, formatear: formatear, cargar: cargar, errorCarga: errorCarga };
+  window.CN = { t: t, preferencias: preferencias, guardarPreferencias: guardarPreferencias, esc: esc, resaltar: resaltar, plantilla: plantilla, formatear: formatear, cargar: cargar, errorCarga: errorCarga };
 })();
