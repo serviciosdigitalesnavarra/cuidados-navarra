@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "actualizado": "2026-11-22",
+  "_nota": "Preguntas frecuentes del asistente. Cada pregunta: id (sin espacios, no lo cambies), tema, pregunta (como la leería una persona), palabrasClave (palabras o frases cortas que la gente podría escribir, sin importar tildes ni mayúsculas), respuesta (mismo formato que las guías: \\n\\n para párrafo, '- ' para lista) y enlaces opcionales. urgente: true hace que esa respuesta gane siempre que coincida una de sus palabras clave.",
+  "asistente": {
+    "nombre": "Asistente de Cuidados Navarra",
+    "botonTexto": "¿Dudas?",
+    "bienvenida": "Hola. Soy el asistente de Cuidados Navarra. Escribe tu duda con tus palabras o elige una de estas preguntas.",
+    "aviso": "Respuestas orientativas. No sustituyen a un profesional sanitario. Urgencias: 112.",
+    "sinRespuesta": "No tengo una respuesta para eso todavía. Puedes probar con otras palabras, mirar las guías o escribirnos y te contestamos personalmente.",
+    "sugerencias": ["urgencias", "servicios", "dependencia", "caidas", "cansancio-cuidador", "contacto"],
+    "ia": {
+      "_nota": "Preparado para el futuro: si algún día hay un servidor de inteligencia artificial, pon activa: true y su dirección en endpoint. Si falla, el asistente vuelve a estas preguntas.",
+      "activa": false,
+      "endpoint": ""
+    }
+  },
+  "preguntas": [
+    {
+      "id": "urgencias",
+      "tema": "Salud",
+      "urgente": true,
+      "pregunta": "¿Qué hago ante una urgencia?",
+      "palabrasClave": ["urgencia", "emergencia", "112", "no respira", "respira mal", "ahoga", "atragant", "infarto", "ictus", "dolor de pecho", "dolor en el pecho", "inconsciente", "desmayo", "se ha desmayado", "no responde", "convulsion", "sangra mucho", "hemorragia", "no puede hablar", "boca torcida"],
+      "respuesta": "Si la vida de la persona puede estar en peligro, llama ahora al 112. Es gratuito y atiende las 24 horas.\n\nLlama al 112 ante:\n- Dolor en el pecho o dificultad para respirar.\n- Pérdida de fuerza en un lado del cuerpo, boca torcida o dificultad para hablar.\n- Pérdida de consciencia o convulsiones.\n- Atragantamiento que no se resuelve.\n\nMientras llega la ayuda, quédate con la persona y sigue las indicaciones del 112.",
+      "enlaces": [
+        { "texto": "Llamar al 112", "url": "tel:112" },
+        { "texto": "Señales de alerta", "url": "index.html#guia-art-008" }
+      ]
+    },
+    {
+      "id": "senales-alerta",
+      "tema": "Salud",
+      "pregunta": "¿Cuándo debo llamar al centro de salud?",
+      "palabrasClave": ["centro de salud", "medico", "fiebre", "confusion", "confundido", "somnolencia", "no come", "no quiere comer", "no bebe", "señales de alerta", "alerta", "empeora", "esta raro"],
+      "respuesta": "Consulta con su centro de salud si aparece:\n- Fiebre que no baja.\n- Confusión o somnolencia nueva.\n- Dejar de comer o de beber.\n- Una caída, aunque parezca leve.\n\nSi hay dolor en el pecho, dificultad para respirar o pérdida de fuerza, llama al 112.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-008" }]
+    },
+    {
+      "id": "servicios",
+      "tema": "Nuestra empresa",
+      "pregunta": "¿Qué servicios ofrecéis?",
+      "palabrasClave": ["servicios", "que haceis", "que ofreceis", "ofreceis", "contratar", "ayuda en casa", "cuidadora", "cuidador profesional", "auxiliar", "apoyo en casa", "a domicilio", "domicilio"],
+      "respuesta": "Ofrecemos apoyos para que la persona siga en su casa con seguridad y la familia respire tranquila:\n- Cuidado en el domicilio (aseo, movilidad, comidas, medicación).\n- Acompañamiento en casa, paseos y visitas médicas.\n- Respiro familiar: unas horas, una noche o un fin de semana.\n- Orientación y trámites de dependencia.\n- Adaptación del hogar.\n- Formación para cuidadores.",
+      "enlaces": [
+        { "texto": "Ver los servicios", "url": "servicios.html" },
+        { "texto": "Hablar con nosotros", "url": "empresa.html#contacto" }
+      ]
+    },
+    {
+      "id": "precios",
+      "tema": "Nuestra empresa",
+      "pregunta": "¿Cuánto cuestan vuestros servicios?",
+      "palabrasClave": ["precio", "precios", "cuanto cuesta", "cuanto vale", "tarifa", "tarifas", "coste", "presupuesto", "euros", "barato", "caro", "pagar"],
+      "respuesta": "El precio depende del tipo de apoyo, las horas y el horario. En la página de servicios tienes precios orientativos, y la primera consulta de orientación es gratuita.\n\nCuéntanos vuestra situación por el formulario y te preparamos un presupuesto sin compromiso.",
+      "enlaces": [
+        { "texto": "Ver servicios y precios", "url": "servicios.html" },
+        { "texto": "Pedir presupuesto", "url": "empresa.html#contacto" }
+      ]
+    },
+    {
+      "id": "zona",
+      "tema": "Nuestra empresa",
+      "pregunta": "¿En qué zonas trabajáis?",
+      "palabrasClave": ["zona", "zonas", "donde", "pamplona", "navarra", "pueblo", "localidad", "ciudad", "cerca", "venir", "venis", "desplazais", "tudela", "estella", "tafalla", "sanguesa", "olite", "baztan", "alsasua", "burlada", "barañain", "villava", "zizur", "ansoain"],
+      "respuesta": "Trabajamos en Navarra. Escríbenos con tu localidad y te confirmamos si podemos atenderte y en qué horarios.",
+      "enlaces": [{ "texto": "Escribirnos", "url": "empresa.html#contacto" }]
+    },
+    {
+      "id": "contacto",
+      "tema": "Nuestra empresa",
+      "pregunta": "¿Cómo puedo contactar con vosotros?",
+      "palabrasClave": ["contacto", "contactar", "hablar con alguien", "hablar con una persona", "telefono", "llamar", "correo", "email", "escribir", "escribiros", "horario", "atencion"],
+      "respuesta": "Puedes escribirnos por el formulario de contacto y te responderemos lo antes posible, normalmente en horario de lunes a viernes, de 9:00 a 14:00.\n\nTambién puedes escribir directamente a serviciosdigitalesnavarra@protonmail.com.",
+      "enlaces": [{ "texto": "Ir al formulario", "url": "empresa.html#contacto" }]
+    },
+    {
+      "id": "respiro",
+      "tema": "Cuidar al cuidador",
+      "pregunta": "Necesito descansar unos días, ¿podéis sustituirme?",
+      "palabrasClave": ["respiro", "descansar", "descanso", "vacaciones", "fin de semana", "sustituir", "sustituirme", "una noche", "de noche", "unos dias", "irme"],
+      "respuesta": "Sí. Con el servicio de respiro familiar una persona de nuestro equipo te sustituye unas horas, una noche, un fin de semana o durante tus vacaciones. Lo planificamos contigo para que la persona cuidada mantenga sus rutinas.",
+      "enlaces": [
+        { "texto": "Ver el servicio de respiro", "url": "servicios.html" },
+        { "texto": "Consultar disponibilidad", "url": "empresa.html#contacto" }
+      ]
+    },
+    {
+      "id": "cansancio-cuidador",
+      "tema": "Cuidar al cuidador",
+      "pregunta": "Estoy agotado de cuidar, ¿qué puedo hacer?",
+      "palabrasClave": ["agotado", "agotada", "cansado", "cansada", "cansancio", "no puedo mas", "estres", "estresado", "triste", "culpa", "quemado", "sobrecarga", "solo", "sola", "ansiedad"],
+      "respuesta": "Cuidar de forma continuada agota, y sentirlo no te hace peor cuidador. Algunas ideas:\n- Pide ayuda concreta a familiares (un día fijo, una tarea).\n- Busca un grupo de apoyo para personas cuidadoras.\n- Reserva cada día un rato solo para ti.\n- Valora un servicio de respiro para descansar de verdad.\n\nSi la tristeza o el cansancio no mejoran, coméntalo con tu médico de familia.",
+      "enlaces": [
+        { "texto": "Leer la guía", "url": "index.html#guia-art-011" },
+        { "texto": "Respiro familiar", "url": "servicios.html" }
+      ]
+    },
+    {
+      "id": "dependencia",
+      "tema": "Ayudas y trámites",
+      "pregunta": "¿Cómo solicito la ley de dependencia?",
+      "palabrasClave": ["dependencia", "ley de dependencia", "valoracion", "grado", "solicitar", "solicitud", "tramite", "tramites", "papeles", "servicios sociales", "trabajadora social"],
+      "respuesta": "La valoración de dependencia da acceso a ayuda a domicilio, centro de día o prestaciones económicas. Los primeros pasos:\n- Acude a los servicios sociales de tu ayuntamiento.\n- Prepara un informe de salud actualizado de su médico.\n- Rellena la solicitud con los datos de la persona y de quien cuida.\n\nSi quieres, te ayudamos con los formularios y la documentación.",
+      "enlaces": [
+        { "texto": "Leer la guía", "url": "index.html#guia-art-012" },
+        { "texto": "Orientación y trámites", "url": "servicios.html" }
+      ]
+    },
+    {
+      "id": "ayudas-economicas",
+      "tema": "Ayudas y trámites",
+      "pregunta": "¿Qué ayudas económicas hay para cuidar a un mayor?",
+      "palabrasClave": ["ayuda economica", "ayudas economicas", "ayudas", "subvencion", "prestacion", "prestaciones", "dinero", "paga", "cobrar"],
+      "respuesta": "La principal vía es la valoración de dependencia: según el grado, da derecho a servicios (ayuda a domicilio, centro de día, teleasistencia) o a prestaciones económicas. En Navarra se tramita a través de los servicios sociales de base de tu ayuntamiento.\n\nEn nuestra primera consulta de orientación, que es gratuita, revisamos contigo qué ayudas os pueden corresponder.",
+      "enlaces": [
+        { "texto": "Cómo pedir la dependencia", "url": "index.html#guia-art-012" },
+        { "texto": "Pedir orientación", "url": "empresa.html#contacto" }
+      ]
+    },
+    {
+      "id": "caidas",
+      "tema": "Movilidad y caídas",
+      "pregunta": "¿Cómo puedo evitar caídas en casa?",
+      "palabrasClave": ["caida", "caido", "caer", "se cae", "tropieza", "resbala", "equilibrio", "alfombra", "alfombras", "mareo"],
+      "respuesta": "La mayoría de caídas se pueden evitar con pequeños cambios:\n- Retira alfombras sueltas y cables del suelo.\n- Buena luz, también de noche (luces de pasillo con sensor).\n- Calzado cerrado y con suela antideslizante.\n- Barras de apoyo en el baño.\n- Revisa con su médico los medicamentos que den mareo.\n\nSi ya se ha caído, aunque parezca leve, coméntalo en su centro de salud.",
+      "enlaces": [
+        { "texto": "Leer la guía", "url": "index.html#guia-art-005" },
+        { "texto": "Adaptación del hogar", "url": "servicios.html" }
+      ]
+    },
+    {
+      "id": "transferencias",
+      "tema": "Movilidad y caídas",
+      "pregunta": "¿Cómo paso a una persona de la cama a la silla?",
+      "palabrasClave": ["cama a la silla", "silla de ruedas", "levantar", "mover", "movilizar", "transferencia", "grua", "espalda", "incorporar", "sentar"],
+      "respuesta": "Coloca la silla junto a la cama, frenada y en ángulo. Después:\n- Ayúdale a sentarse en el borde de la cama con los pies en el suelo.\n- Flexiona tus rodillas y mantén la espalda recta.\n- Sujétale por la cintura o con un cinturón de transferencia, nunca por los brazos.\n- Gira con la persona pivotando sobre los pies y siéntala despacio.\n\nSi necesitas hacer mucha fuerza, pregunta por grúas o tablas de transferencia.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-006" }]
+    },
+    {
+      "id": "aseo",
+      "tema": "Higiene",
+      "pregunta": "¿Cómo lavo a una persona que no se levanta de la cama?",
+      "palabrasClave": ["aseo", "lavar", "bañar", "baño en cama", "higiene", "ducha", "encamado", "encamada", "asear"],
+      "respuesta": "Prepara todo antes de empezar para no dejarle solo: agua templada, jabón neutro, esponjas, toallas y ropa limpia. Explica cada paso y tapa las zonas que no estés lavando.\n- Lava de las zonas más limpias a las más sucias.\n- Seca bien los pliegues de la piel.\n- Revisa la piel por si hay rojeces.\n- Hidrata con crema y un masaje suave.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-001" }]
+    },
+    {
+      "id": "ulceras",
+      "tema": "Higiene",
+      "pregunta": "¿Cómo se previenen las úlceras o escaras?",
+      "palabrasClave": ["ulcera", "ulceras", "escara", "escaras", "llaga", "llagas", "rojez", "rojeces", "piel", "cambios posturales", "colchon", "cojin", "antiescaras"],
+      "respuesta": "Las úlceras por presión aparecen en zonas que soportan peso mucho tiempo (talones, caderas, sacro, codos).\n- Cambia de postura cada 2 o 3 horas.\n- Mantén la piel limpia, seca e hidratada.\n- Usa cojines o colchón antiescaras si te lo recomiendan.\n- Evita arrugas en las sábanas y no arrastres a la persona.\n\nSi una rojez no desaparece al dejar de presionar, avisa a su enfermera.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-002" }]
+    },
+    {
+      "id": "hidratacion",
+      "tema": "Alimentación",
+      "pregunta": "Mi madre casi no bebe agua, ¿qué hago?",
+      "palabrasClave": ["beber", "bebe", "agua", "sed", "hidratacion", "hidratar", "deshidratacion", "deshidratado", "orina oscura", "liquidos"],
+      "respuesta": "Con la edad se siente menos sed. Algunos trucos:\n- Ofrece agua a menudo, aunque no la pida.\n- Deja siempre un vaso a la vista y al alcance.\n- Incluye caldos, infusiones, gelatinas y fruta jugosa.\n\nBoca seca, orina oscura, cansancio o confusión pueden ser señales de deshidratación: consulta con su centro de salud.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-003" }]
+    },
+    {
+      "id": "tragar",
+      "tema": "Alimentación",
+      "pregunta": "Se atraganta al comer, ¿cómo le ayudo?",
+      "palabrasClave": ["tragar", "disfagia", "tose al comer", "tos", "comer", "comida", "texturas", "espesante", "triturado", "pure", "alimentacion", "dieta"],
+      "respuesta": "La dificultad para tragar (disfagia) es frecuente tras un ictus o en demencias avanzadas.\n- Siéntale bien erguido, con la barbilla un poco hacia abajo.\n- Cucharadas pequeñas, esperando a que trague.\n- Sin televisión ni distracciones mientras come.\n- Que siga sentado 30 minutos después de comer.\n\nSi tose a menudo al comer o beber, pide valoración a su equipo sanitario. Si no puede respirar, llama al 112.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-004" }]
+    },
+    {
+      "id": "medicacion",
+      "tema": "Medicación",
+      "pregunta": "¿Cómo organizo las pastillas para no equivocarme?",
+      "palabrasClave": ["medicacion", "medicamentos", "pastillas", "pastillero", "dosis", "olvida", "olvido", "tomas", "tratamiento", "receta medica"],
+      "respuesta": "Una buena organización evita olvidos y dosis repetidas:\n- Usa un pastillero semanal por días y horas (los hay con alarma).\n- Ten una lista con cada medicamento, la dosis y para qué sirve.\n- Asocia las tomas a rutinas fijas, como el desayuno o la cena.\n- Lleva la lista a todas las consultas.\n\nNunca cambies ni suspendas un tratamiento sin consultarlo.",
+      "enlaces": [
+        { "texto": "Leer la guía", "url": "index.html#guia-art-007" },
+        { "texto": "Pastilleros en la tienda", "url": "tienda.html" }
+      ]
+    },
+    {
+      "id": "demencia",
+      "tema": "Memoria y demencias",
+      "pregunta": "¿Cómo hablo con una persona con alzhéimer?",
+      "palabrasClave": ["demencia", "alzheimer", "memoria", "olvida todo", "desorientado", "desorientada", "no me reconoce", "agresivo", "agitado", "repite", "deterioro cognitivo"],
+      "respuesta": "La forma de comunicarnos puede reducir mucho su ansiedad:\n- Ponte a su altura y mírale a los ojos.\n- Frases cortas, una sola idea cada vez.\n- No le corrijas ni discutas: acompaña su emoción.\n- Apóyate en gestos, caricias y una sonrisa.\n\nLas rutinas diarias estables le dan seguridad.",
+      "enlaces": [{ "texto": "Leer la guía", "url": "index.html#guia-art-009" }]
+    },
+    {
+      "id": "bano",
+      "tema": "Hogar seguro",
+      "pregunta": "¿Cómo adapto el baño para una persona mayor?",
+      "palabrasClave": ["adaptar el baño", "baño", "bañera", "plato de ducha", "barras", "asideros", "inodoro", "taburete", "silla de ducha", "obras"],
+      "respuesta": "El baño es la estancia con más riesgo. Ideas sencillas:\n- Plato de ducha a ras de suelo en lugar de bañera.\n- Silla o taburete de ducha.\n- Barras de apoyo junto al inodoro y la ducha.\n- Alfombrillas antideslizantes dentro y fuera.\n- Elevador de inodoro para sentarse y levantarse mejor.\n\nTambién podemos visitar la casa y proponerte cambios.",
+      "enlaces": [
+        { "texto": "Leer la guía", "url": "index.html#guia-art-010" },
+        { "texto": "Adaptación del hogar", "url": "servicios.html" }
+      ]
+    },
+    {
+      "id": "teleasistencia",
+      "tema": "Hogar seguro",
+      "pregunta": "Vive solo, ¿cómo puedo estar más tranquilo?",
+      "palabrasClave": ["vive solo", "vive sola", "solo en casa", "sola en casa", "teleasistencia", "boton", "sos", "detector de caidas", "reloj", "localizador", "gps", "aviso"],
+      "respuesta": "Hay soluciones sencillas para que pueda pedir ayuda en cualquier momento:\n- Teleasistencia (botón o colgante conectado a una central 24 h). Puede solicitarse también por dependencia.\n- Reloj con botón SOS y GPS, o colgante detector de caídas.\n- Sensores en casa que avisan al móvil de la familia.\n\nEn la tienda tienes algunos ejemplos, y en el servicio de acompañamiento le visitamos con regularidad.",
+      "enlaces": [
+        { "texto": "Ver la tienda", "url": "tienda.html" },
+        { "texto": "Acompañamiento", "url": "servicios.html" }
+      ]
+    },
+    {
+      "id": "soledad",
+      "tema": "Nuestra empresa",
+      "pregunta": "¿Podéis hacerle compañía o acompañarle al médico?",
+      "palabrasClave": ["compañia", "acompañar", "acompañamiento", "soledad", "paseo", "pasear", "recados", "visita medica", "acompañarle al medico", "conversacion"],
+      "respuesta": "Sí. En el servicio de acompañamiento le hacemos compañía en casa, salimos a pasear, hacemos recados y le acompañamos a consultas y gestiones.",
+      "enlaces": [
+        { "texto": "Ver el servicio", "url": "servicios.html" },
+        { "texto": "Hablar con nosotros", "url": "empresa.html#contacto" }
+      ]
+    },
+    {
+      "id": "formacion",
+      "tema": "Nuestra empresa",
+      "pregunta": "¿Dais cursos para cuidadores?",
+      "palabrasClave": ["curso", "cursos", "formacion", "taller", "talleres", "aprender", "clases", "enseñar"],
+      "respuesta": "Sí, organizamos talleres prácticos presenciales y en línea, en grupos reducidos, sobre movilizaciones, alimentación, demencias y otros temas del día a día.",
+      "enlaces": [{ "texto": "Ver formación", "url": "servicios.html" }]
+    },
+    {
+      "id": "tienda",
+      "tema": "Tienda",
+      "pregunta": "¿Qué productos me recomendáis?",
+      "palabrasClave": ["tienda", "producto", "productos", "comprar", "amazon", "recomendais", "aparato", "tensiometro", "telefono teclas grandes"],
+      "respuesta": "En la tienda reunimos productos útiles para el día a día: seguridad y alertas, medicación, comunicación, hogar y control de salud. Al pulsar un producto vas a la tienda del proveedor para comprarlo.",
+      "enlaces": [{ "texto": "Ir a la tienda", "url": "tienda.html" }]
+    },
+    {
+      "id": "privacidad",
+      "tema": "Legal",
+      "pregunta": "¿Guardáis lo que escribo en este chat?",
+      "palabrasClave": ["privacidad", "mis datos", "guardais", "guardar", "se guarda", "cookies", "proteccion de datos", "rgpd", "confidencial"],
+      "respuesta": "No. Este asistente funciona en tu propio dispositivo: lo que escribes aquí no se envía ni se guarda en ningún sitio. Si quieres que te contestemos personalmente, usa el formulario de contacto.",
+      "enlaces": [{ "texto": "Política de privacidad", "url": "privacidad.html" }]
+    },
+    {
+      "id": "saludo",
+      "tema": "General",
+      "pregunta": "Hola",
+      "palabrasClave": ["hola", "buenas", "buenos dias", "buenas tardes", "buenas noches", "que tal"],
+      "respuesta": "¡Hola! Cuéntame en qué te puedo ayudar: cuidados en casa, ayudas, nuestros servicios…",
+      "oculta": true
+    },
+    {
+      "id": "gracias",
+      "tema": "General",
+      "pregunta": "Gracias",
+      "palabrasClave": ["gracias", "muchas gracias", "vale", "perfecto", "genial", "adios", "hasta luego"],
+      "respuesta": "Un placer ayudarte. Si te surge otra duda, aquí estoy. Y recuerda que puedes escribirnos cuando quieras.",
+      "oculta": true
+    }
+  ]
+}

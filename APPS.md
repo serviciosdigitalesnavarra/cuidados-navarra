@@ -25,12 +25,37 @@ https://serviciosdigitalesnavarra.github.io/cuidados-navarra/datos/indice.json
 | `servicios.json` | Servicios | `servicios[] {id, icono, titulo, resumen, detalles[], precio}` |
 | `tienda.json` | Tienda de enlaces | `proveedores[] {id, nombre, etiquetaAfiliado}`, `categorias[]`, `productos[] {id, categoria, proveedor, titulo, texto, url, imagen?, icono, precio}` |
 | `legal.json` | Textos legales | `terminos` y `privacidad`, cada uno con `secciones[] {titulo, texto}` |
+| `preguntas.json` | Asistente (chatbot) | `asistente {bienvenida, aviso, sinRespuesta, sugerencias[], ia}`, `preguntas[] {id, tema, pregunta, palabrasClave[], respuesta, enlaces[], urgente?, oculta?}` |
 
 Convenciones de texto (igual que en la web):
 - Párrafos separados por `\n\n`; líneas que empiezan por `- ` son listas.
 - `{{titular.nif}}`, `{{sitio.nombre}}`… se sustituyen con los valores de `sitio.json`.
 - Lo que va entre `[corchetes]` es un dato pendiente de rellenar.
 - Los `id` son estables: úsalos como claves (favoritos, enlaces profundos, notificaciones).
+
+## Asistente (chatbot)
+
+La web incluye un asistente de preguntas frecuentes (`js/asistente.js`) que lee `preguntas.json`.
+Las apps pueden reutilizar los mismos datos y la misma lógica de búsqueda:
+
+1. Normalizar el texto (minúsculas, sin tildes, solo letras y números) y quitar plurales sencillos.
+2. Por cada pregunta, sumar 3 puntos por cada palabra clave que aparezca (frases de varias palabras: 3 + nº de palabras)
+   y 1 punto por cada palabra útil compartida con el enunciado. `urgente: true` suma 100 si coincide alguna clave.
+3. Responder con la mejor si tiene 3 puntos o más; si no, proponer las 3 más parecidas, guías de `temas.json` y contacto.
+
+Los enlaces del tipo `index.html#guia-<id>` apuntan a una guía de `temas.json`: en la app conviene abrir esa guía en pantalla.
+
+### Paso futuro a inteligencia artificial
+
+`preguntas.json` → `asistente.ia` tiene `activa` y `endpoint`. Al activarlo, la web envía por `POST` a ese endpoint
+`{ "pregunta": "...", "historial": [{ "rol": "persona|asistente", "texto": "..." }], "pagina": "/..." }` y espera
+`{ "respuesta": "texto con el mismo formato", "enlaces": [{ "texto": "...", "url": "..." }] }`.
+Si el servidor falla o tarda más de 15 segundos, responde con las preguntas frecuentes. Las urgencias se responden
+siempre con el texto revisado, sin pasar por la IA.
+
+El endpoint sería un pequeño servidor (por ejemplo, una función en Cloudflare Workers o Netlify) que guarda la clave de API
+en secreto y usa como contexto `preguntas.json`, `temas.json` y `servicios.json`. Antes de activarlo hay que actualizar
+la política de privacidad (los mensajes pasarían a enviarse a un tercero) y avisar en el propio asistente.
 
 ## Identidad visual
 
