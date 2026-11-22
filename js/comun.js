@@ -100,11 +100,11 @@
       '<nav class="nav" id="nav" aria-label="Principal">' + nav +
       '<a class="boton" href="empresa.html#contacto">Contacto</a></nav>' +
       '<div class="herramientas-acc">' +
-        '<button type="button" class="boton-acc boton-escuchar" id="boton-escuchar" data-escuchar="main" title="Leer en voz alta esta página">' +
-          '<span class="icono-escuchar"></span><span class="texto-escuchar">Escuchar</span></button>' +
+        '<button type="button" class="boton-acc boton-escuchar" id="boton-escuchar" data-escuchar="main" data-icono="oido" data-texto="escucharPagina" data-texto-parar="pararLectura" title="Escuchar esta página">' +
+          '<span class="icono-escuchar"></span><span class="texto-escuchar oculto">Escuchar esta página</span></button>' +
         '<button type="button" class="boton-acc" id="boton-ajustes" aria-expanded="false" aria-controls="panel-acc">' +
           '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.5" r="1.8" fill="currentColor"/><path d="M5 8.5l7 1.5 7-1.5M12 10v4.5M12 14.5l-3 6M12 14.5l3 6"/></svg>' +
-          '<span class="texto-acc">Accesibilidad</span></button>' +
+          '<span class="texto-acc oculto-compacto">Accesibilidad</span></button>' +
       "</div>" +
       '<div class="panel-acc" id="panel-acc" role="dialog" aria-modal="false" aria-labelledby="acc-titulo" tabindex="-1" hidden></div>' +
       "</div></div></header>" +
