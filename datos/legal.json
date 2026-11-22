@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "_nota": "Textos legales. Las marcas {{titular.nombre}}, {{titular.nif}}, etc. se sustituyen solas con los datos de datos/sitio.json. Separa párrafos con \n\n y empieza las líneas de lista con '- '. IMPORTANTE: son plantillas de partida; conviene que las revise un profesional jurídico antes de usarlas con clientes reales.",
+  "terminos": {
+    "titulo": "Términos y condiciones de uso",
+    "actualizado": "22 de noviembre de 2026",
+    "secciones": [
+      {
+        "titulo": "1. Información del titular",
+        "texto": "En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa de los datos del titular de este sitio web:\n\n- Titular: {{titular.nombre}}\n- NIF/CIF: {{titular.nif}}\n- Domicilio: {{titular.domicilio}}\n- Correo electrónico: {{titular.email}}\n- Teléfono: {{titular.telefono}}\n- Datos registrales: {{titular.registro}}\n- Actividad: {{titular.actividad}}"
+      },
+      {
+        "titulo": "2. Objeto y aceptación",
+        "texto": "Estas condiciones regulan el acceso y el uso del sitio web {{sitio.nombre}} ({{sitio.web}}) y de las aplicaciones móviles que lo acompañen. Acceder o usar el sitio implica la aceptación de estas condiciones. Si no estás de acuerdo con ellas, te rogamos que no utilices el sitio.\n\nEl titular puede modificar estas condiciones en cualquier momento. La versión vigente es siempre la publicada en esta página, con su fecha de actualización."
+      },
+      {
+        "titulo": "3. Carácter informativo de los contenidos",
+        "texto": "Las guías y consejos de este sitio tienen una finalidad divulgativa y orientativa. No constituyen diagnóstico, tratamiento ni consejo médico personalizado, y no sustituyen la valoración de profesionales sanitarios o sociales.\n\nAnte cualquier duda sobre la salud de una persona, consulta con su centro de salud. En caso de urgencia, llama al 112."
+      },
+      {
+        "titulo": "4. Condiciones de uso",
+        "texto": "Te comprometes a usar el sitio de forma lícita, diligente y respetuosa, y a no:\n\n- Utilizarlo con fines ilícitos o contrarios a la buena fe y al orden público.\n- Introducir virus o cualquier sistema que pueda dañar el sitio o a otros usuarios.\n- Enviar a través del formulario contenidos ofensivos, falsos o datos de terceros sin su consentimiento.\n- Intentar acceder a áreas restringidas o a los sistemas del titular."
+      },
+      {
+        "titulo": "5. Propiedad intelectual e industrial",
+        "texto": "Los textos, el diseño, los logotipos y demás elementos del sitio pertenecen al titular o se usan con autorización, y están protegidos por el Real Decreto Legislativo 1/1996 (Ley de Propiedad Intelectual) y la normativa de propiedad industrial.\n\nPuedes consultar, imprimir y compartir los contenidos para uso personal y no comercial citando la fuente. Cualquier otro uso, reproducción o transformación requiere autorización previa y por escrito."
+      },
+      {
+        "titulo": "6. Enlaces a otros sitios y tienda",
+        "texto": "El sitio contiene enlaces a webs de terceros, entre ellas la sección Tienda, que enlaza con productos de proveedores como Amazon, tiendas basadas en Shopify u otros comercios.\n\n- {{sitio.nombre}} no vende directamente esos productos ni interviene en la compra. El contrato de compraventa se celebra entre tú y el proveedor, conforme a sus propias condiciones, precios, plazos de entrega, garantías y política de devoluciones.\n- Algunos enlaces son enlaces de afiliado: si compras a través de ellos, el titular puede recibir una comisión, sin coste adicional para ti. Los enlaces de afiliado se identifican en la propia tienda, de acuerdo con el artículo 20 de la LSSI-CE y la normativa de publicidad.\n- No nos hacemos responsables del contenido, la disponibilidad ni las prácticas de privacidad de las webs de terceros."
+      },
+      {
+        "titulo": "7. Derechos de las personas consumidoras",
+        "texto": "Cuando contrates alguno de nuestros servicios, serán de aplicación el Real Decreto Legislativo 1/2007, por el que se aprueba el texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios, y su normativa de desarrollo. Antes de contratar te informaremos por escrito del precio total, las características del servicio y, cuando proceda, de tu derecho de desistimiento de 14 días naturales en contratos celebrados a distancia o fuera del establecimiento.\n\nDisponemos de hojas de reclamaciones a disposición de las personas consumidoras. También puedes dirigir tus reclamaciones a {{titular.email}}, al Servicio de Consumo del Gobierno de Navarra o, en compras en línea, a la plataforma europea de resolución de litigios en línea: https://ec.europa.eu/consumers/odr."
+      },
+      {
+        "titulo": "8. Responsabilidad",
+        "texto": "El titular procura que el sitio funcione correctamente y que su información sea exacta y esté actualizada, pero no garantiza la ausencia de interrupciones o errores. En la medida permitida por la ley, no responde de los daños derivados de un uso indebido del sitio, de decisiones tomadas solo con base en la información divulgativa publicada, ni de los contenidos de sitios de terceros enlazados."
+      },
+      {
+        "titulo": "9. Protección de datos",
+        "texto": "El tratamiento de los datos personales que nos facilites se rige por nuestra Política de privacidad y protección de datos, disponible en este mismo sitio."
+      },
+      {
+        "titulo": "10. Legislación aplicable y jurisdicción",
+        "texto": "Estas condiciones se rigen por la legislación española y la normativa de la Unión Europea aplicable. Para cualquier controversia, las partes se someten a los juzgados y tribunales que correspondan conforme a la ley. Si eres consumidor, serán competentes los juzgados de tu domicilio."
+      }
+    ]
+  },
+  "privacidad": {
+    "titulo": "Privacidad y protección de datos",
+    "actualizado": "22 de noviembre de 2026",
+    "secciones": [
+      {
+        "titulo": "1. Responsable del tratamiento",
+        "texto": "De acuerdo con el Reglamento (UE) 2016/679, General de Protección de Datos (RGPD), y la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), te informamos de que el responsable del tratamiento de tus datos es:\n\n- Responsable: {{titular.nombre}}\n- NIF/CIF: {{titular.nif}}\n- Domicilio: {{titular.domicilio}}\n- Correo electrónico: {{titular.email}}\n- Delegado de protección de datos: {{titular.dpd}}"
+      },
+      {
+        "titulo": "2. Qué datos tratamos y para qué",
+        "texto": "Solo tratamos los datos que nos facilitas voluntariamente:\n\n- Formulario de contacto: nombre, correo electrónico, teléfono (opcional), motivo y el contenido del mensaje. Los usamos para responder a tu consulta y, si lo solicitas, para informarte sobre nuestros servicios.\n- Contratación de servicios: los datos necesarios para prestar el servicio, facturar y cumplir nuestras obligaciones legales.\n\nTe pedimos que en el formulario no incluyas datos de salud ni de terceras personas salvo que sea imprescindible para tu consulta. Si los incluyes, los trataremos solo para atenderla, con base en tu consentimiento explícito (artículo 9.2.a del RGPD)."
+      },
+      {
+        "titulo": "3. Base jurídica",
+        "texto": "- Consentimiento de la persona interesada (artículo 6.1.a del RGPD), que prestas al marcar la casilla del formulario y que puedes retirar en cualquier momento.\n- Ejecución de un contrato o aplicación de medidas precontractuales a petición tuya (artículo 6.1.b), cuando solicitas o contratas un servicio.\n- Cumplimiento de obligaciones legales (artículo 6.1.c), por ejemplo fiscales y contables."
+      },
+      {
+        "titulo": "4. Plazo de conservación",
+        "texto": "Conservamos los datos de las consultas el tiempo necesario para responderlas y, como máximo, un año desde el último contacto, salvo que se inicie una relación contractual. Los datos de clientes se conservan mientras dure la relación y, después, durante los plazos legales de prescripción (por ejemplo, seis años para la documentación contable según el Código de Comercio). Después se suprimen o anonimizan."
+      },
+      {
+        "titulo": "5. Destinatarios y encargados del tratamiento",
+        "texto": "No cedemos tus datos a terceros salvo obligación legal. Para prestar el servicio contamos con proveedores que actúan como encargados del tratamiento, con los que se han firmado o aceptado las garantías exigidas por el artículo 28 del RGPD:\n\n- FormSubmit (formsubmit.co): servicio que reenvía los mensajes del formulario de contacto a nuestro correo.\n- Proton AG (Suiza): proveedor de nuestro correo electrónico. Suiza cuenta con una decisión de adecuación de la Comisión Europea.\n- GitHub, Inc. (GitHub Pages): alojamiento del sitio web, que puede registrar direcciones IP de forma técnica por motivos de seguridad.\n\nAlgunos de estos proveedores pueden tratar datos fuera del Espacio Económico Europeo. En ese caso, las transferencias se amparan en decisiones de adecuación (como el Marco de Privacidad de Datos UE-EE. UU. para las entidades adheridas) o en cláusulas contractuales tipo aprobadas por la Comisión Europea."
+      },
+      {
+        "titulo": "6. Tus derechos",
+        "texto": "Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, supresión, oposición, limitación del tratamiento y portabilidad, así como retirar tu consentimiento, escribiendo a {{titular.email}} o a {{titular.domicilio}}, indicando el derecho que ejerces y acreditando tu identidad.\n\nSi consideras que no hemos atendido correctamente tus derechos, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es), C/ Jorge Juan, 6, 28001 Madrid."
+      },
+      {
+        "titulo": "7. Menores de edad",
+        "texto": "Este sitio no está dirigido a menores de 14 años. Si eres menor de esa edad, no nos envíes datos personales sin el consentimiento de tus padres o tutores (artículo 7 de la LOPDGDD)."
+      },
+      {
+        "titulo": "8. Seguridad",
+        "texto": "Aplicamos medidas técnicas y organizativas adecuadas al riesgo para proteger tus datos: conexión cifrada (HTTPS), correo cifrado, acceso restringido a la información y deber de confidencialidad de todas las personas que la tratan."
+      },
+      {
+        "titulo": "9. Cookies y almacenamiento local",
+        "texto": "Este sitio no utiliza cookies propias ni de terceros con fines analíticos, publicitarios o de seguimiento. Las fuentes tipográficas se sirven desde nuestro propio alojamiento, sin conexión a servicios externos.\n\nSolo guardamos en tu navegador (almacenamiento local) tu preferencia de tamaño de letra, si pulsas el botón «Texto grande». Es un dato técnico, no identifica a nadie y está exento de consentimiento conforme al artículo 22.2 de la LSSI-CE. Puedes borrarlo en cualquier momento desde la configuración de tu navegador.\n\nAl pulsar un enlace de la Tienda saldrás de nuestro sitio. Las webs de los proveedores (por ejemplo, Amazon) pueden instalar sus propias cookies, incluidas las de afiliación, según sus políticas, que te recomendamos consultar.\n\nSi en el futuro incorporamos cookies que requieran consentimiento (por ejemplo, de analítica), mostraremos antes un aviso para que puedas aceptarlas o rechazarlas, y actualizaremos esta política."
+      },
+      {
+        "titulo": "10. Cambios en esta política",
+        "texto": "Podemos actualizar esta política para adaptarla a cambios legales o del servicio. Publicaremos siempre la versión vigente en esta página con su fecha de actualización."
+      }
+    ]
+  }
+}

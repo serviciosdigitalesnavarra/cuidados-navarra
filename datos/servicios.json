@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "_nota": "Cada servicio: id (sin espacios), icono (emoji), titulo, resumen, detalles (lista) y, si quieres, precio orientativo. Borra o añade bloques libremente.",
+  "intro": "Apoyos pensados para que la persona mayor o dependiente siga en su entorno con seguridad, y para que la familia respire tranquila.",
+  "servicios": [
+    { "id": "domicilio", "icono": "🏠", "titulo": "Cuidado en el domicilio", "resumen": "Ayuda en el aseo, la movilidad, las comidas y la rutina diaria, en la propia casa.", "detalles": ["Higiene y cuidado personal", "Movilizaciones y transferencias seguras", "Preparación de comidas y control de la hidratación", "Recordatorio de medicación"], "precio": "[Desde 00 €/hora]" },
+    { "id": "acompanamiento", "icono": "🚶", "titulo": "Acompañamiento", "resumen": "Compañía en casa, paseos, recados y visitas médicas para combatir la soledad.", "detalles": ["Acompañamiento a consultas y gestiones", "Paseos y actividades de estimulación", "Conversación y compañía"], "precio": "[Consultar]" },
+    { "id": "respiro", "icono": "🌙", "titulo": "Respiro familiar", "resumen": "Sustituimos a la persona cuidadora unas horas, una noche o un fin de semana.", "detalles": ["Cuidados de día y de noche", "Fines de semana y vacaciones", "Planificación con la familia"], "precio": "[Consultar]" },
+    { "id": "orientacion", "icono": "📋", "titulo": "Orientación y trámites", "resumen": "Te ayudamos a entender y solicitar la valoración de dependencia y otras ayudas.", "detalles": ["Información sobre la Ley de Dependencia", "Ayuda con formularios y documentación", "Recursos públicos y privados de Navarra"], "precio": "[Primera consulta gratuita]" },
+    { "id": "hogar", "icono": "🛠️", "titulo": "Adaptación del hogar", "resumen": "Revisamos la vivienda y proponemos cambios sencillos para prevenir caídas.", "detalles": ["Visita y valoración de riesgos", "Recomendación de ayudas técnicas", "Asesoramiento en teleasistencia y tecnología"], "precio": "[Consultar]" },
+    { "id": "formacion", "icono": "🎓", "titulo": "Formación para cuidadores", "resumen": "Talleres prácticos para familias y profesionales: movilizaciones, alimentación, demencias.", "detalles": ["Talleres presenciales y en línea", "Grupos reducidos", "Material práctico para casa"], "precio": "[Consultar]" }
+  ]
+}

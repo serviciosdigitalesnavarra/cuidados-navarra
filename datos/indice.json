@@ -1,0 +1,14 @@
+{
+  "_nota": "Índice de datos para la web y las apps. Al cambiar un archivo de datos, sube su 'version' aquí y en el propio archivo: las apps comparan este índice para saber qué descargar de nuevo.",
+  "esquema": 1,
+  "actualizado": "2026-11-22",
+  "base": "https://serviciosdigitalesnavarra.github.io/cuidados-navarra/datos/",
+  "archivos": {
+    "sitio":     { "archivo": "sitio.json",     "version": 1, "contenido": "Nombre, contacto, datos del titular y textos de portada" },
+    "temas":     { "archivo": "temas.json",     "version": 1, "contenido": "Temáticas (categorias) y guías (articulos)" },
+    "empresa":   { "archivo": "empresa.json",   "version": 1, "contenido": "Quiénes somos, valores y decálogo" },
+    "servicios": { "archivo": "servicios.json", "version": 1, "contenido": "Catálogo de servicios" },
+    "tienda":    { "archivo": "tienda.json",    "version": 1, "contenido": "Proveedores, categorías y productos enlazados" },
+    "legal":     { "archivo": "legal.json",     "version": 1, "contenido": "Términos y condiciones, privacidad y cookies" }
+  }
+}

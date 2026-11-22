@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "quienesSomos": {
+    "titulo": "Quiénes somos",
+    "parrafos": [
+      "Somos un equipo navarro de profesionales del ámbito sociosanitario que acompaña a personas mayores, personas en situación de dependencia y a sus familias.",
+      "Nacimos con una idea sencilla: que cuidar no tenga por qué hacerse en soledad ni con prisas. Por eso explicamos las cosas con calma, escuchamos antes de proponer y adaptamos cada apoyo a la vida real de cada casa.",
+      "[Añade aquí tu historia: cuándo empezasteis, quién forma el equipo, en qué zonas trabajáis.]"
+    ],
+    "datos": [
+      { "cifra": "[00]", "texto": "años de experiencia" },
+      { "cifra": "[000]", "texto": "familias acompañadas" },
+      { "cifra": "Navarra", "texto": "nuestra zona de trabajo" }
+    ]
+  },
+  "valores": [
+    { "icono": "🤍", "titulo": "Respeto y dignidad", "texto": "Cada persona decide sobre su vida. Cuidamos su intimidad, sus costumbres y su manera de hacer las cosas." },
+    { "icono": "🌿", "titulo": "Calma", "texto": "Trabajamos sin prisas, con tiempo para escuchar y explicar. La tranquilidad también cura." },
+    { "icono": "🩺", "titulo": "Rigor profesional", "texto": "Nos basamos en buenas prácticas sanitarias y sociales, y nos formamos de manera continua." },
+    { "icono": "🤝", "titulo": "Cercanía", "texto": "Somos de aquí y conocemos los recursos de nuestra comunidad. Hablamos claro y estamos localizables." },
+    { "icono": "🔒", "titulo": "Confidencialidad", "texto": "Lo que sabemos de cada familia se queda en la familia. Protegemos sus datos con el máximo cuidado." },
+    { "icono": "💚", "titulo": "Cuidar a quien cuida", "texto": "Las personas cuidadoras también necesitan apoyo, descanso y reconocimiento." }
+  ],
+  "decalogo": [
+    "Trataremos a cada persona por su nombre, con respeto y cariño.",
+    "Escucharemos antes de proponer: la persona cuidada es la protagonista de su cuidado.",
+    "Respetaremos su intimidad, sus creencias, sus horarios y sus costumbres.",
+    "Fomentaremos su autonomía: haremos con ella, no por ella, siempre que sea posible.",
+    "Explicaremos cada paso con palabras sencillas, sin tecnicismos innecesarios.",
+    "Actuaremos con prudencia y derivaremos a profesionales sanitarios cuando haga falta.",
+    "Guardaremos con discreción toda la información personal y de salud.",
+    "Cuidaremos también a la familia y a las personas cuidadoras.",
+    "Seremos puntuales, constantes y fáciles de localizar.",
+    "Revisaremos y mejoraremos nuestro trabajo escuchando a quienes atendemos."
+  ]
+}

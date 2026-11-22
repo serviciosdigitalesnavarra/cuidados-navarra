@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nuestra empresa · Cuidados Navarra</title>
+  <meta name="description" content="Quiénes somos, nuestros valores, nuestro decálogo de cuidado y formulario de contacto de Cuidados Navarra.">
+  <meta name="theme-color" content="#EAF6EC">
+  <meta name="apple-mobile-web-app-title" content="Cuidados Navarra">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icono-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/lato-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="empresa">
+  <main id="contenido">
+    <div class="contenedor">
+      <nav class="subnav" aria-label="Apartados de Nuestra empresa">
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#valores">Nuestros valores</a>
+        <a href="#decalogo">Decálogo</a>
+        <a href="#contacto">Formulario de contacto</a>
+      </nav>
+
+      <section class="bloque" id="quienes-somos">
+        <div class="dos-columnas">
+          <div>
+            <span class="antetitulo">Nuestra empresa</span>
+            <h1 class="titulo-seccion" id="qs-titulo">Quiénes somos</h1>
+            <div id="qs-texto"><p class="cargando">Cargando…</p></div>
+          </div>
+          <div class="cifras" id="qs-cifras"></div>
+        </div>
+      </section>
+
+      <section class="bloque" id="valores">
+        <div class="cabeza-seccion">
+          <span class="antetitulo">Lo que nos mueve</span>
+          <h2 class="titulo-seccion">Nuestros valores</h2>
+        </div>
+        <div class="rejilla-valores" id="lista-valores"></div>
+      </section>
+
+      <section class="bloque" id="decalogo">
+        <div class="cabeza-seccion">
+          <span class="antetitulo">Nuestro compromiso</span>
+          <h2 class="titulo-seccion">Decálogo del buen cuidado</h2>
+          <p class="subtitulo">Diez compromisos que cumplimos con cada persona y cada familia.</p>
+        </div>
+        <ol class="decalogo" id="lista-decalogo"></ol>
+      </section>
+
+      <section class="bloque" id="contacto">
+        <div class="contacto-rejilla">
+          <div>
+            <span class="antetitulo">Contacto</span>
+            <h2 class="titulo-seccion">Estamos aquí para ayudarte</h2>
+            <p class="subtitulo">Cuéntanos tu situación o tu duda. Te responderemos lo antes posible, con calma y sin compromiso.</p>
+            <div class="panel-verde">
+              <p><strong>Si se trata de una urgencia médica, llama al 112.</strong></p>
+              <p>Para consultas sobre la salud de una persona, contacta también con su centro de salud.</p>
+              <p style="margin:0">También puedes escribirnos a <a id="email-contacto" href="mailto:serviciosdigitalesnavarra@protonmail.com">serviciosdigitalesnavarra@protonmail.com</a></p>
+            </div>
+          </div>
+
+          <div>
+            <!--
+              ENVÍO DEL FORMULARIO
+              Los mensajes se envían con FormSubmit (gratuito, sin servidor propio)
+              a la dirección indicada en "action". Para cambiar el correo,
+              sustituye la dirección aquí y en js/contacto.js (líneas marcadas ← CORREO).
+            -->
+            <form id="formulario" action="https://formsubmit.co/serviciosdigitalesnavarra@protonmail.com" method="POST"><!-- ← CORREO -->
+              <input type="hidden" name="_subject" value="Nuevo mensaje desde la web Cuidados Navarra">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" class="oculto" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="nombre">Nombre</label>
+                  <input id="nombre" name="nombre" type="text" required autocomplete="name">
+                </div>
+                <div class="campo">
+                  <label for="telefono">Teléfono (opcional)</label>
+                  <input id="telefono" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
+                </div>
+              </div>
+              <div class="campo">
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" required autocomplete="email" inputmode="email">
+              </div>
+              <div class="campo">
+                <label for="motivo">Motivo de la consulta</label>
+                <select id="motivo" name="motivo">
+                  <option>Información sobre servicios</option>
+                  <option>Duda sobre cuidados</option>
+                  <option>Ayudas y trámites</option>
+                  <option>Tienda y productos</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" required placeholder="Por favor, no incluyas datos de salud que no sean necesarios."></textarea>
+              </div>
+              <div class="casilla">
+                <input id="privacidad" name="privacidad" type="checkbox" value="Aceptada" required>
+                <label for="privacidad">He leído y acepto la <a href="privacidad.html" target="_blank">Política de privacidad</a>, y consiento que mis datos se usen para responder a mi consulta.</label>
+              </div>
+              <button class="boton" type="submit" id="enviar">Enviar mensaje</button>
+              <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+              <div class="info-datos">
+                <p><strong>Información básica sobre protección de datos</strong></p>
+                <p><strong>Responsable:</strong> <span id="resp-nombre">el titular de Cuidados Navarra</span>. <strong>Finalidad:</strong> responder a tu consulta. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos a terceros, salvo obligación legal; el envío se gestiona con FormSubmit como encargado del tratamiento. <strong>Derechos:</strong> acceso, rectificación, supresión y otros, como se explica en la <a href="privacidad.html">información adicional</a>.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/comun.js"></script>
+  <script src="js/empresa.js"></script>
+  <script src="js/contacto.js"></script>
+</body>
+</html>

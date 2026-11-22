@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nuestros servicios · Cuidados Navarra</title>
+  <meta name="description" content="Cuidado en el domicilio, acompañamiento, respiro familiar, orientación en trámites de dependencia, adaptación del hogar y formación para cuidadores.">
+  <meta name="theme-color" content="#EAF6EC">
+  <meta name="apple-mobile-web-app-title" content="Cuidados Navarra">
+  <link rel="icon" href="img/icono.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/icono-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="fuentes/lato-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fuentes/lato-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="servicios">
+  <main id="contenido">
+    <div class="contenedor">
+      <section class="bloque">
+        <div class="cabeza-seccion">
+          <span class="antetitulo">Lo que hacemos</span>
+          <h1 class="titulo-seccion">Nuestros servicios</h1>
+          <p class="subtitulo" id="servicios-intro"></p>
+        </div>
+        <div class="rejilla-servicios" id="lista-servicios"><p class="cargando">Cargando…</p></div>
+      </section>
+      <section class="banda-negra">
+        <div>
+          <h2>¿No sabes qué servicio necesitas?</h2>
+          <p>Cuéntanos vuestra situación y te orientamos sin compromiso.</p>
+        </div>
+        <a class="boton" href="empresa.html#contacto">Pedir información</a>
+      </section>
+    </div>
+  </main>
+  <script src="js/comun.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var el = document.getElementById("lista-servicios");
+      CN.cargar("servicios").then(function (d) {
+        document.getElementById("servicios-intro").textContent = d.intro || "";
+        el.innerHTML = (d.servicios || []).map(function (s, i) {
+          return '<article class="servicio" id="' + CN.esc(s.id) + '" style="animation-delay:' + i * 60 + 'ms">' +
+            '<div class="icono" aria-hidden="true">' + s.icono + "</div>" +
+            "<h3>" + CN.esc(s.titulo) + "</h3><p>" + CN.resaltar(s.resumen) + "</p>" +
+            "<ul>" + (s.detalles || []).map(function (x) { return "<li>" + CN.resaltar(x) + "</li>"; }).join("") + "</ul>" +
+            '<div class="pie-servicio"><span class="precio">' + CN.resaltar(s.precio || "") + "</span>" +
+            '<a class="boton" href="empresa.html#contacto">Solicitar</a></div></article>';
+        }).join("");
+      }).catch(function () { CN.errorCarga(el); });
+    });
+  </script>
+</body>
+</html>

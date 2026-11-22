@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "actualizado": "2026-11-22",
+  "nombre": "Cuidados Navarra",
+  "nombrePartes": ["Cuidados", "Navarra"],
+  "lema": "Cuidar mejor, con calma y con confianza",
+  "descripcion": "Guías, servicios y recursos para acompañar a personas mayores y dependientes, y para cuidar también de quien cuida.",
+  "web": "https://serviciosdigitalesnavarra.github.io/cuidados-navarra/",
+  "contacto": {
+    "email": "serviciosdigitalesnavarra@protonmail.com",
+    "telefono": "[TELÉFONO DE CONTACTO]",
+    "horario": "De lunes a viernes, de 9:00 a 14:00"
+  },
+  "titular": {
+    "_nota": "RELLENA ESTOS DATOS. Aparecen en Términos y condiciones y en Privacidad. Lo que vaya entre [corchetes] se muestra resaltado hasta que lo cambies.",
+    "nombre": "[NOMBRE O RAZÓN SOCIAL DEL TITULAR]",
+    "nif": "[NIF / CIF]",
+    "domicilio": "[DOMICILIO SOCIAL COMPLETO, CÓDIGO POSTAL Y LOCALIDAD]",
+    "email": "serviciosdigitalesnavarra@protonmail.com",
+    "telefono": "[TELÉFONO]",
+    "registro": "[DATOS DE INSCRIPCIÓN EN EL REGISTRO MERCANTIL, SI ES SOCIEDAD; SI NO, BORRA ESTA LÍNEA]",
+    "actividad": "Información y orientación sobre cuidados a personas mayores y dependientes, y prestación de servicios de apoyo",
+    "dpd": "[DELEGADO DE PROTECCIÓN DE DATOS, SI LO HAY; SI NO, ESCRIBE: No designado]"
+  },
+  "portada": {
+    "titulo": "Cuidar mejor, con calma y con confianza",
+    "texto": "Guías prácticas, servicios cercanos y productos útiles para acompañar a personas mayores y dependientes en su día a día.",
+    "imagen": "img/portada.svg",
+    "imagenAlt": "Planta verde en un salón luminoso y tranquilo",
+    "tarjeta": {
+      "titulo": "Un cuidado tranquilo empieza por una buena información",
+      "texto": "Consejos revisados y explicados con palabras sencillas, para familias y profesionales."
+    }
+  },
+  "avisoSanitario": "La información de esta web es orientativa y no sustituye la consulta con profesionales sanitarios. En caso de urgencia, llama al 112."
+}
