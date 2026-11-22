@@ -130,8 +130,13 @@
       if (a && s.avisoSanitario) a.textContent = s.avisoSanitario;
     }).catch(function () {});
 
+    // Asistente de preguntas frecuentes (chatbot): sus textos están en datos/preguntas.json
+    var sa = document.createElement("script");
+    sa.src = "js/asistente.js"; sa.defer = true;
+    document.body.appendChild(sa);
+
     // Si la página se abre con #ancla, vuelve a situarla cuando se pinten los contenidos
-    if (location.hash) setTimeout(function () { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }, 400);
+    if (location.hash && location.hash.indexOf("#guia-") !== 0) setTimeout(function () { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }, 400);
   });
 
   window.CN = { esc: esc, resaltar: resaltar, plantilla: plantilla, formatear: formatear, cargar: cargar, errorCarga: errorCarga };

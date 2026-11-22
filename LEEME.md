@@ -25,6 +25,7 @@ datos/                ← AQUÍ se editan todos los contenidos
   servicios.json      Servicios
   tienda.json         Proveedores, categorías y productos de la tienda
   legal.json          Textos legales
+  preguntas.json      Preguntas y respuestas del asistente (chatbot)
   indice.json         Índice y versiones de los datos (para las apps)
 
 css/estilos.css       Estilos. Colores al principio del archivo (verde #47C269, negro, blanco)
@@ -55,6 +56,26 @@ Ejemplos:
 - **Añadir un producto a la tienda**: en `tienda.json`, copia un bloque de `productos`. `proveedor` es `amazon`, `shopify` u `otros` (o uno nuevo que añadas en `proveedores`). Puedes poner `imagen` con la dirección de una foto; si no, se muestra el `icono`.
 - **ID de afiliado de Amazon**: escríbelo en `proveedores` → `amazon` → `etiquetaAfiliado` (por ejemplo `"cuidados-21"`) y se añadirá solo a todos los enlaces de Amazon.
 - Un enlace con `[corchetes]` aparece como «Próximamente» hasta que pongas la dirección real.
+
+## Asistente de preguntas frecuentes (chatbot)
+
+En todas las páginas aparece abajo a la derecha el botón **«¿Dudas?»**. Abre un asistente que responde
+con los textos de `datos/preguntas.json`. Funciona sin servidor y sin coste, y lo que escribe la gente
+**no se envía ni se guarda** en ningún sitio.
+
+- **Añadir una pregunta**: copia un bloque `{ ... }` de `preguntas`, ponle un `id` nuevo y rellena
+  `pregunta`, `respuesta` y `palabrasClave`.
+- **`palabrasClave`** es lo más importante: escribe las palabras o frases cortas que usaría una persona
+  («se ha caído», «escaras», «cuánto cuesta»). Da igual poner tildes o mayúsculas, y los plurales se reconocen solos.
+- **`enlaces`** (opcional): botones bajo la respuesta. Para abrir una guía concreta usa
+  `index.html#guia-art-005` (el `id` de la guía en `temas.json`).
+- **`urgente: true`** hace que esa respuesta gane siempre (se usa para la del 112).
+- **`oculta: true`** evita que se proponga como sugerencia (saludos, «gracias»…).
+- En `asistente` cambias el saludo, el aviso, el texto cuando no sabe responder y las preguntas
+  que se ofrecen al abrir (`sugerencias`, por su `id`).
+- Si no encuentra respuesta, propone preguntas parecidas, guías relacionadas y el formulario de contacto.
+
+Para que algún día responda con inteligencia artificial, ver `APPS.md`, apartado «Asistente».
 
 Cuando cambies un archivo, sube su número de `version` en `datos/indice.json` (lo usan las apps para saber que hay novedades).
 

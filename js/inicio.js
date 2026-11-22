@@ -76,6 +76,13 @@
     if (d.showModal) d.showModal(); else d.setAttribute("open", "");
   }
 
+  // Enlaces directos a una guía: index.html#guia-art-005 (los usa el asistente)
+  function abrirDesdeEnlace() {
+    var m = /^#guia-(.+)$/.exec(location.hash);
+    if (m && ARTS.length) abrir(decodeURIComponent(m[1]));
+  }
+  window.addEventListener("hashchange", abrirDesdeEnlace);
+
   function elegir(id, desplazar) {
     estado.categoria = id; pintarFiltros(); pintarArticulos();
     if (desplazar) document.getElementById("guias").scrollIntoView({ behavior: "smooth" });
@@ -86,6 +93,7 @@
     CN.cargar("temas").then(function (d) {
       CATS = d.categorias || []; ARTS = d.articulos || [];
       pintarTemas(); pintarFiltros(); pintarArticulos(); pintarDestacados();
+      abrirDesdeEnlace();
     }).catch(function () { CN.errorCarga($("#rejilla-temas")); $("#destacados").hidden = true; });
 
     document.addEventListener("click", function (e) {
@@ -101,6 +109,10 @@
     });
     var d = $("#dialogo");
     $("#cerrar-dialogo").addEventListener("click", function () { d.close ? d.close() : d.removeAttribute("open"); });
+    // Al cerrar una guía abierta por enlace, se limpia la dirección para poder volver a abrirla
+    d.addEventListener("close", function () {
+      if (/^#guia-/.test(location.hash) && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+    });
     d.addEventListener("click", function (e) { if (e.target === d) d.close(); });
   });
 })();
