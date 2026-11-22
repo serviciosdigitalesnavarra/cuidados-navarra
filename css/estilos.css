@@ -396,6 +396,9 @@ section[id], [id].bloque { scroll-margin-top: 110px; }
   html.asistente-abierto .asistente-boton { display: none; }
 }
 @media print { .asistente { display: none; } }
+.asistente-origen { margin: 0 0 .35rem; font-size: .78rem; font-weight: 700; color: var(--verde-texto); text-transform: uppercase; letter-spacing: .04em; }
+
+/* ============================================================
    ACCESIBILIDAD: botones «Escuchar» y «Accesibilidad», panel de ajustes,
    barra de lectura en voz alta, alto contraste y más espaciado.
    ============================================================ */
@@ -564,7 +567,3 @@ html.alto-contraste .pista-interruptor { background: #555; }
 html.alto-contraste .interruptor input:checked + .pista-interruptor { background: #000; }
 html.alto-contraste :focus-visible { outline: 3px solid #000; outline-offset: 3px; box-shadow: 0 0 0 6px #fff, 0 0 0 9px #000; }
 html.alto-contraste .lector-actual { background: #FFE14D; box-shadow: 0 0 0 .3em #FFE14D; color: #000; }
-=======
-.asistente-origen { margin: 0 0 .35rem; font-size: .78rem; font-weight: 700; color: var(--verde-texto); text-transform: uppercase; letter-spacing: .04em; }
-
-/* =====================================================
