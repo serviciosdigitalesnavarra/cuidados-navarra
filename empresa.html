@@ -12,6 +12,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="fuentes/lato-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fuentes/lato-900.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="js/idioma.js"></script><!-- idioma (castellano / euskera): debe ir antes que el resto -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body data-pagina="empresa">
@@ -108,14 +109,14 @@
               </div>
               <div class="casilla">
                 <input id="privacidad" name="privacidad" type="checkbox" value="Aceptada" required>
-                <label for="privacidad">He leído y acepto la <a href="privacidad.html" target="_blank">Política de privacidad<span class="oculto"> (se abre en otra pestaña)</span></a>, y consiento que mis datos se usen para responder a mi consulta.</label>
+                <label for="privacidad" data-t="casilla-privacidad">He leído y acepto la <a href="privacidad.html" target="_blank">Política de privacidad<span class="oculto"> (se abre en otra pestaña)</span></a>, y consiento que mis datos se usen para responder a mi consulta.</label>
               </div>
               <button class="boton" type="submit" id="enviar">Enviar mensaje</button>
               <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
 
               <div class="info-datos">
                 <p><strong>Información básica sobre protección de datos</strong></p>
-                <p><strong>Responsable:</strong> <span id="resp-nombre">el titular de Cuidados Navarra</span>. <strong>Finalidad:</strong> responder a tu consulta. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos a terceros, salvo obligación legal; el envío se gestiona con FormSubmit como encargado del tratamiento. <strong>Derechos:</strong> acceso, rectificación, supresión y otros, como se explica en la <a href="privacidad.html">información adicional</a>.</p>
+                <p data-t="info-datos"><strong>Responsable:</strong> <span id="resp-nombre">el titular de Cuidados Navarra</span>. <strong>Finalidad:</strong> responder a tu consulta. <strong>Legitimación:</strong> tu consentimiento. <strong>Destinatarios:</strong> no se ceden datos a terceros, salvo obligación legal; el envío se gestiona con FormSubmit como encargado del tratamiento. <strong>Derechos:</strong> acceso, rectificación, supresión y otros, como se explica en la <a href="privacidad.html">información adicional</a>.</p>
               </div>
             </form>
           </div>

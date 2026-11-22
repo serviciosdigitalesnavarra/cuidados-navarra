@@ -7,12 +7,13 @@
       var d = r[0][doc], s = r[1];
       var datos = { sitio: s, titular: s.titular || {} };
       var ids = d.secciones.map(function (sec, i) {
-        return /cookies/i.test(sec.titulo) ? "cookies" : "seccion-" + (i + 1);
+        return /cookie/i.test(sec.titulo) ? "cookies" : "seccion-" + (i + 1);
       });
       var pendientes = JSON.stringify(s.titular || {}).indexOf("[") !== -1;
       el.innerHTML = "<h1>" + CN.esc(d.titulo) + "</h1>" +
-        '<p class="fecha">Última actualización: ' + CN.esc(d.actualizado) + "</p>" +
-        (pendientes ? '<p class="nota-revision">Los datos <span class="pendiente">[resaltados]</span> están pendientes de completar por el titular. Este texto es una plantilla adaptada a la normativa española y europea; se recomienda su revisión por un profesional jurídico.</p>' : "") +
+        '<p class="fecha">' + CN.esc(CN.t("Última actualización: {fecha}", { fecha: d.actualizado })) + "</p>" +
+        (window.I18N && I18N.idioma !== I18N.base ? '<p class="nota-revision">' + CN.t("html:nota-traduccion") + "</p>" : "") +
+        (pendientes ? '<p class="nota-revision" data-t="nota-revision">Los datos <span class="pendiente">[resaltados]</span> están pendientes de completar por el titular. Este texto es una plantilla adaptada a la normativa española y europea; se recomienda su revisión por un profesional jurídico.</p>' : "") +
         '<nav class="indice-legal" aria-label="Índice">' + d.secciones.map(function (sec, i) {
           return '<a href="#' + ids[i] + '">' + CN.esc(sec.titulo) + "</a>";
         }).join("") + "</nav>" +

@@ -1,0 +1,88 @@
+{
+  "_nota": "Traducción al euskera de datos/temas.json (solo textos; iconos, categoría y 'destacado' salen del archivo en castellano). Una guía nueva que no esté aquí se muestra en castellano hasta que se traduzca: copia su bloque con el mismo id. Pendiente de revisión por una persona nativa, sobre todo los consejos de salud.",
+  "version": 1,
+  "categorias": [
+    { "id": "higiene", "nombre": "Higienea eta zaintza pertsonala", "descripcion": "Garbiketa, azala, ahoa eta janztea, duintasunez eta segurtasunez." },
+    { "id": "alimentacion", "nombre": "Elikadura", "descripcion": "Dietak, hidratazioa eta jaten laguntzea." },
+    { "id": "movilidad", "nombre": "Mugikortasuna eta erorikoak", "descripcion": "Mugiarazteak, lekualdatzeak eta erorikoen prebentzioa." },
+    { "id": "medicacion", "nombre": "Medikazioa eta osasuna", "descripcion": "Tratamenduen antolaketa eta alerta-seinaleak." },
+    { "id": "memoria", "nombre": "Memoria eta dementziak", "descripcion": "Narriadura kognitiboari lasai lagundu." },
+    { "id": "hogar", "nombre": "Etxe segurua", "descripcion": "Egokitzapen errazak autonomiaz bizitzeko." },
+    { "id": "cuidador", "nombre": "Zaintzailea zaindu", "descripcion": "Atsedena, laguntza emozionala eta baliabideak." },
+    { "id": "tramites", "nombre": "Laguntzak eta izapideak", "descripcion": "Mendekotasuna, prestazioak eta eskura dauden zerbitzuak." }
+  ],
+  "articulos": [
+    {
+      "id": "art-001",
+      "titulo": "Ohean garbitzea, urratsez urrats",
+      "resumen": "Nola egin garbiketa oso, eroso eta errespetuzko bat pertsona ezin denean altxatu.",
+      "contenido": "Hasi aurretik, prestatu behar duzun guztia, pertsona bakarrik ez uzteko: ur epeldun bi kubeta, xaboi neutroa, belakiak, eskuoihalak eta arropa garbia.\n\nAzaldu urrats bakoitza egin aurretik, eta estali eskuoihal batez garbitzen ari ez zaren guneak, haren intimitatea zaintzeko eta hotzik pasa ez dezan.\n\n- Garbitu gune garbienetatik zikinenetara: aurpegia, besoak, toraxa, hankak eta, azkenik, genitalen gunea.\n- Lehortu ondo azalaren tolesturak, batez ere besapeak, iztaiak eta behatzen artea.\n- Aprobetxatu azala aztertzeko, gorriunerik edo zauririk dagoen ikusteko.\n- Eman krema hidratatzailea, masaje leun batekin.\n\nSakatzeari uztean desagertzen ez den gune gorrituren bat ikusten baduzu, esan haren erizainari edo medikuari."
+    },
+    {
+      "id": "art-002",
+      "titulo": "Presio-ultzerak saihestea",
+      "resumen": "Jarrera-aldaketak, azalaren hidratazioa eta garaiz jarduteko alerta-seinaleak.",
+      "contenido": "Presio-ultzerak gorputzeko gune batek denbora luzez presioa jasaten duenean agertzen dira. Ohikoagoak dira orpoetan, aldaketan, sakroan eta ukondoetan.\n\n- Aldatu jarrera ohean dagoen pertsonari 2 edo 3 orduz behin.\n- Mantendu azala garbi, lehor eta hidratatuta.\n- Erabili ultzeren aurkako kuxinak edo koltxoiak, gomendatzen badizkizute.\n- Saihestu izaren zimurrak eta pertsona mugitzean arrastaka eramatea.\n\nElikadura eta hidratazio onak ere babesten du azala."
+    },
+    {
+      "id": "art-003",
+      "titulo": "Adinekoen hidratazioa",
+      "resumen": "Adinarekin, egarri-sentsazioa gutxitu egiten da. Trikimailu txikiak behar adina edateko.",
+      "contenido": "Adinekoek egarri gutxiago sentitzen dute; beraz, konturatu gabe deshidrata daitezke. Alerta-seinaleak dira ahoa lehor izatea, gernu iluna, nekea edo nahasmena.\n\n- Eskaini ura maiz, eskatzen ez badute ere.\n- Utzi beti baso edo botila bat begi bistan eta eskura.\n- Sartu saldak, infusioak, gelatinak eta ur asko duten frutak.\n- Likidoak irensteko arazoak badaude, galdetu loditzaileak erabiltzeari buruz."
+    },
+    {
+      "id": "art-004",
+      "titulo": "Irensteko zailtasuna duenari jaten laguntzea",
+      "resumen": "Jarrera, testura egokiak eta zer egin pertsona itotzen bada.",
+      "contenido": "Irensteko zailtasuna (disfagia) ohikoa da iktus baten ondoren edo dementzia aurreratuetan.\n\n- Eseri ezazu ondo zuzen, kokotsa apur bat beherantz duela.\n- Eskaini koilarakada txikiak, eta itxaron irentsi arte hurrengoa eman aurretik.\n- Saihestu distrakzioak, telebista adibidez, jaten ari den bitartean.\n- Mantendu eserita jan ondoren gutxienez 30 minutuz.\n\nJatean edo edatean maiz eztul egiten badu, eskatu balorazioa haren osasun-taldeari."
+    },
+    {
+      "id": "art-005",
+      "titulo": "Etxean erorikoak saihestea",
+      "resumen": "Eroriko gehienak saihestu daitezke aldaketa txikiekin eta ohitura onekin.",
+      "contenido": "Erorikoak dira adinekoek autonomia galtzeko kausa nagusietako bat.\n\n- Kendu lurretik alfonbra solteak eta kableak.\n- Ziurtatu argiztapen ona, gauez ere (korridoreko argiak).\n- Erabili oinetako itxiak, zola irristagaitzarekin.\n- Jarri euskarri-barrak komunean.\n- Berrikusi medikuarekin zorabioa eragin dezaketen botikak.\n\nAktibo mantentzeak, paseoekin eta oreka-ariketekin, arriskua murrizten du."
+    },
+    {
+      "id": "art-006",
+      "titulo": "Ohetik aulkira pasatzea",
+      "resumen": "Teknika segurua pertsonarentzat eta zure bizkarrarentzat.",
+      "contenido": "Hasi aurretik, jarri aulkia ohearen ondoan, balaztatuta eta angeluan.\n\n- Lagundu pertsonari ohearen ertzean esertzen, oinak lurrean dituela.\n- Tolestu belaunak eta mantendu bizkarra zuzen.\n- Hel iezaiozu gerritik edo lekualdatze-gerriko batekin, inoiz ez besoetatik.\n- Biratu harekin batera oinen gainean pibotatuz, eta eseri ezazu poliki.\n\nIndar handia egin behar baduzu, eskatu garabiei edo lekualdatze-oholei buruzko informazioa."
+    },
+    {
+      "id": "art-007",
+      "titulo": "Asteko medikazioa antolatzea",
+      "resumen": "Pilula-kutxak, zerrendak eta errutinak dosiak ez ahazteko eta ez errepikatzeko.",
+      "contenido": "Hainbat botika hartzen direnean, antolaketa onak akatsak saihesten ditu.\n\n- Erabili asteko pilula-kutxa bat, egun eta ordu bakoitzeko konpartimentuekin.\n- Izan zerrenda eguneratu bat botika bakoitzarekin, dosiarekin eta zertarako den.\n- Lotu hartualdiak errutina finkoei, gosaria edo afaria adibidez.\n- Eraman zerrenda beti mediku-kontsultetara.\n\nEz aldatu edo eten inoiz tratamendu bat, kontsultatu gabe."
+    },
+    {
+      "id": "art-008",
+      "titulo": "Arreta behar duten alerta-seinaleak",
+      "resumen": "Noiz deitu osasun-etxera edo 112ra.",
+      "contenido": "Deitu 112ra bularreko mina, arnasteko zailtasuna, gorputzaren alde batean indarra galtzea, hitz egiteko zailtasuna edo konortea galtzea badago.\n\nKontsultatu haren osasun-etxearekin hauetakoren bat agertzen bada:\n\n- Jaisten ez den sukarra.\n- Nahasmen edo logura berria.\n- Jateari edo edateari uztea.\n- Eroriko bat, arina dirudien arren."
+    },
+    {
+      "id": "art-009",
+      "titulo": "Dementzia duen pertsona batekin komunikatzea",
+      "resumen": "Esaldi laburrak, tonu lasaia eta pazientzia handia.",
+      "contenido": "Komunikatzeko moduak asko murriz dezake pertsonaren antsietatea.\n\n- Jarri haren altueran eta begiratu begietara.\n- Erabili esaldi laburrak eta ideia bakarra aldi bakoitzean.\n- Ez zuzendu eta ez eztabaidatu; lagundu haren emozioari.\n- Baliatu keinuak, laztanak eta irribarre bat.\n\nEguneroko errutina egonkorrek segurtasuna ematen diote."
+    },
+    {
+      "id": "art-010",
+      "titulo": "Komuna egokitzea",
+      "resumen": "Komuna da arrisku handieneko lekua. Ideia erraz eta merkeak.",
+      "contenido": "Egokitzapen txikiek asko hobetzen dituzte segurtasuna eta autonomia.\n\n- Aldatu bainuontzia lurraren mailako dutxa-plater batengatik, ahal bada.\n- Jarri dutxako aulki edo aulkitxo bat.\n- Jarri euskarri-barrak komun-ontziaren eta dutxaren ondoan.\n- Erabili alfonbra irristagaitzak barruan eta kanpoan.\n- Komun-ontziaren altxagailu batek errazago egiten du esertzea eta altxatzea."
+    },
+    {
+      "id": "art-011",
+      "titulo": "Zaintzailearen nekea antzematea",
+      "resumen": "Zeure burua zaintzea artatzen duzun pertsona zaintzea ere bada.",
+      "contenido": "Etengabe zaintzeak nekea eragin dezake, fisikoa zein emozionala.\n\nKontuan hartu beharreko seinaleak:\n\n- Atsedenarekin hobetzen ez den nekea.\n- Suminkortasuna, tristura edo errudun sentitzea.\n- Zure zaletasunak eta harremanak alde batera uztea.\n\nEskatu laguntza senideei, bilatu laguntza-taldeak, eta galdetu zure inguruko atseden-zerbitzuei buruz. Egunean une bat zuretzat gordetzea ez da berekoikeria."
+    },
+    {
+      "id": "art-012",
+      "titulo": "Mendekotasunaren balorazioa eskatzea",
+      "resumen": "Laguntzak eta zerbitzuak eskuratzeko lehen urratsak.",
+      "contenido": "Mendekotasun-egoeraren balorazioak zerbitzuak eskuratzeko aukera ematen du, hala nola etxez etxeko laguntza, eguneko zentroa edo prestazio ekonomikoak.\n\n- Jo zure udaleko edo autonomia-erkidegoko gizarte-zerbitzuetara.\n- Prestatu haren medikuaren osasun-txosten eguneratua.\n- Bete eskaera pertsonaren eta zaintzailearen datuekin.\n\nGizarte-langile batek prozesu osoan orienta zaitzake."
+    }
+  ]
+}

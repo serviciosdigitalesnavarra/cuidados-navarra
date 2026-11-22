@@ -12,6 +12,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="preload" href="fuentes/lato-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fuentes/lato-900.woff2" as="font" type="font/woff2" crossorigin>
+  <script src="js/idioma.js"></script><!-- idioma (castellano / euskera): debe ir antes que el resto -->
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body data-pagina="accesibilidad">
@@ -23,7 +24,7 @@
   <main id="contenido">
     <div class="contenedor">
       <article class="bloque">
-        <div class="legal">
+        <div class="legal" id="texto-accesibilidad">
           <h1>Accesibilidad</h1>
           <p class="fecha">Última revisión: 22 de noviembre de 2026</p>
 
@@ -108,6 +109,93 @@
       </article>
     </div>
   </main>
+  <!-- VERSIÓN EN EUSKERA de este texto (se muestra al elegir EU). Si cambias el texto de arriba, cambia también este.
+       Traducción pendiente de revisión por una persona nativa. -->
+  <template data-idioma="eu" data-sustituye="texto-accesibilidad">
+          <h1>Irisgarritasuna</h1>
+          <p class="fecha">Azken berrikuspena: 2026ko azaroaren 22a</p>
+
+          <nav class="indice-legal" aria-label="Aurkibidea">
+            <a href="#escuchar">Webgunea ozen entzun</a>
+            <a href="#ajustes">Letra handiagoa, kontrastea eta tartea</a>
+            <a href="#lectores">Pantaila-irakurgailuak eta teklatua</a>
+            <a href="#declaracion">Irisgarritasun-adierazpena</a>
+            <a href="#limitaciones">Eduki ez-irisgarriak</a>
+            <a href="#contacto-accesibilidad">Arazo baten berri eman</a>
+          </nav>
+
+          <p>Edonork erabiltzea nahi dugu webgune hau, baita gutxi ikusten dutenek, pantailan irakurtzean nekatzen direnek edo pantaila-irakurgailua erabiltzen dutenek ere.</p>
+
+          <section id="escuchar">
+            <h2>Webgunea ozen entzun</h2>
+            <p>Sakatu <strong>«Entzun»</strong> botoia, goian eskuinean, eta webguneak orriko edukia ozen irakurriko du. Irakurtzen ari den paragrafoa horiz markatzen da.</p>
+            <p>Entzuten ari zaren bitartean, behean barra bat agertzen da pausatzeko, aurreko edo hurrengo paragrafora joateko eta irakurketa gelditzeko.</p>
+            <p>Hauek ere entzun ditzakezu:</p>
+            <ul>
+              <li>Gida bakoitza, ireki ondoren goian dagoen «Entzun gida» botoiarekin.</li>
+              <li>«Zalantzak?» laguntzailearen erantzunak, erantzun bakoitzeko «Entzun» botoiarekin. «Irisgarritasuna» panelean, berez irakur ditzan ezar dezakezu.</li>
+            </ul>
+            <p>Zure mugikorraren, tabletaren edo ordenagailuaren ahotsa erabiltzen da, beraz, ez duzu ezer instalatu behar. Euskarazko ahotsik ez badago, gailuak beste hizkuntza bateko ahotsa erabiliko du, eta azentu arrotza izan dezake. Euskarazko ahots bat instala dezakezu gailuaren ezarpenetan, eskuragarri badago:</p>
+            <ul>
+              <li>iPhone eta iPad: Ezarpenak › Erabilerraztasuna › Ahoz esandako edukia › Ahotsak.</li>
+              <li>Android: Ezarpenak › Erabilerraztasuna › Testua ahots bihurtzea › hizkuntza.</li>
+              <li>Windows: Ezarpenak › Ordua eta hizkuntza › Ahotsa › Gehitu ahotsak.</li>
+              <li>Mac: Sistemaren ezarpenak › Erabilerraztasuna › Ahoz esandako edukia › Sistemaren ahotsa.</li>
+            </ul>
+            <p>Zure iPhonea isilarazita badago, baliteke ez entzutea: desaktibatu isilik modua edo igo bolumena.</p>
+          </section>
+
+          <section id="ajustes">
+            <h2>Letra handiagoa, kontrastea eta tartea</h2>
+            <p>Sakatu <strong>«Irisgarritasuna»</strong> botoia (giza irudiaren ikonoa, goian eskuinean) hauek egiteko:</p>
+            <ul>
+              <li>Letra-tamaina aukeratu: arrunta, handia edo oso handia.</li>
+              <li>Kontraste handia aktibatu: testu beltza zuriaren gainean, ertz markatuak eta esteka azpimarratuak.</li>
+              <li>Lerroen, hitzen eta letren artean tarte handiagoa utzi, ahalegin txikiagoz irakurtzeko.</li>
+              <li>Ahotsaren abiadura aldatu: motela, arrunta edo azkarra.</li>
+            </ul>
+            <p>Zure ezarpenak nabigatzaile honetan gordetzen dira, eta orri guztietan mantentzen dira. «Berrezarri» sakatuta, hasierako ezarpenetara itzuliko zara.</p>
+            <p>Orria handitu ere egin dezakezu mugikorrean bi hatzekin zabalduta, edo ordenagailuan Ctrl eta + sakatuta (Cmd eta + Mac-en).</p>
+          </section>
+
+          <section id="lectores">
+            <h2>Pantaila-irakurgailuak eta teklatua</h2>
+            <p>Webgunea gehien erabiltzen diren pantaila-irakurgailuetarako prestatuta dago: VoiceOver iPhone, iPad eta Mac-en, TalkBack Androiden eta NVDA edo JAWS Windowsen. Izenburuek, menuek, botoiek eta formularioek izen argiak dituzte, irakurgailuak ondo iragar ditzan.</p>
+            <p>Teklatua erabiltzen baduzu, tabuladore-teklak estekak eta botoiak zeharkatzen ditu, eta ertz batek non zauden markatzen du. Orri bakoitzaren hasieran «Joan edukira» esteka dago, eta Ihes teklak irekitako leihoak ixten ditu.</p>
+            <p>Dagoeneko pantaila-irakurgailua erabiltzen baduzu, ez duzu «Entzun» botoia behar: zure irakurgailuak irakurriko du webgunea.</p>
+          </section>
+
+          <section id="declaracion">
+            <h2>Irisgarritasun-adierazpena</h2>
+            <p>Cuidados Navarrak bere webgunea irisgarria egiteko konpromisoa hartzen du, Web Edukiaren Irisgarritasun Jarraibideen (WCAG) 2.2 bertsioaren AA mailaren arabera; jarraibide horiek dira EN 301 549 Europako arauaren erreferentzia.</p>
+            <p><strong>Betetze-egoera:</strong> partzialki bat dator. Webgunearen zatirik handienak AA maila betetzen du, hurrengo atalean adierazitako salbuespenekin.</p>
+            <p><strong>Nola ebaluatu den:</strong> 2026ko azaroaren 22ko barne-berrikuspena, teklatu-probekin, kolore-kontrastearen probekin, testua handitzeko probekin eta pantaila-irakurgailuarekin irakurtzeko probekin.</p>
+            <p>Adierazpen hau urtean behin gutxienez berrikusiko da, eta webgunean aldaketa garrantzitsuak egiten diren bakoitzean.</p>
+          </section>
+
+          <section id="limitaciones">
+            <h2>Eduki ez-irisgarriak</h2>
+            <ul>
+              <li>Ozen irakurtzea nabigatzailearen eta gailu bakoitzean instalatutako ahotsen araberakoa da. Nabigatzaile zahar batzuek ez dute onartzen.</li>
+              <li>Euskarazko ahotsik gabeko gailuetan, euskarazko testuak beste hizkuntza bateko ahotsarekin irakur daitezke.</li>
+              <li>Dendako estekek eramaten duten kanpoko hornitzaileen orriak (adibidez, Amazon) ez dira gure ardura, eta baliteke irisgarriak ez izatea.</li>
+              <li>Harremanetarako formularioa kanpoko zerbitzu baten bidez bidaltzen da (FormSubmit), eta haren berrespen-orria ingelesez dago.</li>
+              <li>Titularrak osatu gabe dituen testu batzuk horiz nabarmenduta agertzen dira, [kortxete] artean.</li>
+              <li>Euskarazko itzulpena lehen bertsio bat da, eta berrikusten ari gara.</li>
+            </ul>
+          </section>
+
+          <section id="contacto-accesibilidad">
+            <h2>Arazo baten berri eman</h2>
+            <p>Erabili edo irakurri ezin duzun zerbait aurkitzen baduzu, edo informazioa beste formatu batean behar baduzu, jakinarazi iezaguzu, eta ahalik eta lasterren erantzungo dizugu:</p>
+            <ul>
+              <li><a href="empresa.html#contacto">Harremanetarako formularioaren</a> bidez, «Beste bat» arrazoia aukeratuta.</li>
+              <li>Posta elektronikoz, helbide honetara: <a href="mailto:serviciosdigitalesnavarra@protonmail.com">serviciosdigitalesnavarra@protonmail.com</a>.</li>
+            </ul>
+            <p>Adierazi orria eta arazoa. Erantzunik jasotzen ez baduzu edo ados ez bazaude, zure autonomia-erkidegoko kontsumo-zerbitzuetara jo dezakezu.</p>
+          </section>
+  </template>
+
   <script src="js/comun.js"></script>
 </body>
 </html>

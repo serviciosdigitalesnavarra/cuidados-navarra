@@ -21,7 +21,7 @@
       var url = enlace(p, prov);
       var img = p.imagen ? '<img src="' + esc(p.imagen) + '" alt="" loading="lazy">' : '<span aria-hidden="true">' + (p.icono || "🛒") + "</span>";
       var boton = url
-        ? '<a class="boton" href="' + esc(url) + '" target="_blank" rel="sponsored noopener">Ver en ' + esc(prov.nombre) + ' <span aria-hidden="true">↗</span><span class="oculto"> (se abre en otra pestaña)</span></a>'
+        ? '<a class="boton" href="' + esc(url) + '" target="_blank" rel="sponsored noopener">' + esc(CN.t("Ver en {proveedor}", { proveedor: prov.nombre })) + ' <span aria-hidden="true">↗</span><span class="oculto"> (se abre en otra pestaña)</span></a>'
         : '<span class="boton" aria-disabled="true">Próximamente</span>';
       return '<article class="producto" style="animation-delay:' + i * 40 + 'ms"><div class="imagen">' + img +
         '<span class="proveedor">' + esc(prov.nombre) + "</span></div>" +

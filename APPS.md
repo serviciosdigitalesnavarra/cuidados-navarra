@@ -64,6 +64,21 @@ El endpoint sería un pequeño servidor (por ejemplo, una función en Cloudflare
 en secreto y usa como contexto `preguntas.json`, `temas.json` y `servicios.json`. Antes de activarlo hay que actualizar
 la política de privacidad (los mensajes pasarían a enviarse a un tercero) y avisar en el propio asistente.
 
+## Idiomas (castellano y euskera)
+
+`indice.json` → `idiomas` lista los idiomas disponibles y `traducciones` las versiones de cada archivo traducido
+(`datos/eu/temas.json`, etc.). Una traducción contiene **solo los textos**; la app debe descargar el archivo en castellano
+y el traducido, y **unirlos** con las mismas reglas que la web (`I18N.fusionar` en `js/idioma.js`):
+
+1. Objetos: campo a campo; lo que falte en la traducción se queda en castellano. Se ignoran los campos que empiezan por `_`.
+2. Listas de objetos con `id`: se emparejan por `id` (un elemento sin traducir se muestra en castellano).
+3. Otras listas de objetos: por posición. Listas de textos: la traducción sustituye a la original.
+4. `palabrasClave`: se suman las de los dos idiomas.
+
+Idioma inicial: el elegido por la persona; si no hay, el del sistema si es `eu`, y si no, `es`. Los textos fijos de la
+interfaz de la app son propios de cada app, pero pueden tomarse como referencia los de `js/idioma.js` y
+`js/accesibilidad.js` (`TEXTOS.eu`). Para la lectura en voz alta, usar el código `eu-ES` o `es-ES`.
+
 ## Identidad visual
 
 - Verde `#47C269` (marca), verde texto `#237A3B`, negro `#000000`, blanco `#FFFFFF`, fondo `#EAF6EC`.

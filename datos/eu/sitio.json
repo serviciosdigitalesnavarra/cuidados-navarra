@@ -1,0 +1,22 @@
+{
+  "_nota": "Traducción al euskera de datos/sitio.json. Solo lleva los TEXTOS; el correo, el teléfono y los datos del titular (NIF, domicilio…) se toman siempre de datos/sitio.json. Traducción pendiente de revisión por una persona nativa.",
+  "version": 1,
+  "lema": "Hobeto zaindu, lasai eta konfiantzaz",
+  "descripcion": "Adinekoei eta mendekotasuna duten pertsonei laguntzeko gidak, zerbitzuak eta baliabideak, eta zaintzen duena ere zaintzeko.",
+  "contacto": {
+    "horario": "Astelehenetik ostiralera, 9:00etatik 14:00etara"
+  },
+  "titular": {
+    "actividad": "Adinekoen eta mendekotasuna duten pertsonen zaintzari buruzko informazioa eta orientazioa, eta laguntza-zerbitzuak ematea"
+  },
+  "portada": {
+    "titulo": "Hobeto zaindu, lasai eta konfiantzaz",
+    "texto": "Gida praktikoak, zerbitzu hurbilak eta produktu erabilgarriak, adinekoei eta mendekotasuna duten pertsonei egunerokoan laguntzeko.",
+    "imagenAlt": "Landare berdea egongela argitsu eta lasai batean",
+    "tarjeta": {
+      "titulo": "Zaintza lasaia informazio onarekin hasten da",
+      "texto": "Berrikusitako aholkuak, hitz errazekin azalduak, familientzat eta profesionalentzat."
+    }
+  },
+  "avisoSanitario": "Webgune honetako informazioa orientagarria da, eta ez ditu ordezten osasun-profesionalen kontsultak. Larrialdietan, deitu 112ra."
+}
