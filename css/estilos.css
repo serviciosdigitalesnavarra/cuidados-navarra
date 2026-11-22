@@ -567,3 +567,21 @@ html.alto-contraste .pista-interruptor { background: #555; }
 html.alto-contraste .interruptor input:checked + .pista-interruptor { background: #000; }
 html.alto-contraste :focus-visible { outline: 3px solid #000; outline-offset: 3px; box-shadow: 0 0 0 6px #fff, 0 0 0 9px #000; }
 html.alto-contraste .lector-actual { background: #FFE14D; box-shadow: 0 0 0 .3em #FFE14D; color: #000; }
+
+/* ============================================================
+   IDIOMAS: selector castellano / euskera (bandera + texto), en la esquina de la cabecera
+   ============================================================ */
+.franja-idiomas { display: flex; justify-content: flex-end; padding-top: 10px; margin-bottom: -4px; }
+.idiomas { flex: none; display: flex; gap: 2px; padding: 3px; background: rgba(255, 255, 255, .85); border-radius: 12px; box-shadow: 0 4px 14px rgba(30, 80, 45, .06); }
+.idioma {
+  display: inline-flex; align-items: center; gap: .35rem; min-height: 38px; padding: .2rem .55rem; border-radius: 9px;
+  text-decoration: none; color: var(--texto-suave); font-weight: 900; font-size: .8rem; letter-spacing: .03em;
+}
+.idioma:hover { background: var(--verde-suave); color: var(--texto); }
+.idioma[aria-current="true"] { background: var(--verde-suave); color: var(--verde-texto); box-shadow: inset 0 0 0 1.5px var(--verde); }
+.bandera { display: block; flex: none; border-radius: 3px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .15); }
+@media (max-width: 560px) { .franja-idiomas { padding-top: 8px; } .idioma { min-height: 36px; } }
+html.alto-contraste .idiomas { background: #fff; border: 2px solid #000; }
+html.alto-contraste .idioma { color: #000; }
+html.alto-contraste .idioma[aria-current="true"] { background: #000; color: #fff; }
+@media print { .idiomas { display: none; } }

@@ -311,9 +311,10 @@
   }
   function recorrer(n) {
     if (n.nodeType === 3) { traducirTexto(n); return; }
-    if (n.nodeType !== 1 || SALTAR[n.nodeName]) return;
+    if (n.nodeType !== 1 || n.nodeName === "SCRIPT" || n.nodeName === "STYLE") return;
     if (n.getAttribute("translate") === "no" || (n.parentElement && n.parentElement.closest('[translate="no"]'))) return;
     traducirElemento(n);
+    if (SALTAR[n.nodeName]) return; // de un cuadro de texto solo se traduce el texto de ayuda (placeholder), no lo escrito
     var hijos = n.childNodes;
     for (var i = 0; i < hijos.length; i++) recorrer(hijos[i]);
   }

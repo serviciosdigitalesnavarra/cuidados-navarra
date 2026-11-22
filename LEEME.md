@@ -28,6 +28,7 @@ datos/                ← AQUÍ se editan todos los contenidos
   legal.json          Textos legales
   preguntas.json      Preguntas y respuestas del asistente (chatbot)
   indice.json         Índice y versiones de los datos (para las apps)
+  eu/                 Traducción al euskera de los archivos anteriores (solo textos)
 
 css/estilos.css       Estilos. Colores al principio del archivo (verde #47C269, negro, blanco)
 js/                   Lógica de cada página (no hace falta tocarla para cambiar textos)
@@ -118,9 +119,36 @@ La primera vez, envía un mensaje de prueba y confirma el correo de activación 
 - Objetivo: WCAG 2.2 nivel AA. Si cambias colores en `css/estilos.css`, comprueba el contraste
   (mínimo 4,5:1 para texto normal y 3:1 para títulos grandes), por ejemplo en https://webaim.org/resources/contrastchecker/.
 
+## Idiomas: castellano y euskera
+
+Arriba a la derecha hay un selector con la bandera española y la ikurriña (**ES | EU**). La web recuerda el idioma
+elegido; si la persona no ha elegido y su navegador está en euskera, se abre en euskera. También se puede enlazar
+directamente a un idioma: `index.html?lang=eu` o `index.html?lang=es`.
+
+**La traducción al euskera es una primera versión y debe revisarla una persona nativa**, sobre todo las guías de
+salud y los textos legales. En los textos legales en euskera se avisa de que, en caso de duda, prevalece el castellano.
+
+Dónde está cada cosa:
+- **Contenidos** (guías, servicios, tienda, empresa, textos legales, chatbot): el castellano sigue en `datos/*.json`
+  y el euskera en `datos/eu/*.json`, con la misma estructura pero **solo con los textos**. Lo demás (enlaces, iconos,
+  precios, correo, datos del titular…) se toma siempre del archivo en castellano, así que solo se cambia una vez.
+- Los elementos con `id` (guías, servicios, productos, preguntas) se emparejan por su `id`. **Si añades una guía,
+  un servicio o un producto en castellano y no lo traduces, en euskera se verá en castellano** hasta que copies su
+  bloque en el archivo de `datos/eu/` con el mismo `id` y sus textos traducidos.
+- Las listas sin `id` (párrafos, secciones legales, enlaces de una pregunta) van **en el mismo orden** que en castellano.
+- En el chatbot, las `palabrasClave` del archivo en euskera **se suman** a las de castellano: el asistente entiende
+  los dos idiomas. Escribe raíces cortas (`erori` encuentra «erori», «erorita», «erorikoa»…).
+- **Textos fijos** de la web (menús, botones, formulario, avisos): en `js/idioma.js`, objeto `TEXTOS.eu`, con el
+  castellano a la izquierda y el euskera a la derecha. Si cambias un texto fijo en castellano, cambia también ahí
+  la parte izquierda. Los textos de los botones «Escuchar» y «Accesibilidad» están en `js/accesibilidad.js` (`TEXTOS.eu`).
+- **Página de accesibilidad**: la versión en euskera está en la misma `accesibilidad.html`, dentro de
+  `<template data-idioma="eu">`.
+- Al cambiar un archivo de `datos/eu/`, sube su versión en `datos/indice.json` → `traducciones` → `eu`.
+- La lectura en voz alta usa una voz en euskera si el dispositivo la tiene; si no, usa otra voz disponible.
+
 ## Cookies
 
-La web no usa cookies. Solo guarda en el navegador los ajustes de accesibilidad (técnicos, exentos de
+La web no usa cookies. Solo guarda en el navegador los ajustes de accesibilidad y el idioma elegido (técnicos, exentos de
 consentimiento). Si algún día añades analítica (Google Analytics, etc.), necesitarás un banner de consentimiento
 y actualizar el apartado de cookies en `legal.json`.
 

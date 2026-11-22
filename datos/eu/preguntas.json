@@ -1,6 +1,6 @@
 {
   "_nota": "Traducción al euskera de datos/preguntas.json (chatbot). Cada pregunta se empareja por su id. Las palabrasClave de aquí SE SUMAN a las de castellano, así que el asistente entiende ambos idiomas: escribe raíces cortas (por ejemplo 'erori' encuentra 'erori', 'erorita'…). 'enlaces' van en el mismo orden que en castellano (solo se traduce 'texto'). Pendiente de revisión por una persona nativa.",
-  "version": 2,
+  "version": 3,
   "asistente": {
     "nombre": "Cuidados Navarraren laguntzailea",
     "botonTexto": "Zalantzak?",
@@ -12,7 +12,7 @@
     {
       "id": "urgencias", "tema": "Osasuna",
       "pregunta": "Zer egin larrialdi batean?",
-      "palabrasClave": ["larrialdi", "ez du arnasten", "arnasa", "ito", "itotzen", "bihotzeko", "iktus", "bularreko min", "bularrean min", "konorte", "zorabiatu", "kordea galdu", "ez du erantzuten", "konbultsio", "odol asko", "odoljario", "ezin du hitz egin", "ahoa okertuta"],
+      "palabrasClave": ["larrialdi", "arnas", "ito", "itota", "itotzen", "bihotzeko", "infartu", "iktus", "bularre", "konorte", "zorabiatu", "kordea", "ez du erantzuten", "konbultsio", "odol asko", "odoljario", "ezin du hitz egin", "okertu"],
       "respuesta": "Pertsonaren bizitza arriskuan egon badaiteke, deitu orain 112ra. Doakoa da, eta 24 orduz artatzen du.\n\nDeitu 112ra kasu hauetan:\n- Bularreko mina edo arnasteko zailtasuna.\n- Gorputzaren alde batean indarra galtzea, ahoa okertuta edo hitz egiteko zailtasuna.\n- Konortea galtzea edo konbultsioak.\n- Konpontzen ez den itotzea.\n\nLaguntza iristen den bitartean, geratu pertsonarekin eta jarraitu 112ren argibideei.",
       "enlaces": [{ "texto": "Deitu 112ra" }, { "texto": "Alerta-seinaleak" }]
     },

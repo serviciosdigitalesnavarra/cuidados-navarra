@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "actualizado": "2026-11-22",
   "_nota": "El asistente se actualiza solo: cada guía de temas.json, cada servicio de servicios.json y cada producto de tienda.json se convierte automáticamente en una respuesta. Aquí solo hace falta escribir preguntas a medida. Campos: id (sin espacios), tema, pregunta, palabrasClave (palabras o frases que la gente podría escribir), y además UNO de estos: respuesta (texto propio), guia (id de una guía: responde con su texto actual) o servicio (id de un servicio). En las respuestas puedes usar {{contacto.horario}}, {{contacto.email}}, {{sitio.nombre}}, {{lista.servicios}}, {{lista.temas}}, {{lista.tienda}} o {{lista.guias}}, que se rellenan solos. urgente: true hace que esa respuesta gane siempre; oculta: true evita que se proponga como sugerencia.",
   "asistente": {
@@ -21,7 +21,7 @@
       "tema": "Salud",
       "urgente": true,
       "pregunta": "¿Qué hago ante una urgencia?",
-      "palabrasClave": ["urgencia", "emergencia", "112", "no respira", "respira mal", "ahoga", "atragant", "infarto", "ictus", "dolor de pecho", "dolor en el pecho", "inconsciente", "desmayo", "se ha desmayado", "no responde", "convulsion", "sangra mucho", "hemorragia", "no puede hablar", "boca torcida"],
+      "palabrasClave": ["urgencia", "emergencia", "112", "no respira", "respira mal", "ahoga", "atragant", "infarto", "ictus", "dolor de pecho", "dolor en el pecho", "pecho", "no puede respirar", "respirar", "inconsciente", "desmayo", "se ha desmayado", "no responde", "convulsion", "sangra mucho", "hemorragia", "no puede hablar", "boca torcida"],
       "respuesta": "Si la vida de la persona puede estar en peligro, llama ahora al 112. Es gratuito y atiende las 24 horas.\n\nLlama al 112 ante:\n- Dolor en el pecho o dificultad para respirar.\n- Pérdida de fuerza en un lado del cuerpo, boca torcida o dificultad para hablar.\n- Pérdida de consciencia o convulsiones.\n- Atragantamiento que no se resuelve.\n\nMientras llega la ayuda, quédate con la persona y sigue las indicaciones del 112.",
       "enlaces": [
         { "texto": "Llamar al 112", "url": "tel:112" },

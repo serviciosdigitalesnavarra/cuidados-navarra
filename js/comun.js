@@ -106,9 +106,10 @@
       return '<a href="' + m.url + '"' + (m.id === pagina ? ' aria-current="page"' : "") + ">" + m.texto + "</a>";
     }).join("");
     return '<a class="saltar" href="#contenido">Saltar al contenido</a>' +
+      // Selector de idioma (castellano / euskera), arriba a la derecha, encima de la cabecera
+      (window.I18N ? '<div class="contenedor franja-idiomas">' + I18N.selector() + "</div>" : "") +
       '<header class="cabecera"><div class="contenedor"><div class="barra" style="position:relative">' +
       '<a class="logo" href="index.html" aria-label="Cuidados Navarra, inicio">Cuidados <span>Navarra</span></a>' +
-      (window.I18N ? I18N.selector() : "") +
       '<button class="menu-movil" id="menu-movil" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>' +
       '<nav class="nav" id="nav" aria-label="Principal">' + nav +
       '<a class="boton" href="empresa.html#contacto">Contacto</a></nav>' +
